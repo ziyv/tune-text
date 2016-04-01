@@ -1,0 +1,6 @@
+/* Like threepart, but with fixed menus */
+@import "threepart.css";
+/* The child selectors are a hack to hide these rules from WinIE6,
+   which gets confused by 'fixed' */
+body>div#Menu,
+body>div.map { position: fixed }

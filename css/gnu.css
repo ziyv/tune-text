@@ -1,0 +1,398 @@
+/*
+gnu.css -- css stylesheet used on www.gnu.org
+
+Copyright (C) 2006 Free Software Foundation
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+   
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+   
+*/
+
+@media screen{
+
+html, body{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font-family: "Bitstream Vera Sans", sans-serif; /* favour free fonts!! */
+	background-color: #fff;
+	margin: 0;
+	padding: 1em;
+	color: #333;
+}
+
+h1,h2,h3,h4,h5,h6{
+	color: #000;
+	font-weight: bold;
+	font-family: "Bitstream Vera Sans", sans-serif; /* favour free fonts!! */
+	border: 0;
+	background-color: transparent;
+}
+
+h1{
+	font-size: 1.7em;
+}
+
+
+a:link { 
+ 	color: #1f00ff; 
+	background-color: transparent;
+	text-decoration: underline;
+ 	}
+
+a:visited { 
+ 	color: #9900dd; 
+	background-color: transparent;
+	text-decoration: underline;
+ 	}
+
+a:hover { 
+ 	color: red; 
+	background-color: transparent;
+	text-decoration: none;
+ 	}
+
+.center {
+	text-align: center;
+}
+
+.italic { 
+ 	font-style: italic; 
+ 	}
+
+.bold {
+        font-weight: bold;
+        }
+
+.quote {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.hrsmall {
+	width: 80px;
+	height: 1px;
+	margin-left: 20px;
+}
+
+.td_title {
+	border-color: #3366cc;
+	border-style: solid;
+	border-width: thin;
+	color: #3366cc;
+	background-color : #f2f2f9; 
+	font-weight: bold; 
+}
+
+.td_con {
+	padding-top: 3px; 
+	padding-left: 8px; 
+	padding-bottom: 3px; 
+	color : #303030; 
+	background-color : #fefefe; 
+}
+
+.translations {
+	background-color: transparent; 
+}
+
+.fsflink {
+	border-bottom: #3366cc thin solid; 
+}
+
+/*
+ * rtl stands for right-to-left layout, as in farsi/persian,
+ * arabic, etc. See also trans_rtl.
+ */
+.fsflink_rtl {
+	border-bottom: #3366cc thin solid; 
+	padding-right: 0.2em; 
+	padding-bottom: 0.2em;
+}
+
+.trans {
+	padding-left: 1em; 
+}
+
+.trans_rtl {
+	padding-right: 1em; 
+}
+
+img {
+	border: 0px !important;
+}
+
+p{
+	font-size: 1.0em;
+}
+
+td.side {
+	color: #3366cc;
+/*	background: #f2f2f9; 
+	border-color: #3366cc;
+	border-style: solid;
+	border-width: thin; */
+	border-color: white;
+	border-style: none;
+	vertical-align: top;
+	width: 150px;
+}
+
+div.copyright, #footer {
+	border: 0px;
+	padding: 0.4em;
+	border-top: 2px solid #06C;
+}
+
+
+.translations-list, .translations-list li, #validation, #validation li{
+	list-style: none;
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+.translations-list li{
+	padding-right: 0.3em;
+	border-left: 1px solid #AAA;
+	padding-left: 0.3em;
+	margin: 0;
+}
+
+.translations-list li:first-child {
+        border-left: 0;
+        padding-left: 0;
+}
+
+.footnoteref {
+	vertical-align: text-top;
+}
+
+/* Please don't remove -- "ss" class is used in Polish pages */
+.ss > li, .ss > dt { margin-top: 1em; margin-bottom:0.2em; }
+.ss >li > p, .ss > dd > p { margin-top: 0.4em; margin-bottom:0; }
+
+/* styles copied from fsf.org/plone.css */
+
+ul { 
+    line-height: 1.5em;
+    list-style-type: square;
+    margin: 0.5em 0 0 1.5em;
+    padding: 0;
+    list-style-image: url(http://www.fsf.org/bullet.gif);
+}
+
+ol {
+    line-height: 1.5em;
+    margin: 0.5em 0 0 1.5em;
+    padding: 0;
+}
+ul a, ol a {
+    text-decoration: underline;
+}
+/* testing, karl 20aug06  li {
+    margin-bottom: 1em;
+} */
+dt {
+    font-weight: bold;    
+}
+dt a {
+    text-decoration: underline;
+}
+
+dd {
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+dd a {
+    text-decoration: underline;
+}
+
+dd.link a {
+    text-decoration: none;
+    color: Black;
+}
+
+fieldset {
+    border: 1px solid #666666;
+    margin: 1em 0em 1em 0em;
+    padding: 0em 1em 1em 1em;
+    line-height: 1.5em;
+    width: auto;
+}
+legend {
+    background: White;
+    padding: 0.5em;
+    font-size: 90%;
+}
+
+form {
+    border: none;
+    margin: 0;
+}
+textarea {
+    font: 110% "Courier New", Courier, monospace; 
+    border: 1px solid #666666;  
+    color: Black;
+    background-color: white;
+    width: 100%;
+}
+input {
+    font-family: sans-serif;
+    visibility: visible;
+    border: 1px solid #666666;  
+    color: Black;
+    background-color: white;
+    vertical-align: middle;
+}
+select {
+    border: 1px solid #666666;  
+    color: Black;
+    vertical-align: top;
+}
+abbr, acronym, .explain {
+    border-bottom: 1px dotted Black;
+    color: Black;
+    background-color: transparent;
+    cursor: help;
+}
+q {
+    font-family: serif;
+    font-style: italic;
+}
+blockquote {
+    font-family: serif;
+    font-style: italic;
+}
+
+#38FBB3
+code {
+    color: Black;
+    background-color: #d4cfcb;
+    border: 1px dashed #666666;
+    padding: 0 0.1em;
+}
+pre {
+    padding: 1em;
+    border: 1px dashed #666666;
+    color: Black;
+    background-color: #d4cfcb;
+    overflow: auto;
+}
+.pre a {
+    text-decoration: underline;
+}
+
+ins {
+    color: green;
+    text-decoration: none;
+}
+
+del {
+    color: red;
+    text-decoration: line-through;
+}
+
+.netscape4 {
+    display: none;
+}
+
+.field {
+    top: 0;
+    left: 0;
+    margin: 0 1em 1em 0;    
+}
+
+a:link acronym{
+	border:0;
+	color: blue;
+}
+
+a:visited acronym{
+	color: purple;
+	border:0;
+
+}
+
+a:hover acronym{
+	color: red;
+	border:0;
+
+}
+
+.field .field {
+    margin: 1em 0 0 0;
+}
+
+.field label {
+    font-weight: bold;
+}
+
+.fieldRequired {
+    background: url(http://www.fsf.org/required.gif) center left no-repeat;
+    padding: 0 0 0 8px;
+    color: White;
+} 
+
+.formHelp {
+    font-size: 90%;
+    color: #76797c;
+    margin: 0 0 0.2em 0;
+}
+
+.formHelp a {
+    text-decoration: underline;
+}
+
+.formHelp:hover {
+    color: Black;
+    cursor: default;
+}
+
+.formControls {
+   margin: 1em 0 0 0; 
+}
+
+.highlight{
+background-color: #ffc;
+}
+
+/* Banner styles, work in progress */
+
+#top { 
+    width: 800px;
+    padding: 0;
+    margin: 0;
+}
+
+#top img {
+    float: left;
+    border: 0;
+}
+
+#top-stack {
+    float: left;
+    margin-top: 65px;
+    margin-left: 7px;
+}
+
+#top-stack img {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+}

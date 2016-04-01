@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO: 開啟 X</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-6.html" REL=next>
+ <LINK HREF="XWindow-User-HOWTO-Chinese-4.html" REL=previous>
+ <LINK HREF="XWindow-User-HOWTO-Chinese.html#toc5" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-6.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-4.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc5">Contents</A>
+<HR>
+<H2><A NAME="s5">5.</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc5">開啟 X</A></H2>
+
+<P>下面的各個型態設定的例子中，我們假設所用到視窗管理員都相當穩定，例如
+FVWM2 。我也建議試用 <B>FVWM2</B> 來學這些主題，因為雖然這些主題，也可
+以應用在其它任何現有的視窗管理員上，但是如果使用 FVWM2 ，主題就更容易了。</P>
+
+<H2><A NAME="ss5.1">5.1</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc5.1">一個簡單的開啟型態</A>
+</H2>
+
+<P>看先先來為 X 寫一個初始檔。初始檔可以是全系統共用，如果是，此時它可能被放在
+<EM>/var/X11R6/lib/xinit/xinitrc</EM> 中。它也可以是專屬於個人，而取代
+全系統通用之初始檔，此時它會被放在你的 home 目錄中的 <CODE>.xinitrc</CODE> 中。
+一般而言，在系統中應會有個基本預設的初始檔，作為全系統共同使用，然後若個人有需要 
+( 如為了保全理由 ) ，再予以加強，否則使用者會使用專屬的初檔。</P>
+<P>首先，在你的 home 目錄中，建立 <CODE>.xinitrc</CODE> 檔。先打開你最``深愛''的文
+字編輯器，然後把下面的 ( 或相似的 ) 指令貼上去:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ #!/bin/sh
+ 
+ # if your backspace and delete are reversed, try this:
+ xmodmap -e &quot;keysym BackSpace=Delete&quot; -e &quot;keysym
+Delete-BackSpace&quot;
+ 
+ xsetroot -solid darkslateblue
+ 
+ # start some basic applications
+ xclock -geometry 96x96+2+2 -bg grey40 -fg black -hl white &amp;
+ xload -geometry 120x96+2+147 -bg grey40 -fg white -hl darkred -update 4
+&amp;
+ xterm -sb -ls -geom 80x25-2+2 -title "shell" &amp;
+ xterm -sb -ls -geom 80x25-2-2 &amp;
+ 
+ # start the window manager
+ /usr/X11R6/bin/fvwm2
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>在這個例子中可以學到許多東西。首先，這個檔案必須用第一行來表示它是個 shell
+script 。在第二行中的 <B>xsetroot</B> 指令，將桌面的背景顏色改成娛人的籃色。
+既然這個顏色將一直主宰桌面，好的顏色甚為重要。</P>
+<P>當一切都跑得很快的時候，我想讓第三及第四行的程式時時在跑。你可以看得出來
+其中有一些選項做了一些不錯的設定，例如，設定一些顏色及幾何特性 ( 在螢幕
+上的位置 ) 。在後面，我會再給你一些要領，讓你了解這些指令是做什麼用的。
+第五及第六行也很類似，它們為我們打開兩個好用的 <B>xterm</B> ，做為
+接下來之用。</P>
+<P>最後一行極為重要，它啟動視窗管理員！注意，我們唯一沒有以<EM>背景程序 (
+background processes )</EM> ( 在它們後面，我們放了一個 <B>&amp;</B> ) 
+執行的是 <B>xsetroot</B>、 <B>xmodmap</B> 及 <B>fvwm2</B>。
+而其它的程式，則以背景程式的方式運行，否則只要關掉其中一個，整個 X 視窗
+會期 ( session ) 都會被砍掉。這樣子，它將令人非常困擾。另外你也可以預期
+到，如果 <B>fvwm2</B> 一且關掉了， X 也就結束了。</P>
+
+<H2><A NAME="ss5.2">5.2</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc5.2">更有意思的開啟型態</A>
+</H2>
+
+<P>對於開啟檔，我們可以有許多例子。例如說，當不小心以 root user 的身份開啟
+了 X ，可以有個好的警示方法。 Red Hat 的使用者就常常有這種困擾，因為有許
+多設定型態的程式必須以 root 的身份在 X 來執行。在平常 X 使用者的會期一中，
+若要成為 root ，可以用 <B>su</B> 的命令，接著可以以 root 的身份，以
+上述的 <B>-display :0.0</B> 選項來叫用程式。</P>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ # change background color for root 
+ if [ &quot;$USER&quot; = &quot;root&quot; ];
+ then
+      xsetroot -solid darkred
+ else xsetroot -solid darkslateblue
+ fi
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>這一段指令會檢查是否你是 root ，若是，它會把背景顏色從代表普通使用者的柔和
+的藍色變成刺眼的紅色來警告你。下面這一段指令，則是放在 <CODE>.xinitrc</CODE> 
+檔中，它會先查看一下代表你個人專用的及全系統共用的資源的檔案是否存在，然後
+把存在者熔合在一起。</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ userresources=$HOME/.Xresources
+ usermodmap=$HOME/.Xmodmap
+ sysresources=/usr/X11R6/lib/X11/xinit/.Xresources
+ sysmodmap=/usr/X11R6/lib/X11/xinit/.Xmodmap
+ # Merge in defaults and keymaps
+ if [ -f $sysresources ]; then
+    xrdb -merge $sysresources; fi
+ if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap; fi
+ if [ -f $userresources ]; then
+    xrdb -merge $userresources; fi
+ if [ -f $usermodmap ]; then
+    xmodmap $usermodmap; fi
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+
+<H2><A NAME="ss5.3">5.3</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc5.3">在想要的地方打開視窗</A>
+</H2>
+
+<P>以 <EM>-geometry</EM> 選項及憶測來把每一個視窗安置在螢幕上，不是一件
+單純的工作。尤其當你希望要使 X 中跑的每一個程式，都能用 <EM>-geometry</EM> 
+來定出適合它的大小位置。這個介面的調整工作要求很細，事實上在運用選項上有許多
+的祕密。</P>
+<P>因而 FVWM 設計了許多很好的功能。當你在螢幕上移動一個視窗時，它的幾何特性
+會預設地出現在螢幕上。試試看，按著左鍵移動一個視窗看看。然後改變它的大小
+。可以看到，你可以得到它的一些主要的幾何數值。即使這個方法有點麻煩，但
+它讓你能以一種一致的方法定出每一個視窗的所有細節。</P>
+<P>現在我們要來介紹 <B>xwininfo</B> 程式。要使用這個程式，先進入
+<B>xterm</B> 視窗，然後鍵入它的程式名。它會要求點選任何視窗，一
+旦點選了，它會列出有關此一視窗的有用資訊。這在更改視窗的特性上很有用 - 先
+執行此程式，點選一個視窗，然後在開啟型態檔中修改參數值，這麼以後視窗系
+統一開始，就會精精確確地把視窗開成你所要的樣子。</P>
+<P>
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-6.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-4.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc5">Contents</A>
+</BODY>
+</HTML>

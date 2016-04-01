@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO: 選擇那一個視窗管理員呢?</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-4.html" REL=next>
+ <LINK HREF="XWindow-User-HOWTO-Chinese-2.html" REL=previous>
+ <LINK HREF="XWindow-User-HOWTO-Chinese.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-4.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-2.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc3">Contents</A>
+<HR>
+<H2><A NAME="s3">3.</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc3">選擇那一個視窗管理員呢?</A></H2>
+
+<P>我們在此要討論的是，X 的使用者能選擇那些視窗管理員，並比較各別之
+優劣。不想使本文件太大 ( 也不想使之難以維護 )，我將只限於討論現在檯面上
+幾個最廣泛使用的視窗管理員。它們應該最足以達成我們的討論目的，而且一旦
+掌握其中的基本觀念，要了解所有的視窗管理員亦不遠矣。</P>
+<P>視窗管理員的選擇，對未來使用電腦的行為影響極大。在使用 X 時，會花很
+多時間在視窗上，所以你不會要一個礙手礙腳的視窗，相反地你希望它是為你量
+身打造的。有些視窗管理員可任意打造，甚至讓你覺得好像是在用另一個操作系統
+。如果不要插圖，也可去除掉。如果你的工具列不合用，也可自訂一個更好的，也
+可將它設成較順手較易操作。</P>
+
+<H2><A NAME="ss3.1">3.1</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc3.1">FVWM 及其前身</A>
+</H2>
+
+<P>現今最廣泛使用的各種視窗管理員，都發展自 Robert Nation 的 FVWM 視窗管理
+員。例如 FVWM 、 FVWM2 、 FVWM95 等等。 FVWM 本身則由 TWM 發展出來的，
+TWM 包含在 X 的安裝元件中，在本文中並不討論。 TWM 的指令文法及用
+法和 FVWM 類似，但需要較多記憶體，而且令人覺得很笨拙。</P>
+<P>FVWM 是原始而備用的 Linux 視窗管理員。現在 FVWM 的第 2.0 版已經漸漸穩定
+，而且越來越多人在使用它。因為它變得簡單明瞭得多，也變得更有彈性，應是
+個不錯的選擇。但是因為老版本的 FVWM 已經長期為人喜愛，而成為一共同標準，
+現在有許多人的系統中仍在使用它，所以本文中的許多實例都是以老版本為主。
+如果老的版本仍然能滿足你的需求，昇級與否並不是非常重要，因為有些指令的文
+法有根本的改變，一旦昇級，型態檔將會有某個程度的破壞，而且昇級後，又無法
+再降級。以上是 FVWM 的現況。</P>
+<P>沒有人(包括我)真正知道 FVWM 中的 F 代表什麼，但其中的 VWM 應該(正
+確地說)是指虛擬視窗管理員 ( Virtual Window Manager ) ，而 FVWM 系列是指
+諸虛擬視窗管理員。每一個按鍵都可以定義一個功能(包括在虛擬視窗間切換)
+，而且輕易完成。</P>
+<P><B>FVWM2</B> 定義了一套新標準，有許多在前一版本中所沒有的許多改善。比許
+多較新的(就我現在所能用到的)視窗管理員好的地方是，只需要 8 位元( 256 
+色)，在加上一些插圖及漸變色彩，就可以表現的與 Win98 (不論你是不是它的
+愛用者)的介面相類似。一般而言，這一版本也較有延申性，能使用佈景主題 ( theme ) 
+及動態選單 ( dynamic manu ) 。技術上， FVWM2 現在仍然只有 Beta 版，但是它
+運行的很順，到現在為止，我還沒有遇到任何問題。</P>
+<P>
+<DL>
+<DT><B>資料來源:</B><DD><P>FVWM 及 FVWM2 的正式網站為 
+<A HREF="http://www.hpc.uh.edu/fvwm/">http://www.hpc.uh.edu/fvwm/</A>。它們的最新修正版則可從
+<A HREF="ftp://ftp.hpc.uh.edu/pub/fvwm/">ftp://ftp.hpc.uh.edu/pub/fvwm/</A> 取得。</P>
+</DL>
+</P>
+
+<H2><A NAME="ss3.2">3.2</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc3.2">視窗系統的世界性</A>
+</H2>
+
+<P>對於用慣了其它操作系統上的視窗環境者，我們有許多的視窗管理員可用來模仿你
+慣用的桌面。</P>
+<P>
+<A HREF="http://berta.fri.uni-lj.si/~markom/icewm">icewm</A> 視窗管
+理員是設計來仿造其它視窗系統的標準，使你有較一致的感覺，如熱鍵等。它尤其
+善於模仿 OS/2 。 
+<A HREF="http://www.lysator.liu.se/~marcus/amiwm.html">AmiWM</A> 為 Amiga Workbench 式的視窗管理員，而
+<A HREF="http://www.bioele.nuee.nagoya-u.ac.jp/member/tak/mlvwm.html">mlvwm</A> 用來模仿 MacOS 。另外還有很酷的 
+<A HREF="http://www-c.informatik.uni-hannover.de/~kaiser/dfm/dfm.html">dfm</A> ，它整合了桌面及檔案管理員，模
+仿 OS/2 Workplace Shell 得很好。</P>
+<P>
+<DL>
+<DT><B>資料來源:</B><DD><P>在 
+<A HREF="http://www.PLiG.org/xwinman/">http://www.PLiG.org/xwinman/</A> 有視窗
+管理員的網站，其中有各種視窗管理員的最新資料，特別是從中可以找到
+模仿其它視窗環境的視窗管理員。在
+<A HREF="http://www.PLiG.org/xwinman/others.html">http://www.PLiG.org/xwinman/others.html</A> 中還有更多資
+料，本站的作者與前一站相同，但本站比較正式且完整地列出各種資料。
+也可以從 
+<A HREF="ftp://metalab.unc.edu/pub/Linux/X11/window-managers">metalab</A>的檔案庫中下載 Linux 的大部份視窗管理員。</P>
+</DL>
+</P>
+
+<H2><A NAME="ss3.3">3.3</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc3.3">X 圖形介面</A>
+</H2>
+
+<P>Open Look 及 Motif 早期曾試著在各種工作站上，要標準化 X 視窗，使它成為主
+流。兩者在感覺上都滿成功的，因而都可以用在現代的 Linux 系統上。兩者都需要
+特定的函式庫，它們可以用來編譯為其中一個系統所設計之應用程式，而且對任一
+個程式都有類似的感覺效果。</P>
+<P>從 X11 Release 5 起 Sun Microsystem 的 <B>OpenWindows</B> 圖形介面就開
+始可以用在 X 視窗上了。它包含兩個版本的 Open Look 視窗管理員，<EM>olwm</EM> 
+及 <EM>olvwm</EM> ( 含虛擬桌面 ) 。Sun 是基於建立一標準的視窗環境而設計
+它，事實上它數年前，早在 Solaris 中就己經是個設計標準了。如果你的 Linux 
+套件中不包含此一視窗系統，記得要安裝好 <EM>XView</EM> 函式庫，而且要把
+<EM>/usr/openwin/...</EM> 目錄含蓋在 path 中。</P>
+<P>如果在  Linux 中有 <B>OSF/Motif Toolkit</B> ，它們不是免費的。但是
+<EM>Hungry Programmers</EM> 寫了一個叫 <B>LessTif</B> 的東東，可以用
+來編譯 Motif 的程式，讓人覺得自己有了 Motif Toolkit。 LessTif 只是 Motif 
+Toolkit 的抄襲版。現在 LessTif 只是用現有的 API 來建立。許多程式是依靠此
+免費版本之工具來運作的，有的還附有用 FVWM 所建立之視窗管理員，所以
+也可以叫它們為 Motif 視窗管理員。</P>
+<P>此一工具的最大功能是，用系統中的 Motif 函式庫來編譯程式。此一視窗管理員
+並無奇特之處，但是如果你原來是使用 Motif ，而且不想變動型態檔時，它則特
+別好用。不論目的為何， FVWM 都是功能完整而且好用，而且不論看起來或動起來
+都很一致 ( 即使我們知道視窗的暗示是使用 Motif Toolkit 所建立的程式 )。</P>
+<P>
+<DL>
+<DT><B>資料來源:</B><DD><P>Hungry Programmers LessTif 在 
+<A HREF="http://www.lesstif.org/">http://www.lesstif.org/</A> 網站中。</P>
+</DL>
+</P>
+
+<H2><A NAME="ss3.4">3.4</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc3.4">X 桌面環境</A>
+</H2>
+
+<P>第二代的 Linux 視窗管理員是由 KDE 所提供的，接著 GNOME 也有了。其中大同
+小異，將在這裡說明。最先要記著，它們都不是完整的產品。兩者都還在漫長的發
+展循環的初期，也還沒有穩定下來，因為它們都不是現階段的任務重點。</P>
+<P><B>KDE 桌面環境</B></P>
+<P>( KDE 首頁曰: ) <EM>「 KDE 是個全新的桌面，其中有許多 Unix 工作站上可用的應用
+程式。雖然 KDE 也有許多一般人公認現今桌面環境所有的元件，例如視窗管理員、
+檔案管理員、元件板、控制台等，它真正強大的地方是元件間的互動操作 (
+interoperability ) 。」</EM></P>
+<P>(譯者按，原文)``KDE is a completely new desktop,
+incorporating a large suite of applications for Unix
+workstations. While KDE includes a window manager, file manager,
+panel, control center and many other components that one would expect
+to be part of a contemporary desktop environment, the true strength
+of this exceptional environment lies in the interoperability of its
+components.''</P>
+<P>KDE 桌面環境是要使桌面環境超越視窗管理員。KDE 的工具強大到使人以為 KDE 是
+一個獨立的操作系統。它包括視窗系統所需的一切工具，以及其它工具。 KDE 己經
+達到驚人的成熟度，但是因為它是基於 QT toolkit ，有些証照的限制，有許多工
+具仍然難以安裝在桌面上。這問題終於有些改善，今天這個証照已經定義為 Open
+Source ，但和 GUN 軟體是兩回事。</P>
+<P>對許多新手而言，他們往往選擇 KDE 。這個發展計畫己經有一段時日了，而且想要
+作出一個豪華的環境。從許多角度來看，它讓你覺得好像是在用 Windows 的優
+秀元件。這也許是一件好事，但是對於那些一直期盼有個不一樣的視窗者而言，的
+確很令人失望。</P>
+<P><B>GNOME: GNU 物件模式環境</B></P>
+<P>( GNOME 首頁曰: ) <EM>「 GNOME 即 GNU Object Model Environment 。GNOME 專案期望
+完全基於自軟體，來建立一個完整而人性化的桌面。 GNOME 是 GNU 專案的一部份，
+而且也是 OpenSource(tm) 活動的一部份。桌面將用一些工具及一些大型應用程
+式來組成，它們須有一致的感覺。 GNOME 以 GTK+ 為所有 GNOME-編譯成的應用程
+式的圖形使用者介面(GUI) 。」</EM></P>
+<P>(譯者按，原文)``GNOME stands for GNU Network
+Object Model Environment. The GNOME project intends to build a
+complete, user-friendly desktop based entirely on free
+software. GNOME is part of the GNU project, and GNOME is part of the
+OpenSource(tm) movement. The desktop will consist of small utilities
+and larger applications which share a consistent look and feel. GNOME
+uses GTK+ as the GUI toolkit for all GNOME-compliant
+applications.''</P>
+<P>GNOME 專案所要做的事和 KDE 專案相當接近，但還多做了一點點。例如， GNOME 不
+只限於單一視窗管理員。又例如，互動操作也不限於應用程式之間，而是可以在不同
+的電腦之間或不同的平台之間，因為它使用 Common Object Resource Broker Architecture(CORBA)。
+尤有甚者少， GNOME 建立在 GTk+ toolkit 之上，不像 KDE 的下層工具，因為 
+Gtk+ toolkit 是自由軟體也是 Open source ，它和 Linux 的根本精神是一致的。 </P>
+<P>
+<DL>
+<DT><B>資料來源:</B><DD><P>KDE 的正式網站為 
+<A HREF="http://www.kde.org/">http://www.kde.org/</A>。
+GNOME 的正式網站為 
+<A HREF="http://www.gnome.org/">http://www.gnome.org/</A>。
+<A HREF="http://www.gnome.org/gnomefaq/FAQ.txt">http://www.gnome.org/gnomefaq/FAQ.txt</A> 有更多有關 GNOME 的
+資料。CORBA 的首頁在 
+<A HREF="http://www.corba.org/">http://www.corba.org/</A> ，而 GTk+ toolkit 
+的是在
+<A HREF="http://www.gtk.org/">http://www.gtk.org/</A> 。</P>
+</DL>
+</P>
+
+<H2><A NAME="ss3.5">3.5</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc3.5">豪華視窗管理員</A>
+</H2>
+
+<P>最新一代的視窗管理員，真的是非常非常飄亮。只要記憶容量夠大， CPU 夠快，
+有許多視窗管理員可以賣弄一切所知的傳統，並且仿效世上最華麗的工作站的操作
+系統。</P>
+<P><B>Window Maker</B></P>
+<P>( Window Maker 首頁曰: ) <EM>「 Window Maker 為一 X11 視窗管理員，設計來讓 GNUstep 應用程
+式多一點整合性支援。它仿效了 NEXTSTEP(tm) 的高雅感覺。它速度相當地快、功
+能相當地多而且易設定型態易用。」</EM></P>
+<P>(譯者按，原文)``Window Maker is an X11 window manager designed to give additional 
+integration support for GNUstep applications. It tries to emulate the 
+elegant look and feel of the NEXTSTEP(tm) GUI. It is relatively fast, 
+feature rich, and easy to configure and use.'' </P>
+<P>此一視窗管理員的最強大功能是，能夠支援 GNU 的桌面，也就是說它成為了 GNOME
+最美好的前端。它也是最易於設定型態的視窗管理員，而且可以以圖形介面來設定，
+它又支援 OffiX 的隨抓隨丟 ( drag and drop ) 協定，切換佈景主題也很容易，在最
+流行的 Red Hat 套件中也有，所以如果因為心情不佳，而從 FVWM 換過來，中間的
+手續幾乎不痛不癢。在 0.50 版後， Window Maker 還支援 KDE 程式的編譯。</P>
+
+<P><B>AfterStep</B></P>
+<P>( AfterStep 首頁曰: ) <EM>「 AfterStep 為 X 的視窗管理員，本來仿效 NEXTSTEP 的感觀效果，
+但因為眾多使用者的需求而大幅修改為今天的樣子。許多高手可以告訴你 NEXTSTEP
+不只是視覺上最美的介面，也是現有視窗管理員中功能最強最不需要動到大腦的一支
+。 AfterStep 的目標，就是在 NEXTSTEP 的優越介面上，加入一些有用的功能。
+AfterStep 的發展者花了很大的工夫去保証它的穩定性，而不是去做太大幅改變。」</EM></P>
+<P>(譯者按，原文)``AfterStep is a Window Manager for X which started by emulating the 
+NEXTSTEP look and feel, but which has been significantly altered 
+according to the requests of various users. Many adepts will tell you 
+that NEXTSTEP is not only the most visually pleasant interface, but 
+also one of the most functional and intuitive out there. AfterStep aims 
+to incorporate the advantages of the NEXTSTEP interface, and add 
+additional useful features. The developers of AfterStep have also 
+worked very hard to ensure stability and a small program footprint.'' </P>
+<P><B>Enlightenment</B></P>
+<P>Enlightment 不只是視窗管理員，它也是個極端的、詳細的且可設定型態的環境，它
+特別吸引人的地方是它允許無規則而且可完全自訂視窗的形狀。設計是開放的，它不
+指定設計方針，而是給使用者自訂設計方針權，讓他們能從功能到外表，都能定義到
+極微小的細節。</P>
+<P>如果你用的是 GNOME ，你將發現 Enlightment 是它的預設視窗管理員，事實上，你
+必須安裝它 GNOME 才能正常工作。它基本上也是為了整合 GNOME 諸功能的事質設計
+，因此它成為使用 GNOME 時桌面的最實際選擇。也有許多視窗管理員可听和 GNOME 
+搭配，但是你可以見到 Enlightment 是最好的一個。不幸的是，它還在開發階段，
+而且有時跑得不快，有時不完美。</P>
+<P>
+<DL>
+<DT><B>資料來源:</B><DD><P>Window Maker 的正式網站在 
+<A HREF="http://www.windowmaker.org/">http://www.windowmaker.org/</A>。 AfterStep 的正式網
+站在 
+<A HREF="http://www.afterstep.org/">http://www.afterstep.org/</A>。 Enlightenment 
+還是在 
+<A HREF="http://www.enlightenment.org/">http://www.enlightenment.org/</A>。</P>
+</DL>
+</P>
+<P>
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-4.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-2.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc3">Contents</A>
+</BODY>
+</HTML>

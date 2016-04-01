@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO: 與 X 共舞</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-5.html" REL=next>
+ <LINK HREF="XWindow-User-HOWTO-Chinese-3.html" REL=previous>
+ <LINK HREF="XWindow-User-HOWTO-Chinese.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-5.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-3.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc4">Contents</A>
+<HR>
+<H2><A NAME="s4">4.</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc4">與 X 共舞</A></H2>
+
+<P>在本節中，我們開始熟晰在 X 視窗中跑用戶程式及有關此系統之基本程序。X 視窗
+介面本身並不是完全不須用到大腦，而且如果沒有視窗管理員，最簡單的用法，就是
+從在其中以命令列來跑程式開始。使用 X 的一個最普通方式就是一次打開數個 xterm 
+。這方式雖然無法將它的繪圖能力發揮到極至，但不啻為好的開端。</P>
+<P>事實上，命令列的彈性及能力都足以忽視視窗管理員。視窗管理員固然好，而且你
+馬上就會需要用到它，你仍然可只使用命令列及滑鼠，完全不依賴它。但是只要
+稍稍試用一下視窗管理員，你馬上就知道用戶端和視窗管理員之間，是有差別的。
+試一下就知道了。<EM>記著</EM>，只要同時按 Ctrl-Alt-Backspace ，就
+可以跳出 X 視窗。</P>
+
+<H2><A NAME="ss4.1">4.1</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc4.1">命令列選項</A>
+</H2>
+
+<P>大部份的 X 程式，都使用一組相同的命令列選項名稱。凡是以 MIT X 
+Toolkit Intrinsics 所寫成之應用程式，都接受下述的選項。</P>
+<P>
+<DL>
+
+<DT><B>-display <EM>display</EM></B><DD><P>此一選項決定要使用那一個 X 伺服程式。相關細節，見顯示名稱一節。</P>
+
+<DT><B>-geometry <EM>geometry</EM></B><DD><P>視窗初始大小及位置，以 <EM>width</EM>x<EM>height</EM>+
+<EM>hoffset</EM>+<EM>voffset</EM> 或 +<EM>hoffset</EM>-
+<EM>voffset</EM>
+之格式來表示。注意，如果水平或垂直位移量為負值，視窗大小將自在向左
+計算或自下向上計算。</P>
+
+<DT><B>-font <EM>font</EM></B><DD><P>視窗上所顯示的字型。</P>
+
+<DT><B>-bg <EM>color</EM></B><DD><P>視窗背景的顏色。</P>
+
+<DT><B>-fg <EM>color</EM></B><DD><P>視窗前景的顏色。</P>
+
+<DT><B>-name <EM>resource-name</EM></B><DD><P>定義本應用程式會用到的資源名稱。這可以用來區分同一個應用程式在兩次
+呼叫後的資源，例如說，同樣是 xterm ，若它們的名稱在資源資料庫中不
+同，則各別繼承的資源也就不一樣。</P>
+
+<DT><B>-title <EM>string</EM></B><DD><P>這是視窗上所要顯示的標題，通常就是視窗管理員在視窗頂所放的敘述用標
+題。注意，這個選項與 -name 選項並不相同。</P>
+
+
+<DT><B>-iconic</B><DD><P>以點選插圖方式，打開視窗。</P>
+
+<DT><B>-xrm <EM>resource-string</EM></B><DD><P>這一個選項以一資源名稱及一資源值來取代任何預設值。也可用來設定沒有
+明確選項的 X 資源。例如，命令列指令 
+<CODE>xterm -xrm &quot;xterm*background: blue&quot;<CODE>與 <CODE>xterm -bg blue</CODE> 意義相同。</CODE></CODE></P>
+</DL>
+</P>
+
+<H2><A NAME="ss4.2">4.2</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc4.2">顯示名稱</A>
+</H2>
+
+<P>每個 X 伺服程式的顯示名稱的格式為:</P>
+<P><EM>hostname:displaynumber.screennumber</EM></P>
+<P><EM>hostname</EM> 定義顯示時真正本體連接的機器名稱。 <EM>hostname</EM> 可以
+忽視。如果忽視了，所在的機器即為顯示的機器。事實上，如果你是這台電腦上唯一使用 X 的
+使用者，你根本就不必指定顯示方式。 <EM>displaynumber</EM> 也可能是 0 。當要
+控制一個以上的鍵盤、顯示器 ( 例如說 X 終端機網路 ) ，這個值才有大用。 
+<EM>screennumber</EM> 定義數個顯示器中，要用到那一個顯示器。因此，如果要在自
+己的顯示器上打開一個 <B>xterm</B> 視窗，則要以 <B>-display :0.0</B> 的
+選項值。其中省略掉 <EM>hostname</EM> 代表在本顯示器上顯示。</P>
+<P>在 Linux 系統上，<EM>DISPLAY</EM> 變數之值保存顯示名稱，在我的系統中，它的值
+是 <B>:0.0</B>。這個值雖然可以自行寫入，也可以在打開應用程式時，用上述的 
+<B>-display</B> 命令列選項來設定，它通常是用 <B>xterm</B> 來設定，或用
+開啟 X 視窗的 script 來設定。</P>
+<P>If you have opened an <B>xterm</B> or <B>rxvt</B> window, and then
+opted to do super-user work via the <CODE>su</CODE> command, you will find
+that if you try to launch an X application you will have no display to
+launch it on. Silly it seems, because you are sitting right in front of
+your display, but the trick to getting this to work is to pass an
+option
+on the command line to the program such as <CODE>-display :0.0</CODE>, and
+it
+will work fine.
+如果在開啟一個 <B>xterm</B> 或 <B>rxvt</B> 視窗後，又用 <CODE>su</CODE> 
+命令成為超級使用者 (super-user )，此時所開啟的任何應用程式，都不再顯示出來了。
+這看起來好像很怪，那是因為你是在用自己的顯示器。此時的解決方法，就是在命令列上，在
+呼叫此程式時加上選項值 <CODE>-display :0.0</CODE>。</P>
+
+
+<H2><A NAME="ss4.3">4.3</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc4.3">是要 xterm ? 還是要 rxvt ? 了解您要那一種終端機仿模器</A>
+</H2>
+
+<P>就如選擇視窗管理員一般，對於<B>終端機仿模器</B>，不同的選擇會給你不一樣的
+體驗，所以在此，我們討論一下什麼才是你的最佳選擇。前所述之 <B>xterm</B> 程式，
+就是一個讓你在 X 視窗上模仿終端機的終端機仿模器的例子。一旦選擇了一個終端機仿模器，
+它就會深深影響你的操作方式，所以此一選擇，不可不慎。</P>
+<P>如果影像卡 (video card) 速度不快，那就要先考慮 <B>rxvt</B>。 雖然可以
+先考慮 <B>xterm</B>，但是在某些情況，它不是最佳的選擇。它經過極多修改，現在澎
+脹得遠遠超過一個簡單終端機的需求。這也因為它不再單單只是文字終端機仿模器，它也模仿終
+端機的繪圖功能，而你可能根本用不到這些功能。如果事情是這樣，或因為 <B>xterm</B> 
+太慢，可能就該改用 <B>rxvt</B>。我不是很確定為什麼它會減慢顯示速度，但是如果
+的顯示卡太慢，你就能了瞭我所說的問題了，而且也可以發現單單只是顯示 <B>xterm</B>，
+影響居然就有那麼大的。</P>
+<P><B>rxvt</B> 還有 pixmap 背景及非常好的 scrollbar 。如果編譯時有加入此版
+本進去，在命令列上加上 <CODE>-pixmap</CODE> 選項，則可以加任何的 
+<CODE>.xpm</CODE>-type 圖形在背景上。酷吧？而且顯示還完全不會因而減緩，重繪更比 
+<B>xterm</B> 要快。試試看吧！雖然最近很少見到，但是在 metalab 中應該可以
+找到。</P>
+<P>
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-5.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-3.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc4">Contents</A>
+</BODY>
+</HTML>

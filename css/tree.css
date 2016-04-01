@@ -1,0 +1,25 @@
+
+a,a:visited {color:#333;text-decoration:none;}
+a:hover {color:#f60;}
+body,td {font:13px "Geneva","宋体", "Arial", "Helvetica",sans-serif;}
+ul,li {margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4,h5,h6 {margin:0;padding:0;}
+h1 {padding:5px;color:#900;font:16px bold "Geneva","宋体", "Arial", "Helvetica",sans-serif;}
+h1 small {font-size:11px;font-weight:normal;color:#660;}
+.TreeWrap {width:200px;}
+.MenuBox .titBox a,
+.MenuBox .titBox a:visited,
+.MenuBox2 .titBox a,
+.MenuBox2 .titBox a:visited {margin-left:10px;padding-left:40px;color:#003;font-size:12px;display:block;}
+.MenuBox .titBox h3 a {background:url(http://cnlei.iecn.net/mycode/csstreemenu/tree/ico_folder_open.gif) no-repeat 0 40%;}
+.MenuBox .titBox h3.Fst a {background:url(http://cnlei.iecn.net/mycode/csstreemenu/tree/ico_folder_open_fst.gif) no-repeat 0 40%;}
+.MenuBox .titBox h3.Lst a {background:url(http://cnlei.iecn.net/mycode/csstreemenu/tree/ico_folder_open_lst.gif) no-repeat 0 40%;}
+.MenuBox2 .titBox h3 a {background:url(http://cnlei.iecn.net/mycode/csstreemenu/tree/ico_folder.gif) no-repeat 0 40%;}
+.MenuBox2 .titBox h3.Fst a {background:url(http://cnlei.iecn.net/mycode/csstreemenu/tree/ico_folder_fst.gif) no-repeat 0 40%;}
+.MenuBox2 .titBox h3.Lst a {line-height:250%;background:url(http://cnlei.iecn.net/mycode/csstreemenu/tree/icon_exit.gif) no-repeat 0 0;}
+.MenuBox2 .txtBox {display:none;}
+.MenuBox .txtBox ul li {padding-left:65px;line-height:150%;}
+.MenuBox .txtBox .num {color:#e00;}
+.MenuBox .txtBox ul {background:url(http://cnlei.iecn.net/mycode/csstreemenu/tree/line_y.gif) repeat-y 16px 0;}
+.MenuBox .txtBox ul li {background:url(http://cnlei.iecn.net/mycode/csstreemenu/tree/t.gif) no-repeat 28px 50%;}
+.MenuBox .txtBox ul li.Lst {background:url(http://cnlei.iecn.net/mycode/csstreemenu/tree/t_lst.gif) no-repeat 28px 50%;}

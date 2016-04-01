@@ -1,0 +1,936 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en"><head profile="http://www.microformats.org/wiki/hcard-profile"><title>Cascading Style Sheets</title>
+
+
+
+
+
+<meta name="description" content="W3C's overview of Web style sheets: CSS.">
+<meta name="keywords" content="style, stylesheets, stylesheet, style sheet,
+style, W3C, CSS, CSS1, CSS2, Web, Cascading Style Sheets, level 1,
+level 2, browser, editor, specification, HTML, XML, Bert Bos,
+overview, resources, specifications, layout, formatting, resources,
+tutorial, tutorials, compatibility">
+
+<link rel="stylesheet" title="Gold" href="Cascading%20Style%20Sheets_files/threepart-f.css" media="screen, print, projection, tv">
+
+<style type="text/css" title="Gold">
+/* The following is for windows that aren't tall enough for
+   the fixed menu. Use the scrolling menu instead. */
+@media screen and (max-height: 27em) {
+  body div.map {position: absolute}
+}
+</style>
+
+<link rel="alternate stylesheet" title="Blue shadows" href="Cascading%20Style%20Sheets_files/main.css">
+<link rel="alternate stylesheet" title="Blue shadows" href="Cascading%20Style%20Sheets_files/map-ns.css">
+<link rel="alternate stylesheet" title="Blue shadows" href="Cascading%20Style%20Sheets_files/map.css" media="all"><!-- map.css is better than map-ns, but must be hidden from NS 4.x -->
+
+<link rel="alternate stylesheet" title="Blue shadows" href="Cascading%20Style%20Sheets_files/banner-k.css">
+<link rel="alternate stylesheet" title="Blue shadows" href="Cascading%20Style%20Sheets_files/shadows.css" media="all">
+
+<link rel="alternate stylesheet" title="Without navigation bar" href="Cascading%20Style%20Sheets_files/main.css">
+<link rel="alternate stylesheet" title="Without navigation bar" href="Cascading%20Style%20Sheets_files/map-ns.css">
+<link rel="alternate stylesheet" title="Without navigation bar" href="Cascading%20Style%20Sheets_files/map.css" media="all">
+<link rel="alternate stylesheet" title="Without navigation bar" href="Cascading%20Style%20Sheets_files/banner-none.css">
+<link rel="alternate stylesheet" title="Without navigation bar" href="Cascading%20Style%20Sheets_files/shadows.css">
+
+<link rel="alternate stylesheet" title="Oldstyle" href="Cascading%20Style%20Sheets_files/Oldstyle">
+<link rel="alternate stylesheet" title="Modernist" href="Cascading%20Style%20Sheets_files/Modernist">
+<link rel="alternate stylesheet" title="Midnight" href="Cascading%20Style%20Sheets_files/Midnight">
+<link rel="alternate stylesheet" title="Ultramarine" href="Cascading%20Style%20Sheets_files/Ultramarine">
+<link rel="alternate stylesheet" title="Swiss" href="Cascading%20Style%20Sheets_files/Swiss">
+<link rel="alternate stylesheet" title="Chocolate" href="Cascading%20Style%20Sheets_files/Chocolate">
+<link rel="alternate stylesheet" title="Traditional" href="Cascading%20Style%20Sheets_files/Traditional">
+<link rel="alternate stylesheet" title="Steely" href="Cascading%20Style%20Sheets_files/Steely">
+<link rel="alternate stylesheet" title="Forest (by David Baron)" href="Cascading%20Style%20Sheets_files/forest">
+<link rel="alternate stylesheet" title="Plain (by David Baron)" href="Cascading%20Style%20Sheets_files/plain">
+
+<link rel="stylesheet" href="Cascading%20Style%20Sheets_files/handheld.css" media="handheld">
+<link rel="stylesheet" href="Cascading%20Style%20Sheets_files/handheld-bw.css" media="only handheld and (monochrome)">
+
+<style type="text/css">
+  .hide { display: none }
+  .illustration { float: right }
+  .icon { float: left; height: 4em; margin-right: 0.5em }
+</style>
+
+<style type="text/css" title="Gold" media="screen, print, projection, tv">
+  #browsers span.date, #editors span.date, #software span.date,
+  #specs span.date, #online span.date, #books span.date,
+  #fora span.date, #secondary span.date {color: #999; font-size: 100%;
+    font-weight: inherit; line-height: inherit}
+</style>
+
+<link rel="home" title="W3C" href="http://www.w3.org/">
+<link rel="top" title="Style Sheets" href="http://www.w3.org/Style/">
+<link rel="up" title="Style Sheets" href="http://www.w3.org/Style/">
+<link rel="first" title="(this page)" href="http://www.w3.org/Style/CSS/">
+<link rel="next" title="Learning CSS" href="http://www.w3.org/Style/CSS/learning">
+<link rel="chapter" title="Roadmap" href="http://www.w3.org/Style/CSS/current-work">
+<link rel="chapter" title="Examples" href="http://www.w3.org/Style/Examples/007/">
+<link rel="bookmark" title="Activities" href="http://www.w3.org/Consortium/Activities">
+<link rel="bookmark" title="Tech.&nbsp;reports" href="http://www.w3.org/TR/">
+<link rel="bookmark" title="Translations" href="http://www.w3.org/Consortium/Translation/">
+<link rel="bookmark" title="Software" href="http://www.w3.org/Status">
+<link rel="index" title="Site&nbsp;index" href="http://www.w3.org/Help/siteindex">
+<link rel="search" title="Search" href="http://search.w3.org/">
+<link rel="copyright" title="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice.html#Copyright"><!-- not really an alternative: it only contains the "what's new"... -->
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.w3.org/Style/CSS/Overview.rss">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="http://www.w3.org/Style/CSS/Overview.atom"></head><body>
+
+<h1>Cascading Style Sheets<br>
+home page</h1>
+
+<p class="hide">(This page uses CSS style sheets)
+
+</p><div class="map">
+<p id="p1"><a rel="bookmark" href="#news">What's new?</a>
+
+</p><p id="p2"><a rel="chapter" href="http://www.w3.org/Style/CSS/learning" id="learn">Learning CSS</a>
+
+</p><p id="p3"><a rel="bookmark" href="#browsers">CSS Browsers</a>
+
+</p><p id="p4"><a rel="bookmark" href="#editors">Authoring Tools</a>
+
+</p><p id="p10"><a rel="bookmark" href="#specs">Specs,</a>
+<a rel="bookmark" href="http://www.w3.org/TR/CSS1" title="CSS1 specification">1,</a>
+<a rel="bookmark" href="http://www.w3.org/TR/CSS21" title="CSS&nbsp;2.1 working draft">2<sup>1</sup>,</a>
+<a rel="bookmark" href="http://www.w3.org/Style/CSS/current-work" title="CSS3 drafts &amp; roadmap">3</a>
+
+</p><p id="p6"><a rel="chapter" href="http://www.w3.org/Style/CSS/Test">CSS Test Suites</a>
+
+</p><p id="p9"><a href="http://www.w3.org/StyleSheets/Core">W3C Core Styles</a>
+
+</p><p class="map-also">Also: <a rel="chapter" href="http://www.w3.org/Style/CSS/current-work" title="Drafts and roadmap">info for developers,</a> <abbr title="Simple API for CSS"><a rel="chapter" href="http://www.w3.org/Style/CSS/SAC">SAC,</a></abbr>
+<a href="http://www.w3.org/Consortium/Translation">translations</a>, <a href="http://www.w3.org/Style/CSS/members">working group</a>
+
+</p><p class="map-also"><a href="http://www.w3.org/Style/CSS10/"><img src="Cascading%20Style%20Sheets_files/banner-w3c-white.png" alt="CSS10" style="height: 2.1em;"></a>
+
+</p></div>
+
+<p class="skip"><a href="#news">(skip to next section)</a>
+
+</p><p>Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g.
+fonts, colors, spacing) to Web documents. Tutorials, books, mailing
+lists for users, etc. can be found on the <a href="http://www.w3.org/Style/CSS/learning">&#8220;learning
+CSS&#8221;</a> page. For background information on style sheets, see the <a href="http://www.w3.org/Style/">Web style sheets</a> page. Discussions
+about CSS are carried out on the (<a href="http://lists.w3.org/Archives/Public/www-style/">archived</a>) <a href="http://www.w3.org/Mail/Lists.html#www-style">www-style@w3.org</a>
+mailing list and on <a href="news:comp.infosystems.www.authoring.stylesheets">
+comp.infosystems.www.authoring.stylesheets</a>.
+
+</p><p class="stb"><em>W3C celebrates <a href="http://www.w3.org/Style/CSS10/">ten years of
+CSS1.</a> Contribute to the <a href="http://www.w3.org/Style/CSS10/reactions">gallery!</a></em>
+
+
+</p><div class="back">
+<div class="section" id="news">
+
+<h2>What's new?</h2>
+
+<p class="skip"><a href="#browsers">(skip to next section)</a>
+
+</p><p>(For announcements of new CSS (draft) specifications, see <a href="http://www.w3.org/Style/CSS/current-work.html">&#8220;CSS under construction.&#8221;</a>)
+
+<!-- 15 items -->
+</p><ul>
+
+<li><span class="date">2006-12-19</span> Until Dec 2007, W3C celebrates
+the tenth anniversary of CSS level&nbsp;1. See the <a href="http://www.w3.org/2006/12/css10-pressrelease.html">press release</a> and the <a href="http://www.w3.org/Style/CSS10/">CSS10 site.</a>
+
+</li><li><span class="date">2006-12-07</span> <a href="http://www.oxygenxml.com/">&lt;oXygen/&gt; XML Editor</a>
+version&nbsp;8 is released. It provides <a href="http://www.oxygenxml.com/css_editor.html">CSS editing</a> and
+validation, XML Schemas, XSLT, XQuery, SVN and Webdav clients and more
+(Java, free trial)
+
+</li><li><span class="date">2006-12-05</span> <a href="http://www.html.net/">HTML.net</a> published translations of its
+CSS tutorial in Russian (<a href="http://ru.html.net/tutorials/css/" lang="ru"> &#1059;&#1095;&#1077;&#1073;&#1085;&#1080;&#1082; CSS</a>)
+and French (<a href="http://fr.html.net/tutorials/css/" lang="fr">Tutoriel CSS</a>).
+
+</li><li><span class="date">2006-11-24</span> Microsoft released the <a href="http://www.microsoft.com/windows/ie/ie7/about/default.mspx">
+Internet Explorer version&nbsp;7</a> Web browser, with support for
+CSS&nbsp;2, transparent PNG, and more. (Windows, free)
+
+</li><li><span class="date">2006-11-14</span> <a href="http://www.css3.info/">CSS3.info</a> is a site by Joost de Valk
+and Peter Gasston about the new features under development for CSS
+level&nbsp;3.
+
+</li><li><span class="date">2006-11-07</span> <a href="http://macrabbit.com/">Macrabbit</a> released version 2 of <a href="http://macrabbit.com/cssedit/">CSSEdit</a>, a CSS editor with
+preview (even for dynamic pages), checkpoints/rollback, validation,
+structure analyzer, etc. (Mac, free trial)
+
+</li><li><span class="date">2006-09-16</span> W3C's German-Austrian Office
+organizes
+a <a href="http://www.w3c.de/Events/2006/PrintSymposium_en.html">
+symposium on printing with HTML, CSS, XSL and SVG,</a> in Heidelberg,
+Germany, on October 17. Includes talks (in English) and demos.
+
+</li><li><span class="date">2006-07-31</span> Stu Nicholls offers <a href="http://www.cssplay.co.uk/">CSSplay,</a> a site with CSS
+examples, including many uses of ':hover'.
+
+</li><li><span class="date">2006-07-18</span> W3C offers a virtual (using the
+Web and a telephone bridge) <a href="http://www.w3.org/2006/06/mobile-train">seminar on Web design
+for mobile devices,</a> on Wednesday July 26, 10:00&nbsp;UTC. 
+Attendance is free, but subject to selection.
+
+</li><li><span class="date">2006-07-17</span> Richard Ishida (W3C) has
+written a <a href="http://www.w3.org/International/tutorials/css3-text/">tutorial</a> that
+explains the concepts in the draft <a href="http://www.w3.org/TR/css3-text/">CSS3 Text Effects module</a>
+and the upcoming <a href="http://www.w3.org/Style/CSS/current-work#text-layout">CSS3 Text Layout
+module.</a>
+
+</li><li><span class="date">2006-07-13</span> <a href="http://wd06.com/">Web
+Directions 2006 (WD06)</a> is a 2-day conference followed by 2 days of
+workshops, on standards-based Web development (HTML, CSS, AJAX,
+accessibility, mobile Web, etc.). Speakers include Andy Clarke, Molly
+Holzschlag and John Allsop. (Sydney, Australia, 26-29 Sep 2006)
+
+</li><li><span class="date">2006-07-13</span> <a href="http://www.westciv.com/">Westciv</a> released <a href="http://www.westciv.com/style_master/">Style Master&nbsp;4.5,</a>
+a CSS editor with preview, info about browser compatibility, a CSS
+reference, <a href="http://www.westciv.com/style_master/product_info/xray_win.html">
+&#8220;X-ray&#8221; (CSS inspector),</a> wizards, etc. (Mac and
+Windows, free trial)
+
+</li><li><span class="date">2006-07-12</span> Belus Technology released
+version 1.7.1 of <a href="http://www.xstandard.com/default.asp">XStandard,</a> a WYSIWYG
+XHTML/CSS editor, supports CSS&nbsp;2.1, accessibility features
+(Windows, free &#8220;Lite&#8221; version, free trial of
+&#8220;Pro&#8221; version)
+
+</li><li><span class="date">2006-07-05</span> Kynn Bartlett has written a 2nd
+edition of his book <a href="http://cssin24hours.com/"><cite>Teach
+Yourself CSS in 24 Hours.</cite></a> (<a href="http://www.samspublishing.com/">Sams,</a> June 2006, <a href="urn:ISBN:0672329069">ISBN 0672329069.</a>)
+
+</li><li><span class="date">2006-06-19</span> <a href="http://www.maxdesign.com.au/">
+Max Design</a> and <a href="http://www.billyblue.com.au/">Billy
+Blue</a> are holding
+a <a href="http://www.maxdesign.com.au/2006/06/19/css-info-night/">
+free CSS info night</a> in Sydney (Australia) on Tuesday July 4 for
+web designers and developers who are new to CSS.
+
+</li></ul>
+
+<p class="remark">Something to add? Let <a href="mailto:bert@w3.org">me</a> know!</p>
+
+</div>
+</div>
+
+<div class="back">
+<div class="section" id="browsers">
+
+<h2>CSS Browsers</h2>
+
+<p class="skip"><a href="#editors">(skip to next section)</a>
+
+</p><p>The easiest way to start experimenting with style sheets is to
+download one of the browsers that support CSS. Not all of the
+browsers below implement the full specification, but releases are
+coming out fast so this should soon change. Various sites describe
+<a href="#support">bugs and work-arounds</a>.
+
+</p><ul>
+<li><span class="date">2006-11-24</span> Microsoft released the <a href="http://www.microsoft.com/windows/ie/ie7/about/default.mspx">
+Internet Explorer version&nbsp;7</a> Web browser, with support for
+CSS&nbsp;2, transparent PNG, and more. (Windows, free)
+
+</li><li><span class="date">2006-01-16</span> <a href="http://www.oregan.net/">Oregan Networks</a> offers the <a href="http://www.oregan.net/tv_web_browser_and_ui.html">Oregan TV
+Browser,</a> with support for CSS2, XHTML, XML, etc. (Various embedded
+platforms)
+
+</li><li><span class="date">2005-12-07</span> <a href="http://www.kde.org/">KDE</a> (K Desktop Environment) has
+released version&nbsp;3.5. The included Konqueror browser passes the
+<a href="http://www.webstandards.org/act/acid2/">Acid2 test.</a>
+(Unix/X, Open Source)
+
+</li><li><span class="date">2005-12-01</span> <a href="http://www.mozilla.org/">Mozilla</a> released version&nbsp;1.5
+of the <a href="http://www.mozilla.org/products/firefox/">Firefox</a>
+browser. (Many platforms, Open Source)
+
+</li><li><span class="date">2005-09-20</span> <a href="http://www.opera.com/">Opera</a> released <a href="http://www.opera.com/products/">version&nbsp;8.50</a> of its
+browser, with handheld mode, support for SVG, alternative styles, etc. 
+(multiple platforms, including cell phones, free on most platforms)
+
+</li><li><span class="date">2005-04-26</span> <a href="http://www.culturedcode.com/">Cultured Code</a> released <a href="http://www.culturedcode.com/xyle">Xyle Scope,</a> a browser that
+helps you analyze the HTML and CSS structure of each page. (Mac OS X,
+German &amp; English, free trial)
+
+</li><li><span class="date">2005-02-11</span> <a href="http://www.antlimited.com/">ANT</a> offers <a href="http://www.antlimited.com/products/galio.htm">Galio</a> and <a href="http://www.antlimited.com/products/fresco.htm">Fresco,</a> which
+are small-footprint embedded browsers for IPTV and digital home
+entertainment products. Supports CSS&nbsp;2.1, CSS TV Profile&nbsp;1.0
+and parts of CSS3.
+
+</li><li><span class="date">2004-07-26</span> <a href="http://www.bimesoft.com/">Bimesoft</a> released <a href="http://www.surfoffline.com/">SurfOffline 1.4,</a> an off-line
+browser, that supports CSS2. The application can download a website to
+your hard drive completely or partially, which you can then browse
+off-line. (Windows, shareware)
+
+</li><li><span class="date">2004-01-16</span> <a href="http://www.mozilla.org/">Mozilla</a> released <a href="http://www.mozilla.org/releases/#1.6">Mozilla 1.6,</a> a Web
+browser, mail client, news reader, HTML editor and IRC client.
+(Windows, Mac, Linux, other platforms, Open Source)
+
+</li><li><span class="date">2004-01-14</span> Tao provides the <a href="http://withintent.biz/qi">Qi browser</a> for consumer devices
+(PDAs, phones, etc.). It supports CSS1 and partial CSS2.
+
+</li><li><span class="date">2003-07-09</span> <a href="http://www.apple.com/">Apple</a> has released version 1.0 of the
+<a href="http://www.apple.com/safari/">Safari Web browser</a>. It uses
+<a href="http://www.konqueror.org/konq-browser.html">KHTML</a> (from
+the <a href="http://www.kde.org/">KDE</a> project) as rendering
+engine. (free, Mac OS X)
+
+</li><li><span class="date">2003-07-03</span> <a href="http://netscape.com/">Netscape</a> released <a href="http://channels.netscape.com/ns/browsers/">Netscape 7.1,</a>
+which is based on Mozilla 1.4. (Windows, Mac, Linux, free),
+
+</li><li><span class="date">2003-04-21</span> InDelv XF Framework, see
+under <a href="#indelv-xf-framework">authoring tools</a>.
+
+</li><li><span class="date">2002-07-24</span> The <a href="http://chimera.mozdev.org/">Chimera project</a> released <a href="ftp://ftp.mozilla.org/pub/chimera/releases/chimera-0.4.dmg.gz">
+version 0.4</a>. Chimera is a browser for Mac OS&nbsp;X, based on Mozilla's
+Gecko layout engine. (Mac, Open Source)
+
+</li><li><span class="date">2002-01-22</span> The <a href="http://www.x-smiles.org/">X-Smiles team</a> has released version
+0.5 ("Oulu") of the X-Smiles XML browser, which <a href="http://www.xsmiles.org/xsmiles_features.html">supports</a>,
+among other things, XHTML, SMIL, XForms and the CSS Mobile Profile.
+(Java, Open Source)
+
+</li><li><span class="date">2002-01-08</span> <a href="http://www.netcluesoft.com/">NetClue</a> released Clue Browser
+v4.1.1. It supports HTML, XML/XHTML, namespaces, CSS (level 1 and part
+of level 2), DOM, Javascript, etc. (Java)
+
+</li><li><span class="date">2001-12-19</span> Microsoft released <a href="http://www.microsoft.com/mac/download/ie/ie51.asp">Internet
+Explorer for the Mac 5.1</a>, with bug fixes and improved performance.
+Supports full CSS1 and partial CSS2. (Mac IE 5 was the first browser
+to reach <a href="http://www.webreview.com/style/css1/leaderboard.shtml">better
+than 99% support for CSS1</a>, in March 2000.) (free; Mac OS 8, 9
+&amp; X)
+
+</li><li><span class="date">2001-12-18</span> <a href="http://www.omnigroup.com/applications/omniweb/">OmniWeb 4</a> is
+a Web browser for the Mac (OS X) and has a built-in source editor
+(with HTTP PUT support). (Shareware)
+
+</li><li><span class="date">2001-11-28</span> <a href="http://galeon.sourceforge.net/">Galeon 1.0</a> is a Web browser
+for <a href="http://www.gnome.org/">Gnome</a>. It uses the <a href="http://www.mozilla.org/newlayout/">Gecko</a> rendering engine
+from <a href="http://mozilla.org/">Mozilla</a> internally. (Open
+Source, Unix)
+
+</li><li><span class="date">2001-11-07</span> <a href="http://www.adobe.com/">Adobe</a> produces an <a href="http://www.adobe.com/svg/viewer/install/">SVG plugin</a> for
+browsers under Mac and Windows and for <a href="http://www.adobe.com/svg/viewer/install/old.html">Mozilla 0.9.1
+under Linux &amp; Solaris</a>. Supports SVG with CSS styling. (free)
+
+</li><li><span class="date">2001-10-31</span> <a href="http://kmeleon.sourceforge.net/">K-Meleon</a> version 0.6 has
+been released, a lightweight browser based on the <a href="http://www.mozilla.org/newlayout/">Gecko</a> rendering engine of
+Mozilla (Windows, Open Source)
+
+</li><li><span class="date">2001-05-15</span> <a href="http://www.espial.com/">Espial's</a> <a href="http://www.espial.com/main/page?view=p-escp_main">Escape 4.7
+browser</a> implements CSS support for HTML, XML and XHTML. Written in
+Java for the embedded software market.
+
+</li><li><span class="date">2001-04-26</span> <a href="http://www.icab.de/">iCab</a>, a browser for the Mac, is starting
+to support CSS. The preview release of version 2.5 reportedly supports
+most of CSS1. (Free)</li>
+
+<li><span class="date">2001-03-26</span> <a href="http://www.openwave.com/">Openwave's</a> mobile <a href="http://www.openwave.com/products/browser.html">browser</a>
+implements XHTML and CSS and is expected to ship in cell phones 2nd
+half of 2001. Also see <a href="http://www.openwave.com/resources/docs/Openwave_MobileBrowser.pdf">data
+sheet [PDF]</a>.
+
+</li><li><span class="date">2001-03-26</span> <a href="http://www.nokia.com/">Nokia</a> will start selling mobile
+phones that support XHTML and CSS during 2001. See <a href="http://www.nokia.com/xhtmldemo/">demo [Flash]</a>, <a href="http://press.nokia.com/PR/200103/813189_5.html">press
+release</a> and <a href="http://www.nokia.com/press/background/pdf/mar011.pdf">white
+paper [PDF]</a>.
+
+</li><li><span class="date">2001-01-23</span> The <a href="http://www.arachne.cz/">Arachne WWW browser</a> for DOS and
+Linux supports CSS1 since version 1.70 (free for non-commercial use).
+
+</li><li><span class="date">2000-12-11</span> <a href="http://www.cmis.csiro.au/">CSIRO</a> released the <a href="http://sis.cmis.csiro.au/svg/">CSIRO SVG Toolkit</a>, with a
+viewer for SVG + CSS and other utilities. (Java, Open Source)
+
+</li><li><span class="date">2000-08-01</span> <a href="http://www.ionicsoft.com/index.html">IONIC</a> offers the <a href="http://www.ionicsoft.com/ionic/svg/index.html">Ionic SVG
+toolkit</a>, with a viewer for SVG + CSS and other tools. (Java)
+
+</li><li><span class="date">2000-06-29</span> The Koala team wrote <a href="http://koala.ilog.fr/jackaroo/">Jackaroo</a>, an SVG + CSS
+viewer. (Jackaroo has now merged with <a href="#batik">Batik</a> and
+is no longer supported.) (Java, Open Source)
+
+</li><li><span class="date">2000-03-27</span> <a href="http://www.microsoft.com/">Microsoft</a> shipped <a href="http://www.microsoft.com/mac/ie">Internet Explorer 5 for the
+Macintosh.</a> It apparently supports <em>full</em> CSS1, the first
+browser to do so.
+
+</li><li><span class="date">1999-12-02</span> <a href="http://www.uni-karlsruhe.de/%7Eunk6/closure/">Closure</a> is a Web
+browser written in Common Lisp; supports CSS1.
+
+</li><li><span class="date">1999-10-22</span> <a href="http://www.hp.com/">Hewlett Packard</a> released their &#8220;embedded
+microbrowser&#8221; <a href="http://www.chai.hp.com/chai_farer.html">ChaiFarer</a>,
+supporting CSS1. CSS2 will come later.
+
+</li><li><span class="date">1999-09-24</span> <a href="http://www.icesoft.com/">ICE Soft</a> released v.5 of their two
+<a href="http://www.icesoft.com/ICEBrowser/index.html">embeddable
+browsers</a>: the &#8220;base&#8221; one is a viewer for HTML/XML+CSS2, the &#8220;pro&#8221;
+one adds networking and more. Both in Java. Does MathML, too.
+
+</li><li>Silicon Graphics has an embeddable CSS-enhanced web browser that
+is used in a number of applications and their desktop
+
+</li><li><a href="http://www.yggdrasil.com/Products/Arena/">Arena</a>,
+previously W3C's testbed browser, is now being developed by <a href="http://www.yggdrasil.com/">Yggdrasil</a>. It has a partial
+implementation of CSS1.
+
+</li><li><a href="http://www.cs.indiana.edu/elisp/w3/docs.html">Emacs-w3</a>,
+a.k.a. Gnuscape Navigator, supports some CSS1.
+</li></ul>
+
+<p id="support">These sources document the level of support in various
+browsers:
+
+</p><ul>
+<li><span class="date">2003-10-30</span> <a href="http://www.quirksmode.org/home.html">Quirksmode</a> (Peter-Paul
+Koch) offers tests and information, including a <a href="http://www.quirksmode.org/css/content.html">compatibility
+chart,</a> that also looks forward to some features that are currently
+proposed for CSS3.
+
+</li><li><span class="date">2002-09-27</span> Johannes Koch has a nice
+page with <a href="http://w3development.de/css/hide_css_from_browsers/summary/">work-arounds
+for various browser bugs</a>.
+
+</li><li><span class="date">2002-04-09</span> The SVG working group has a
+<a href="http://www.w3.org/Graphics/SVG/Test/BE-ImpStatus-20011026.html">detailed
+list of the features</a> (including CSS support) of various SVG
+implementations.
+
+</li><li><span class="date">2000-03-28</span> <a href="http://www.richinstyle.com/">RichInStyle.com</a> has <a href="http://www.richinstyle.com/bugs/">lists of bugs</a> for various
+browsers. (Careful: as of Oct 2001, there are still several bugs in
+the list of bugs itself.)
+
+</li><li><span class="date">1999-09-09</span> <a href="http://www.westciv.com/"> Western Civilisation</a> <a href="http://www.westciv.com/style_master/academy/browser_support/index.html">
+compares CSS1 support</a> in Netscape, Internet Explorer and Opera.
+
+</li><li><span class="date">1999-04-12</span> Do you have <a href="http://www.alistapart.com/stories/fear/">fear of style
+sheets</a>? Jeffrey Zeldman has the cure.
+
+</li><li>The <a href="http://css.nu/">CSS Pointers Group</a> documents <a href="http://www.css.nu/pointers/bugs.html">CSS bugs</a> in major
+browsers.
+
+</li><li><a href="http://www.projectcool.com/">ProjectCool</a> documents <a href="http://www.projectcool.com/developer/cssref/ref.html">CSS
+properties</a> and tells you <a href="http://www.projectcool.com/developer/reference/css_style.html">
+what works in which browser</a>.
+
+</li><li>Former <a href="http://web.archive.org/web/20010202065800/http://webreview.com/">
+WebReview [link back to 2001]</a>'s The <a href="http://devedge.netscape.com/library/xref/2003/css-support/css1/mastergrid.html">Browser
+Compatibility Chart</a> (the &#8220;mastergrid&#8221;) is a thorough
+review from 2001 of how implementations match the CSS1 specification.
+
+</li></ul>
+
+</div>
+</div>
+
+<div class="back">
+<div class="section" id="editors">
+
+<h2>CSS Authoring Tools</h2>
+
+<p class="skip"><a href="#software">(skip to next section)</a>
+
+</p><p>Currently, most Web authoring tools provide some sort of support
+for CSS style sheets. The list below is far from
+complete, but contains (in chronological order) all tools that have
+been reported to us.
+
+</p><ul>
+<li><span class="date">2006-12-07</span> <a href="http://www.oxygenxml.com/">&lt;oXygen/&gt; XML Editor</a>
+version&nbsp;8 is released. It provides <a href="http://www.oxygenxml.com/css_editor.html">CSS editing</a> and
+validation, XML Schemas, XSLT, XQuery, SVN and Webdav clients and more
+(Java, free trial)
+
+</li><li><span class="date">2006-11-07</span> <a href="http://macrabbit.com/">Macrabbit</a> released version 2 of <a href="http://macrabbit.com/cssedit/">CSSEdit</a>, a CSS editor with
+preview (even for dynamic pages), checkpoints/rollback, validation,
+structure analyzer, etc. (Mac, free trial)
+
+</li><li><span class="date">2006-07-13</span> <a href="http://www.westciv.com/">Westciv</a> released <a href="http://www.westciv.com/style_master/">Style Master&nbsp;4.5,</a>
+a CSS editor with preview, info about browser compatibility, a CSS
+reference, <a href="http://www.westciv.com/style_master/product_info/xray_win.html">
+&#8220;X-ray&#8221; (CSS inspector),</a> wizards, etc. (Mac and
+Windows, free trial)
+
+</li><li><span class="date">2006-07-12</span> Belus Technology released
+version 1.7.1 of <a href="http://www.xstandard.com/default.asp">XStandard,</a> a WYSIWYG
+XHTML/CSS editor, supports CSS&nbsp;2.1, accessibility features
+(Windows, free &#8220;Lite&#8221; version, free trial of
+&#8220;Pro&#8221; version)
+
+</li><li><span class="date">2005-11-29</span> <em lang="fr"><a href="http://groups.google.ca/group/fr.usenet.forums.annonces/browse_thread/thread/c118d6c89c5e31c3/e823bc3dc865270a?hl=en&amp;fwc=1">
+Appel à discussion pour un nouveau forum
+fr.­comp.­infosystemes.­www.­auteurs.­css</a> pour
+des questions et discussions concernant les mises en formes de sites
+internet par les CSS.</em> (Discussion has opened on the creation of a
+new French language Usenet newsgroup for discussing the use of CSS.)
+
+</li><li><span class="date">2005-07-21</span> <a href="http://disruptive-innovations.com/">Disruptive Innovations</a>
+and <a href="http://www.linspire.com/">Linspire</a> published version
+1.0 of <a href="">Nvu,</a> a WYSIWYG Web site editor, based on <a href="http://www.mozilla.org/newlayout/">Gecko</a> (Windows, Mac,
+Linux/X, Open Source)
+
+</li><li><span class="date">2005-05-04</span> <a href="http://www.adobe.com/">Adobe</a> published <a href="http://www.adobe.com/products/golive/main.html">GoLive CS2,</a>
+a Web site authoring &amp; management environment, with CSS tools,
+layout templates, support for handheld media, etc. (Mac OS X &amp;
+Windows, free trial)
+
+</li><li><span class="date">2005-03-29</span> TARI released <a href="http://www.goodpage.info/">GoodPage</a> version 1.0.2, an HTML/CSS
+editor with multiple views, validation, etc. (Mac OS X, free trial)
+
+</li><li><span class="date">2005-03-25</span> <a href="http://www.evrsoft.com/">Evrsoft</a> offers <a href="http://www.evrsoft.com/1stpage2.shtml">1st Page 2000,</a> an
+HTML editor with multiple previews, CSS reference, wizards,
+etc. (Windows, free)
+
+</li><li><span class="date">2004-11-04</span> <a href="http://www.eledo.com/">eLeDo</a> published <a href="http://eledo.com/article19.html">Eledicss 0.1,</a> a CSS editor
+implemented as a server-side PHP script. It allows editing CSS files
+using a browser. (Unix, Open Source)
+
+</li><li><span class="date">2004-05-06</span> <a href="http://www.price-media.demon.co.uk/index.html">Price Media</a>
+published version 4.0, a complete re-build of <a href="http://www.price-media.demon.co.uk/cascade.html">Cascade
+DTP,</a> a Web page composition tool for creating HTML + CSS pages,
+with special support for absolute positioning of elements on the page
+(free, Windows)
+
+</li><li><span class="date">2004-04-27</span> <a href="http://www.maxro.de/">Maxro Software</a> released CSS Designer
+2.0, an editor for CSS2, with built-in preview. Available in English
+&amp; German. (Windows, shareware)
+
+</li><li><span class="date">2004-01-16</span> <a href="http://creatext.sourceforge.net/">CreaText 1.5pr3</a>, by <a href="http://www.soutier.de/">Marius Soutier</a>, an HTML source
+editor with a dialog-driven CSS2 editor, has become Open Source (Mac,
+Open Source)
+
+</li><li><span class="date">2004-02-09</span> <a href="http://www.highdots.com/index.php">HighDots.com</a> has released
+<a href="http://www.highdots.com/css-editor/">Style Studio
+v3.76,</a> a CSS editor that can also convert existing pages to CSS,
+help avoid browser bugs, and more. (Windows, free trial.)
+HighDots.com also offers a free, on-line <a href="http://www.highdots.com/css-editor/validator.html">CSS validator.</a>
+
+</li><li><span class="date">2004-01-29</span> <a href="http://www.philburns.com/quickshow.html">QuickShow</a> is a
+program for writing &amp; presenting slides. Slides are stored as
+HTML/CSS and can also be viewed with a browser that supports the
+'projection' media (such as <a href="http://www.opera.com/">
+Opera</a>). (Windows, shareware)
+
+</li><li><span class="date">2003-01-07</span> <a href="http://cssed.sourceforge.net/">cssed</a> is a syntax-directed
+editor for CSS2 files, with a GUI based on GTK2, syntax highlighting,
+outline view, etc. (Linux, Open Source)
+
+</li><li><span class="date">2003-01-07</span> <a href="http://www.hostm.com/">HostM.com Web Hosting</a> released <a href="http://www.hostm.com/css/">Simple CSS 1.0,</a> an easy-to-use
+CSS authoring tool. You can manage multiple CSS projects and import
+existing style sheets. Supports CSS2. (Windows &amp; Mac, freeware)
+
+</li><li><span class="date">2003-11-24</span> <a href="http://www.athlab.com/">Abstract thought Lab.</a> released
+version&nbsp;2.0 of <a href="http://www.athlab.com/">
+Astyle,</a> a "fairly easy to use" (in their own words) editor for
+CSS2. (Windows, shareware)
+
+</li><li><span class="date">2003-05-24</span> <a href="http://www.macromedia.com/">Macromedia's</a> WYSIWYG HTML editor
+and Web-site development tool <a href="http://www.macromedia.com/software/dreamweaver/">Dreamweaver
+MX</a> supports partial CSS2 and integrates <a href="http://www.bradsoft.com/topstyle/index.asp">TopStyle</a>
+(Windows &amp; Mac, free trial)
+
+</li><li><span class="date">2003-04-23</span> W3C released version 8.0 of
+<a href="http://www.w3.org/Amaya/">Amaya,</a> a WYSIWYG, structured editor/browser for
+(X)HTML, SVG, MathML and CSS. Supports remote editing and annotations
+(Open Source, Solaris, Linux, Mac, Windows)
+
+</li><li id="indelv-xf-framework"><span class="date">2003-04-21</span> <a href="http://www.indelv.com/">InDelv Software</a> announced the
+release of its <a href="http://www.indelv.com/products/xf.html">XF
+Framework 0.8.1</a>. XF creates and renders XSL, XML, CSS and XHTML
+content with both standalone desktop and class library versions.
+Output can be displayed, printed or exported as PDF. (.NET and Java
+platforms, free trial)
+
+</li><li><span class="date">2003-03-31</span> <a href="http://www.chami.com/html-kit/">HTML-Kit</a> is an HTML, XHTML
+and XML editor with plug-ins that provide, among other things, CSS and
+CSS manuals. (Windows, free)
+
+</li><li><span class="date">2003-02-14</span> <a href="http://www.bradsoft.com/">Bradbury Software</a> has released
+version 3.10 of <a href="http://www.bradsoft.com/topstyle/">TopStyle
+Pro</a>, a CSS1 &amp; 2 editor. New in this version: support for <a href="http://www.opera.com/products/desktop/index.dml?platform=windows">Opera&nbsp;7,</a>
+the W3C <a href="http://validator.w3.org/">HTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/">CSS validators</a> and <a href="http://bobby.watchfire.com/bobby/html/en/index.jsp">Bobby.</a>
+(Windows, free trial)
+
+</li><li><span class="date">2002-05-03</span> <a href="http://www.graphic-group.com/">Graphic-Group</a> released a new
+<a href="http://www.graphic-group.com/inline_frames/ggcss/about.asp">
+G-G CSS</a>, a cascading style sheet editor. It is browser-based and
+includes an embedded http/1.1 web server allowing real-time preview of
+HTML, ASP and XML. (Windows. Free demo)
+
+</li><li><span class="date">2002-05-02</span> Daniel Glazman
+(daniel&nbsp;@glazman.org) has announced a <a href="http://cascades.mozdev.org/">CSS editor add-on</a> for Composer,
+the content editor of Mozilla/Netscape 6. This CSS editor is an
+open-source work in progress and can be freely downloaded
+
+</li><li><span class="date">2002-04-05</span> <a href="http://www.westciv.com/">Westciv</a> has released version 1.1 of
+<a href="http://www.westciv.com/layout_master/">Layout Master</a>, an
+HTML + CSS page layout editor (Win &amp; Mac, free trial)
+
+</li><li><span class="date">2002-03-28</span> &#8220;Uncle Wingnut&#8221; wrote a <a href="http://cmoo.blissed.org:4243/1156/makeform">thing</a> that
+is apparently a simple style sheet creator, but also creates objects
+for a <a href="http://cmoo.blissed.org:4243/">MOO</a> that you
+can see if you visit the MOO with a telnet client with a Mozilla
+rendering engine...
+
+</li><li><span class="date">2002-01-15</span> <a href="http://www.mozilla.org/">Mozilla Composer</a> is a WYSIWYG
+editor for HTML. It generates valid HTML 4.01. A configuration option
+allows the choice between deprecated HTML elements and inline CSS.
+
+</li><li><span class="date">2001-11-26</span> <a href="http://www.ucware.com/juststyle">JustStyle CSS Editor</a>
+(version 1.2.2) is an editor for CSS1 style sheets. (30-day free
+trial, Java)
+
+</li><li><span class="date">2001-11-22</span> <a href="http://www.browseredit.com/">BrowserEdit</a> is an HTML editor
+that runs inside the IE browser. It uses CSS to position objects on a
+page.
+
+</li><li><span class="date">2001-07-11</span> <a href="http://www.morphon.com/">Morphon Technologies</a> released a
+beta of the <a href="http://www.morphon.com/csseditor/">Morphon
+Standalone CSS Editor</a>, supporting CSS2 (Java, free trial)
+
+</li><li><span class="date">2001-07-04</span> <a href="http://www.visic.com/">Visicom Média</a> released version 4.30.0
+of <a href="http://www.visic.com/WebExpert/index.html">WebExpert
+2000</a>, an HTML editor with support for CSS2, in French.
+
+</li><li><span class="date">2000-11-02</span> Thomas Meinike has released <a href="http://www.styleassistant.de/">StyleAssistant</a> (German page),
+a menu-driven program for writing CSS1 style sheets. (Freeware,
+Windows) 
+
+</li><li><span class="date">2000-10-14</span> <a href="http://quanta.sourceforge.net/">Quanta</a> is an HTML editor for
+the KDE desktop. CSS 1 &amp; 2 support is in the beta for KDE2 (Unix,
+Open Source)
+
+</li><li><span class="date">2000-09-28</span> <a href="http://software602.com/">Software602</a> has an office suite <a href="http://www.software602.com/products/pcs/index.html">602 Pro
+Suite</a> for Windows that can edit HTML+CSS (freeware).
+
+</li><li id="morphon"><span class="date">2000-08-02</span> Lunatech Research has released beta version
+7 of the <a href="http://www.morphon.com/">Morphon XML editor,</a>
+which includes a CSS editor. Written in Java.
+
+</li><li><span class="date">2000-07-04</span> <a href="http://www.visicommedia.com/acehtml/">AceHTML 4</a> by <a href="http://www.visicommedia.com/">Visicom Media</a> is an HTML/CSS
+editor for Windows. Both commercial and freeware versions are
+available.
+
+</li><li><span class="date">1999-12-17</span> <a href="http://www.justsystem.co.jp/">Justsystem</a> (also <a href="http://www.justsystem.com/">in English</a>) has released their
+Java-based, multi-lingual wordprocessor <a href="http://www.justsystem.co.jp/ark/index.html">ICHITARO Ark</a>. It
+uses HTML/CSS as its native format (<a href="http://www.w3.org/Style/CSS/images/Ark-CSS">screenshot</a>).
+
+</li><li><span class="date">1999-11-19</span> <a href="http://bluefish.openoffice.nl/"> Bluefish</a> is an <a href="http://www.opensource.org/"> Open Source</a> HTML editor for Unix
+with support for CSS1.
+
+</li><li><span class="date">1999-08-07</span> <a href="http://interaction.in-progress.com/cascade/?id=MOYOW">
+Cascade</a> and Cascade Light are CSS editors for the Mac.
+
+</li><li><span class="date">1999-08-04</span> <a href="http://www.atari-computer.de/mjaap/prg/inter_e.htm"> En
+Vogue</a> is a (non-WYSIWYG) editor running on the Atari ST. It
+supports CSS1 &amp; 2.
+
+</li><li><span class="date">1999-05-29</span> <a href="http://www.softquad.com/">SoftQuad</a>'s <a href="http://www.xmetal.com/">XMetaL</a> authors &amp; displays XML
+documents with CSS style sheets.
+
+</li><li><span class="date">1999-05-25</span> <a href="http://www.corel.com/servlet/Satellite?pagename=Corel/Home">Corel's</a>
+<a href="http://www.corel.com/draw9win/index.htm">CorelDraw 9</a>
+exports HTML + CSS.
+
+</li><li><span class="date">1998-09-29</span> <a href="http://www.softquad.com/">SoftQuad</a>'s <a href="http://www.hotmetal.com/">HoTMetaL PRO 5.0</a> authors, as well
+as displays, CSS and HTML.
+
+</li><li><span class="date">1998-08-29</span> Lewis Gartenberg has released
+a version 2 of a shareware tool, <a href="http://www.geocities.com/w2css/">W2CSS</a> which converts MS
+Word documents into HTML and CSS.
+
+</li><li><span class="date">1998-08-29</span> <a href="http://prime.nmnet.net/style/">Prime Style</a> has become a
+shareware product and versions 2.0 is now available.
+
+</li><li><span class="date">1998-03-12</span> <a href="http://www.taylor.org/%7Epatrick/css/mill/">CSS Mill</a> by
+Patrick Corcoran is a visual tool for generating CSS styled HTML.
+
+</li><li><span class="date">1997-12-16</span> <a href="http://www.edf.fr/">EDF</a> has released <a href="http://www.edf.fr/der/html/produits/publications/w3c/CSSize/cssize.en.htm">CSSize</a>,
+a tool which helps you convert HTML documents into HTML+CSS documents.
+
+</li><li><span class="date">1997-12-16</span> <a href="http://www.hexmac.com/">Hexmac</a> has released <a href="http://www.hexmac.com/">HexWeb CSS Edit</a> as a plugin for
+BBEDit or as a stand-alone Macintosh version.
+
+<!-- <li><span class=date>1997-12-04</span> <a
+href="http://www.xanthus.se">Xanthus</a>' Intranet Writer is available
+in Beta3. Intranet Writer is a WYSIWYG word processor, HTML authoring
+tool and a Web browser which uses HTML and CSS as the native file
+format. -->
+
+</li><li><span class="date">1997-12-05:</span> <a href="http://interaction.in-progress.com/cascade">Cascade</a> is a
+comprehensive Cascading Style Sheets editor for Mac. There is also a
+free version called Cascade Light.
+
+</li><li><span class="date">1997-12-04</span> A <a href="http://www.theophys.kth.se/%7Ejl/Alpha.html">CSS mode for
+Alpha</a>, a Mac programming editor, is available.
+
+</li><li><span class="date">1997-12-04</span> <a href="http://www.xs4all.nl/%7Ehbosma/anansi/index.html">Anansi</a> is
+reported to support CSS.
+
+</li><li><span class="date">1997-11-04</span> <a href="http://www.coffeecup.com/">Coffeecup Software</a>'s <a href="http://www.coffeecup.com/style/">StyleSheet Maker++</a> is a
+dedicated application for creating CSS style sheets.
+
+</li><li><span class="date">1997-10-24</span> <a href="http://www.mbed.com/">mBED</a>'s <a href="http://www.mbed.com/html/mbdframe1.html">Interactor 1.1</a>
+supports CSS Positioning which, when combined with a scripting
+language, allows you to create HTML-based animations.
+
+</li><li><span class="date">1997-10-06:</span> <a href="http://danere.com/">Danere</a> has released a new version of <a href="http://danere.com/StyleMaker/">StyleMaker</a> which supports <a href="http://www.w3.org/TR/WD-positioning">CSS Positioning</a> through a drag-and-drop
+interface.
+
+</li><li><span class="date">1997-09-12</span> <a href="http://www.algonet.se/%7Eoptima/contact.html">Optima System</a>'s
+<a href="http://www.algonet.se/%7Eoptima/pagespinner.html">PageSpinner</a>
+is a shareware HTML editor for MacOS with support for CSS.
+
+</li><li><span class="date">1997-09-08:</span> Microsoft's beta version of <a href="http://www.microsoft.com/frontpage">FrontPage98</a> has some
+support for CSS.
+
+</li><li><span class="date">1997-07-10:</span><a href="http://homepages.tcp.co.uk/%7Edrarh/Stylist/home.html">Sheet
+Stylist</a> is an application (actually an ActiveX control) for
+Windows 95 that allows you to create, edit and maintain CSS styles
+sheets.
+
+</li><li><span class="date">1997-06-23:</span> <a href="http://www.astrobyte.com/">Astrobyte</a> has announced <a href="http://www.astrobyte.com/beyondpress">BeyondPress 3.0</a> which
+will convert QuarkXPress documents into HTML and CSS.
+
+</li><li><span class="date">1997-04-15:</span> The <a href="http://interaction.in-progress.com/">Interaction</a> dynamic site
+management system includes a comprehensive <a href="http://interaction.in-progress.com/components/style">Macintosh
+CSS editor</a>.
+
+</li><li><span class="date">1997-03-26:</span> <a href="http://www.sausage.com/">Sausage Software</a>'s <a href="http://www.sausage.com/products/index.html">HotDog</a> editor
+now supports CSS.
+
+</li><li><span class="date">1997-03-26:</span> <a href="http://www.allaire.com/">Allaire</a>'s <a href="http://www.allaire.com/products/homesite/overview.cfm?tbsection=Overview">HomeSite</a>
+editor (v. 2.5 and above) now <a href="http://www.allaire.com/products/homesite/stylesheets.cfm">supports
+CSS</a>.
+
+</li><li><a href="http://www.abc.se/%7Em8974/index.html">JoyHTML</a> is a
+shareware Swedish HTML editor that supports CSS. It's not WYSIWYG, but
+rather source-code oriented. Nice if you would like to see the code
+without remembering the full CSS1 syntax. And you learn some Swedish
+as well (Download <a href="http://www.abc.se/%7Em8974/jh99sv.exe">jh99sv.exe</a>)
+
+</li><li><a href="http://www.adobe.com/prodindex/framemaker/">Adobe
+FrameMaker</a> since version 5.5 can export HTML+CSS.
+</li></ul>
+
+</div>
+</div>
+
+<div class="back">
+<div class="section" id="software">
+
+<h2 id="other">Other software</h2>
+
+<p class="skip"><a href="#specs">(skip to next section)</a>
+
+</p><ul>
+<li><span class="date">2006-05-18</span> <a href="http://www.realobjects.com/">RealObjects</a> released <a href="http://www.realobjects.com/PDFreactor.808.0.html">PDFreactor</a>,
+a formatter for XML and (X)HTML documents using CSS, including support
+for SVG and XSLT. PDFReactor outputs PDF and can be installed on a Web
+server as a Java servlet. (Java. Free evaluation version)
+
+</li><li><span class="date">2005-12-07</span> <a href="http://yeslogic.com/">YesLogic</a> has released version&nbsp;5.1
+of <a href="http://www.princexml.com/">Prince,</a> a program to print
+XML documents (including XHTML and a subset of SVG) that are styled
+with CSS. Output in PDF. This version passes the <a href="http://www.webstandards.org/act/acid2/">Acid2</a> test and has
+support for HTML parsing, PNG transparency, data URLs and XHTML
+&lt;object&gt; fallback. (Windows, Mac OS X &amp; Linux, free demo
+version.)
+
+</li><li><span class="date">2005-11-02</span> <a href="https://xhtmlrenderer.dev.java.net/"> Flying Saucer</a> (current
+version is Beta R5) is a set of Java classes for rendering XHTML/XML +
+CSS (Java, Open Source)
+
+</li><li><span class="date">2005-09-01</span> <a href="http://www.re.be/css2xslfo/">CSSToXSLFO</a> is a program that
+converts an XML document with a CSS style sheet to XSLFO. It has
+special support for XHTML. (Java, Open source)
+
+</li><li><span class="date">2005-08-19</span> <a href="http://disruptive-innovations.com/"> Disruptive Innovations</a>
+published <a href="http://disruptive-innovations.com/zoo/selectorBuilder/selectorBuilder.xul">
+CSS Selector builder 0.11</a>, a program to interactively construct
+CSS selectors (written in XUL/XBL, requires Firefox)
+
+</li><li><span class="date">2005-07-01</span> Dzianis Koshkin started the
+project <a href="http://www.mythcode.org/">MYTHcode,</a> a code
+library including parsers for CSS and XML. (Object Pascal, Open
+Source)
+
+</li><li><span class="date">2005-04-08</span> Tommi Lahtonen offers a program
+<a href="http://appro.mit.jyu.fi/tools/csstoxml/">CSStoXML</a> that
+parses CSS2 (based on <a href="http://cssparser.sourceforge.net/">CSS
+Parser</a>) and outputs the parse tree as an XML file. Also includes
+an XSLT processor, to transform the tree to other formats (Java, free
+for non-commercial use)
+
+</li><li><span class="date">2004-12-16</span> <a href="http://www.freespiders.org/projects/libcroco/">Libcroco</a> is a
+library (in C) for CSS. It supports <a href="http://www.w3.org/Style/CSS/SAC/">SAC</a> and CSSOM,
+can apply selectors to XML elements and has the beginnings of a
+renderer. (Open Source)
+
+</li><li><span class="date">2004-12-08</span> The <a href="http://cssparser.sourceforge.net/">CSS Parser</a> (formerly
+Steady State CSS2 Parser) is available on SourceForge. It implements
+<a href="http://www.w3.org/TR/2000/REC-DOM-Level-2-Style-20001113">DOM2 Style</a>
+and <a href="http://www.w3.org/Style/CSS/SAC/">SAC</a> (Java, Open Source)
+
+</li><li><span class="date">2004-01-29</span> <a href="http://pbear.com/">David Baldwin</a> sells <a href="http://pbear.com/htmlviewers.html">ThtmlViewer,</a> a browser
+component for use in programs developed with Delphi (4, 5, 6 and 7).
+(Windows, free demo)
+
+</li><li><span class="date">2003-07-10</span> <a href="http://www.infinity-loop.de/">Infinity Loop</a> released new
+versions of upCast and downCast, which convert between XML+CSS and MS
+Word or RTF. Word and upCast together can also be used as a CSS
+editor: named styles will be saved as a CSS style sheet. (Many
+platforms, requires Java, free demo)
+
+</li><li><span class="date">2002-10-11</span> <a href="http://www.xmlmind.com/">XMLmind</a> has released version&nbsp;2
+of the <a href="http://www.xmlmind.com/xmleditor/">XMLmind XML
+Editor</a>, a graphical editor for XML, that supports CSS2 for
+on-screen layout and printing. (Java, free &#8220;Standard Edition,&#8221;
+non-free &#8220;Professional Edition&#8221;)
+
+</li><li><span class="date">2002-01-08</span> <a href="http://www.w3.org/People/Raggett/tidy/">Tidy</a> is a tool to clean up
+invalid HTML pages (such as generated by some &#8220;HTML&#8221; editors,
+unfortunately). It uses heuristics to replace bad mark-up with valid
+HTML and CSS. <a href="http://www.geocities.com/terry_teague/tidy.html">BBTidy</a> is a
+Tidy cast as a plugin for BBEdit on the Mac. (Open Source)
+
+</li><li id="batik"><span class="date">2001-12-06</span> The <a href="http://xml.apache.org/">Apache project</a> released <a href="http://xml.apache.org/batik/svgviewer.html">Batik</a>, an SVG
+browser. Supports SVG with CSS. (Java, Open Source)
+
+</li><li><span class="date">2001-08-06</span> A <a href="http://sourceforge.net/projects/perl-css/">Perl CSS</a> project
+has been started on SourceForge, to develop <a href="http://www.w3.org/TR/DOM-Level-2-Style/">CSS-DOM</a> and <a href="http://www.w3.org/Style/CSS/SAC">SAC</a> libraries for Perl.
+
+</li><li><span class="date">2001-07-09</span> &#8220;xselect&#8221; is a C program that
+extracts all elements from an XML document that match a CSS selector.
+Part of the <a href="http://www.w3.org/Tools/HTML-XML-utils/">HTML-XML-utils</a>
+package. (Open Source)
+
+</li><li><span class="date">2001-04-27</span> A Perl module that implements <a href="http://www.w3.org/Style/CSS/SAC">SAC</a>, called <a href="http://search.cpan.org/search?dist=CSS-SAC">CSS::SAC</a>, has
+been written by Robin Berjon. (Open Source.)
+
+</li><li><span class="date">2000-12-08</span> <a href="http://www.aureliasystems.com/">Aurelia Systems</a> offers <a href="http://www.aureliasystems.com/dnload.htm">Aureleon</a>, a
+printer driver for Windows 95/98/NT/2000 that converts anything you
+can print to HTML + CSS.
+
+</li><li><span class="date">2000-02-17</span> Useful? Or not? Anyway, <a href="http://www.pigdog.org/decss/">DeCSS</a> is a tiny (Perl) program
+by Mr. Bad to strip all CSS from an HTML file.
+
+</li><li><span class="date">1999-10-24</span> <a href="http://www.w3.org/Style/CSS/SAC">SAC</a> (W3C's
+<em>Simple API for CSS</em>) is in beta. Bindings to C and Java are
+provided.
+
+</li><li><span class="date">1999-10-24</span> <a href="http://www.w3.org/Style/CSS/SAC">flute 1.0</a> is
+W3C's CSS parser in Java.
+</li></ul>
+
+</div>
+</div>
+
+<div class="back">
+<div class="section" id="specs">
+
+<h2>CSS Specifications</h2>
+
+<p>CSS has various <em>levels</em> and <em>profiles.</em> Roughly
+speaking, desktop browsers implement level 1, 2 or 3, other programs
+implement the appropriate profile for their platform: cell phone, PDA,
+television, printer, speech synthesizer, etc.
+
+</p><ul>
+<li><strong>CSS level 3</strong> is <a href="http://www.w3.org/Style/CSS/current-work">under
+development.</a> It includes all of level 2 and extends it with new
+selectors, fancy borders and backgrounds, vertical text, user
+interaction, speech and much more.
+
+</li><li><a href="http://www.w3.org/TR/CSS21/"><strong>CSS level&nbsp;2
+revision&nbsp;1</strong></a> (&#8220;CSS&nbsp;2.1&#8221;) contains all
+of CSS level&nbsp;1 and adds absolutely positioned elements, automatic
+numbering, page breaks, right to left text and other things. At this
+moment, February 2004, it is a <em>Candidate</em> W3C Recommendation.
+
+</li><li><a href="http://www.w3.org/TR/CSS1"><strong>CSS level 1</strong></a> (1996, 1999)
+contains properties for fonts, margins, colors, etc., that nearly all
+profiles of CSS need. [Also in <a href="http://www.w3.org/Style/css1-updates/REC-CSS1-19990111.pdf">PDF</a>]
+
+</li><li><a href="http://www.w3.org/TR/css-mobile"><cite>CSS Mobile Profile 1.0</cite></a>
+is for devices such as mobile phones and PDAs.
+
+</li><li><a href="http://www.w3.org/TR/css-print/"><cite>CSS Print Profile</cite></a> is
+still a draft. It is aimed at low-cost printers.
+
+</li><li><a href="http://www.w3.org/TR/css-tv"><cite>CSS TV Profile 1.0</cite></a> is for
+browsers that run on television sets.
+</li></ul>
+
+<p>Other specifications that deal with CSS:
+
+</p><ul>
+<li><a href="http://www.w3.org/TR/SVG11/"><cite>SVG</cite></a> contains the CSS
+properties for styling vector graphics.
+
+</li><li><a href="http://www.w3.org/TR/CSS-access"><cite>Accessibility Features of
+CSS</cite></a> is a Note about how CSS can make documents more
+accessible.
+
+</li><li><a href="http://www.w3.org/Style/css1-updates/translations">Translations of CSS
+level&nbsp;1</a> and <a href="http://www.w3.org/Style/css2-updates/translations">translations of CSS
+level&nbsp;2.</a>
+</li></ul>
+
+<p class="alt-hint"><a href="http://www.w3.org/Style/LieBos3e/" title="Håkon Wium Lie &amp; Bert Bos &#8211;
+Cascading Style Sheets, Designing for the Web
+(3rd ed.)"><img class="icon" src="Cascading%20Style%20Sheets_files/LieBos3e-small2.png" alt=""> Book:
+&#8220;Cascading Style Sheets&#8221; (3rd ed.) &#8211; errata</a>
+
+</p><p>The history of CSS is described in <a href="http://www.w3.org/Style/LieBos2e/history/">chapter 20</a> of the book <a href="http://www.awprofessional.com/catalog/product.asp?product_id=%7BCD6CBE58-0498-4E80-8AE7-0A22DD13E2E5%7D"><cite>Cascading
+Style Sheets, designing for the Web,</cite></a> by Håkon Wium Lie and
+Bert Bos (2nd ed., 1999, Addison Wesley, ISBN 0-201-59625-3)
+
+</p></div>
+</div>
+
+<div class="endmatter">
+
+<div class="banner">
+<p>
+<a rel="home" class="home" href="http://www.w3.org/"><img alt="W3C" src="Cascading%20Style%20Sheets_files/w3c_home.png"></a>
+<a rel="bookmark" href="http://www.w3.org/Consortium/Activities">Activities</a>
+<a rel="bookmark" href="http://www.w3.org/TR/">Tech.&nbsp;reports</a>
+<a rel="index" href="http://www.w3.org/Help/siteindex">Site&nbsp;index</a>
+<a rel="bookmark" href="http://www.w3.org/Consortium/Translation/">Translations</a>
+<a rel="bookmark" href="http://www.w3.org/Status">Software</a>
+<a rel="search" href="http://search.w3.org/">Search</a>
+<em>Nearby:</em>
+<a rel="up" href="http://www.w3.org/Style/">Style</a>
+<a href="http://jigsaw.w3.org/css-validator/">CSS Validator</a>
+
+</p></div>
+
+<p class="button"><a href="http://www.w3.org/Style/CSS/Buttons/"><img alt="CSS" src="Cascading%20Style%20Sheets_files/mwcts"></a> <a href="http://jigsaw.w3.org/css-validator/"><img src="Cascading%20Style%20Sheets_files/vcss" alt="Valid
+CSS!"></a><a href="http://validator.w3.org/"><img src="Cascading%20Style%20Sheets_files/vh40" alt="Valid HTML 4.0!"></a>
+<a class="rss-link" href="http://www.w3.org/Style/CSS/Overview.rss"><img alt="RSS feed" title="RSS feed of the
+&quot;What's new&quot; section" src="Cascading%20Style%20Sheets_files/rdf_flyer.24"></a>
+<a class="rss-link" href="http://www.w3.org/Style/CSS/Overview.atom"><img alt="Atom feed" title="Atom feed of the
+&quot;What's new&quot; section" src="Cascading%20Style%20Sheets_files/atom-logo75px.gif" height="24"></a>
+
+</p><address class="vcard">
+  <img class="photo" src="Cascading%20Style%20Sheets_files/bert6.png" alt="">
+  <a class="fn url" href="http://www.w3.org/People/Bos">Bert Bos</a>,
+  <span class="role">CSS contact</span><br>
+  Last updated $Date: 2006/12/19 23:43:35 $ GMT 
+</address>
+</div>
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:nil
+sgml-minimize-attributes:t
+sgml-always-quote-attributes:t
+sgml-nofill-elements:("pre" "style" "br")
+sgml-live-element-indicator:t
+End:
+-->
+</body></html>

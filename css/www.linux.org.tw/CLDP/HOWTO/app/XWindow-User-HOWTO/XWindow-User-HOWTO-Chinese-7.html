@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO: 字型與顏色</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-8.html" REL=next>
+ <LINK HREF="XWindow-User-HOWTO-Chinese-6.html" REL=previous>
+ <LINK HREF="XWindow-User-HOWTO-Chinese.html#toc7" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-8.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-6.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc7">Contents</A>
+<HR>
+<H2><A NAME="s7">7.</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc7">字型與顏色</A></H2>
+
+<P>如何在 X 視窗中使用字型和顏色，有許多的訣竅。它們不像其餘系統那麼單純，例
+如說，字型的名稱就不只一個字。你要相當明確地說明要用到什麼東西，而且剛開始
+時，相當複雜，但是只要稍加解釋，馬上就會成為專家了。</P>
+
+<H2><A NAME="ss7.1">7.1</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc7.1">解開字型的迷津</A>
+</H2>
+
+<P>一個字型的完整名稱叫做 <EM>X Logical Font Description</EM> （``XLFD"。
+它包含了下述的項目：</P>
+<P>
+<UL>
+<LI><CODE>‧fndry</CODE> - 字型廠商，設計此一字型的公司或個人</LI>
+<LI><CODE>‧fmly</CODE> - 字型家族，此一字型的常用匿稱</LI>
+<LI><CODE>‧wght</CODE> - 字型組細（bold、medium等）</LI>
+<LI><CODE>‧slant</CODE> - 傾斜度（italics、oblique、roman（正常）等）</LI>
+<LI><CODE>‧sWdth</CODE> - 寬度（normal、condensed、extended等）</LI>
+<LI><CODE>‧adstyl</CODE> - 外帶風格（sans serif、serif等）</LI>
+<LI><CODE>‧pxlsz</CODE> - 格點大小，一個字元在垂直方向之格點數</LI>
+<LI><CODE>‧ptSz</CODE> - 文字的大約格點大小（類似 pxlsz）</LI>
+<LI><CODE>‧resx</CODE> - 水平方向之解析度，單位 dpi</LI>
+<LI><CODE>‧resy</CODE> - 垂直方向之解析度，單位 dpi</LI>
+<LI><CODE>‧spc</CODE> - 空間，明顯地，只在 Schumacher 字型上有用到</LI>
+<LI><CODE>‧avgWidth</CODE> - 此一字型的平均字元寬度</LI>
+<LI><CODE>‧rgstry</CODE> - 列出此字型的註冊</LI>
+<LI><CODE>‧encdng</CODE> - 國家代碼</LI>
+</UL>
+</P>
+<P>如果覺得一片混亂， <B>xfontsel</B> 程式（預設的 X 視窗字型選擇程式）可以是個非常
+有用的工具。現在打開它。會看到一個看似無用的奇怪視窗，此時在 fnfry 按鍵
+上按下左鍵。如果字型沒問題的話，可以看到一個選單，其中有 <CODE>adobe</CODE> 、 
+<CODE>b&amp;h</CODE> 、bitstream 等等。例如說，選 <CODE>b&amp;h</CODE>，可以看
+到在下方視窗的字型會變成另一種可理解的東西。用這個程式選擇字型的一般方法是，從
+最左邊（最原則性的選項）開始，到最右邊（最特定的選項）。所以，如果已經知道廠商
+名（foundry），在它左邊的選項，其實沒有太大作用，因為選項的次序是依照它的相依
+性而定的。</P>
+<P>如果要在 <CODE>fmly</CODE> 選項中選擇，將見到大部份的選項都被模糊掉，只剩下
+三個可以選擇。這表示這個廠商只出了三個字型家族。有些字型家族，會出現在數個
+廠商的產品中，例如 <EM>Adobe</EM> 及 <EM>Bitstream</EM> 都有 courier 
+字型。接著就可以開始 <CODE>Wght</CODE> 等等了。最後，會限制到只剩一個要
+的字型。要找到一個字型，並不須要填寫每一個選項，沒有<EM>那麼</EM>多字型
+啦！每一個沒有限定的項目，都會以 <CODE>*</CODE> 來表示，在那裡它可以合乎任
+何選項。</P>
+<P>一旦下定決心，可以點選 select 鍵，這樣，這個字型就會放入 X 剪貼簿（X 
+clipboard）中，隨時準備好貼入你的文件中或任何你在用的東西中。舉例言之，進
+到 <B>xterm</B> 視窗，敲入 <CODE>xterm -font</CODE> ，後面加上一個左邊
+的英式引號。然後把滑鼠移到這個地方，按中央鍵（如果沒有中央鍵，同時按左、右
+兩鍵）。這會把剪貼簿中的內容貼上去，也就是貼上所選擇的字型。然後加上一個
+右邊的英式引號，按 <CODE>Enter</CODE>。例如，一個大的 <CODE>xterm</CODE> 視窗
+使用 Courier 字型，應該是用指令: 
+<CODE>xterm -font &quot;-adobe-courier-medium-r-*-*-14-*-*-*-*-*-*-*&quot;</CODE>。
+單純的 <B>xterm</B> 指令，則在出現時，直接續用先前使用的字型。</P>
+<P><B>xfd</B> 工具用來測驗字型，則非常靈光。以指令像 <CODE>xfd -fn fixed</CODE> 
+來跑這個程式，它會告訴你用來表這個字型的字母長什麼樣子，它有點像麥金塔中的 keycaps 
+工具。注意！也可以比照前面作法，在命令列選項 <EM>-pattern</EM> 後面，
+以引號句指明字型的限制，來限制要 <B>xfontsel</B> 顯示的字型。</P>
+
+<H2><A NAME="ss7.2">7.2</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc7.2">字型別名（font alias）及型態設定</A>
+</H2>
+
+<P>去記憶長長的字型名稱，有時既麻煩又不切實際。幸運地，不必敲入近百字母來找
+到所要的字型名稱，因為 X 視窗提供了叫做<EM>字型別名</EM>的功能。</P>
+<P>看一下 <EM>/usr/X11R6/lib/fonts/misc/fonts.alias</EM> 目錄，可以見
+到其中有許多字型的捷徑名稱。例如， <CODE>8x16</CODE> 是 
+<CODE>-sony-fixed-medium-r-normal--16-120-100-100-c-80-iso8859-1</CODE>
+的捷徑，無論在那裡，用 <CODE>8x16</CODE> 為 X 字型資源，或在命令列中作為字型
+名稱，它都會以長字型名稱來取代。 <CODE>75dpi</CODE> 及 <CODE>100dpi</CODE> 目錄
+也都可以利用相似的別名，在大部份的系統中， Ludcida Sans 字型也有捷徑。</P>
+<P>要在系統中加入字型或別名，需要下一些命令（可能在 root 中）。要加入字型，需
+要下下述兩個命令。在下面的例子中，你要用到正確的目錄。也可完全不理它，而重
+新正確地去讀進所有字型。</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ mkfontdir /usr/lib/X11/fonts/misc
+ xset fp rehash
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>要改變一個字型的別名檔，只要下上面的第二個指令即可，但最好兩個都下，以防萬
+一。以 xset 命令，可以明確地告訴伺服程式，用那一個字型路徑去找你的字型。
+也可以刪除某一字型路徑，詳情見參考頁。</P>
+<P>另外還有一個共同的問題，就是某些套件（現在值得提出來的是 Red Hat 5.2）用來
+設定字型的選項次序是不正確的。可以看一下系統中的 <EM>/etc/XF86Config</EM>
+（在其它套件中，可能在不同地方。而且很不幸的，我也不太確定，現在 Red Hat 把它放
+到那裡去了。所以，還是自行<B>找找看</B>把...）。如果 X 視窗中的字型怪
+怪的，就去檢查一下這個檔案（既使檔案很長，其中的資料也是很難讀）。其中有很多項目，
+看起來像:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ FontPath   &quot;/usr/X11R6/lib/X11/fonts/misc/&quot;
+ FontPath   &quot;/usr/X11R6/lib/X11/fonts/75dpi/:unscaled&quot;
+ FontPath   &quot;/usr/X11R6/lib/X11/fonts/100dpi/:unscaled&quot;
+ FontPath   &quot;/usr/X11R6/lib/X11/fonts/Type1/&quot;
+ FontPath   &quot;/usr/X11R6/lib/X11/fonts/Speedo/&quot;
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>其中值得注意的是，有一些是不定尺寸的（unscaled）比例字型（bitmapped font）
+（在 misc、75dpi、100dpi 目錄中），接著有一些定尺寸字型（scaled font）（例
+如 Type1 及Speed0）。X 伺服程式比較適用比例字型，因為在一般的用途上，定尺
+寸字型看起較不美觀，而對某些程式（如 Gimp 或 Netscape 而言）看起比較好。
+也要理智地檢驗一下，這些目錄是否存在。而且，一旦在未來做任何改變，都要
+到 <B>fonts</B> 目錄中下 <CODE>makefontdir *</CODE> 指令。</P>
+<P>注意，如果用的是較新的版本（例如修改自 Red Hat 6.0 及更新的版本），就不
+須要擔心這個問題，因為 <EM>xttfs</EM> True Type 字型伺服程式己經被設為
+預設程式，而且也不再用路徑系統來找可用的字型。</P>
+
+
+<H2><A NAME="ss7.3">7.3</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc7.3">在 X 視窗中使用 Type 1 字型</A>
+</H2>
+
+<P>X 視窗上平常所用到的幾個字型，在其它地方很少見到。可以見到的是，此類的字
+型只有用在 X 視窗系統本身之上。不幸的是，大部份的媒體迷、字型狂總愛在操作
+系統中使用其它的字型。 <B>Type 1 字型</B>最常和 PostScript 文件格式
+搭配使用，從網際網路上，它可以很容易得自由取得。可以先試一下 
+<A HREF="ftp://ftp.cdrom.com/pub/os2/fonts/">ftp://ftp.cdrom.com/pub/os2/fonts/</A>。</P>
+<P>要使用這些字型並不難，像 <B>GIMP</B> 那樣的繪圖程式也大幅地利用它們的優點。
+最幸運的是， Linux 的 X 伺服程式則以 Type 1 字型為原裝字型。如果要使用它們，
+先以適當的指令打開檔案庫（archive），再把字型放入系統中的 
+<EM>usr/X11R6/lib/X11/fonts/type1/</EM> 目錄中，並且以 .pfb 為檔案副
+名來命名。然後在同一目錄中的 <CODE>fonts.scale</CODE> 檔中，以類似其它字型的
+格式描述新加的字型。然後把這個檔案存起來即可。</P>
+<P>現在就可以用 <CODE>mkfontdir</CODE> 告訴 X 伺服程式字型已經更新了，然後執行一下 
+<CODE>xset fp rehash</CODE> ，重讀字型路徑。這樣如果還有問題，可能就要重新啟動
+X ，以觀成效。</P>
+<P>如果自認 Type 1 字型用得很兇，而且是用在 X 以外（例如 GhostScript 也會用
+到這種字型格式），可以用 James Macnicol 的 <B>type1inst</B> 工具
+來檢查一下。它可以用來設定 GhostScript 及 X 的 Type 1 字型，也可產生字型的
+範例頁，並且幫你完成型態設定的大部份工作。它通常可以從 
+<A HREF="ftp://metalab.unc.edu/pub/Linux/X11/xutils/">ftp://metalab.unc.edu/pub/Linux/X11/xutils/</A> 中找到。</P>
+
+<H2><A NAME="ss7.4">7.4</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc7.4">在 X 視窗中使用 TrueType 字型</A>
+</H2>
+
+<P>如果用過像 Windows 或 MacOS 的操作系統，在你的電腦中，可能已經有許多
+<B>TrueType</B> 字。 在較小、較低解析度的顯示器（例如說，你的電腦上的顯示器）上，
+TyueType 被公認為最佳的字型，它有上色（shading）及抗高頻變形（antialiasing）
+的極佳功能，因此顯示的比較舒服。大量廉價的 TrueType 字型不難取得，在電腦販
+賣店可以很容易找到內含高達 500 種字型的 CD 片。</P>
+<P>X 視窗無法處理 TrueType 字型，它本身的設計（到現在為止）也沒有能力做到，所
+以它需要另一個程式來<EM>畫字型</EM>。有個 FreeType 程式庫可以做到，但是要
+用到它們，要先叫用 <B>xfstt</B> 程式（專為 X 字型的伺服程式）。它可以在
+<A HREF="ftp://metalab.unc.edu/pub/Linux/X11/fonts/">ftp://metalab.unc.edu/pub/Linux/X11/fonts/</A> 上找到。</P>
+<P>安裝則很簡單。打開檔案庫，下 <CODE>make</CODE> 命令，再下 <CODE>make install</CODE> 
+命令。在第二個命令之後，可能會有一些不知道是什麼的錯誤；那就忽略掉吧。接著要建立個叫
+做 <EM>/usr/ttfonts</EM> 的目錄，並且把你的 <CODE>.ttf</CODE> 字型放進去，還
+要檢查一下。然後用 <CODE>xfstt --sync</CODE> 命令讓字型定義一致。</P>
+<P>如果一切都沒問題了，以命令 <CODE>xfstt &amp;</CODE> 在背景執行字型伺服程式，
+再用命令 <CODE>xset fp+ unix/:7100</CODE> 來告訴 X11 伺服程式要有那一種字
+型服務。如果一切都沒問題，就可以跑 Netscape、GIMP 甚至 xfontsel，而且從
+此就有這些字型了。以後，所可能會有的最大問題，將會是找不到所要的字型，但
+這不算是個糟糕的事。</P>
+<P>我發現最新版的 xset ，因為編碼不同，須對此命令的寫法稍加修改。如果你的套件
+是基於 Red Hat 6.0 的版本，或基於更新版者，或類似者，可以試用指令
+<CODE>xset fp+ unix/:7101</CODE>。</P>
+<P>如果一切都沒問題，那麼就要設定系統，使得啟動 X 之後，字型都可正常出現。
+如果要從命令列進入 X ，這並不是一件難事。只要把在上一段中所提到的兩個命
+令，依序加到 <CODE>.xinitrc</CODE> 檔中即可。下次啟動 X 時，它們應該都可正常工作。
+如果是用 <B>xdm</B> 來啟動 X ，就必須在 
+<CODE>/usr/X11R6/lib/X11/xdm/Xsetup_0</CODE> 中加入 
+<CODE>/usr/X11R6/bin/xfstt &amp;</CODE> 。這可以理解吧？然後再加上 
+<CODE>xset fp+ unix/:7100</CODE>。</P>
+<P>記著，安裝 TrueType 字型伺服器，會是件麻煩事。也記著，上述命令的次序非常
+重要。字型伺服程式一定要在 X 啟動前啟動，否則就會碰到問題。也要讀一下隨附
+於套件中的常問問題集，以及 xfstt 的參考頁。許多有這種字型的 Linux 版
+本都已經解決了這個問題，在傷腦筋前，先查一查，你的版本解決了沒有。</P>
+
+<H2><A NAME="ss7.5">7.5</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc7.5">顏色</A>
+</H2>
+
+<P>現在我們回到終端機視窗，試一下其它的東東。先用下面的命令打開一個
+<B>xterm</B> 視窗 ：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ xterm -fg darkslateblue -bg red3 &amp;
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>不幸的是，這視窗既不美麗，也沒有什麼特別的效果，但它展示了 X 的一個有趣的
+佈景主題，即顏色的名稱。它雖然無法很精確地描述一個顏色，但它比去記一串 16 進
+位的數字，要來得容易多了。注意，顏色名稱的大小寫無關結果。</P>
+<P>不論是為了打破砂鍋問到底，或是想要個例子，或是突發奇想想把一些笨名稱改成
+自訂的顏色名稱，都可以看一看 <EM>/usr/X11R6/lib/X11/rgb.txt</EM>，
+系統中的每個顏色名稱與相對的 16 位元數字都一一羅列在其中。我還有一些極有用
+的工具，如 <B>xcolorsel</B> 等等。在一些常見的及其餘的網站（如
+<A HREF="http://metalab.unc.edu/pub/Linux/">http://metalab.unc.edu/pub/Linux/</A>）都可找到。</P>
+<P>更精確的顏色就要以數字來定義。它是以顏色名稱及如下列文法的一組數字：</P>
+<P><EM>&lt;colorspace-name&gt;:&lt;value&gt;/.../&lt;value&gt;</EM></P>
+<P>RGB Device （最可能用到的）是在前面放&quot;rgb:&quot;，如下述之文法：</P>
+<P><EM>rgb:&lt;red&gt;/&lt;green&gt;/&lt;blue&gt;</EM> （其中  為 1 至 4 個 16 進位的數字。）</P>
+<P>舉例言之，<EM>紅色 ( red )</EM> 可定義為 <CODE>rgb:ffff/0/0</CODE> 。紅色色
+碼有其老式的相配表示方式 <CODE>#ff0000</CODE> 或 <CODE>#ffff00000000</CODE>
+，這種（老式的）文法，可能還要用一陣子。</P>
+<P>
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-8.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-6.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc7">Contents</A>
+</BODY>
+</HTML>

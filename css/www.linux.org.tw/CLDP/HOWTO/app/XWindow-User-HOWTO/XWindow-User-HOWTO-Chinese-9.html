@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO: 有關用戶程式及應用程式之訣竅</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-10.html" REL=next>
+ <LINK HREF="XWindow-User-HOWTO-Chinese-8.html" REL=previous>
+ <LINK HREF="XWindow-User-HOWTO-Chinese.html#toc9" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-10.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-8.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc9">Contents</A>
+<HR>
+<H2><A NAME="s9">9.</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc9">有關用戶程式及應用程式之訣竅</A></H2>
+
+<P>前面已經討論過 X 中的一些用戶程式，在本節中，我們還要再討論一些其餘的用戶
+程式。我們的討論將僅限於最基本、最重要的核心項目，也就是那些核心本身就有
+的，或是在使用 X 時，可能會用到的程式。即使安裝了像 KDE 或 GNOME 那
+樣的整合性的桌面環境，仍然可以有許多其它的選擇，它們都有很多相同的功能。
+不論如何，重要的是，要認識並了解 X 中許多基本的程式，因為它們對於在你的環
+境是否有效很有助益。X 也提供許多新的選項，即使一般螢幕上的應用程式可以使
+用。</P>
+
+<H2><A NAME="ss9.1">9.1</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc9.1">X 的螢幕保護程式</A>
+</H2>
+
+<P>許多操作系統都有個共同的功能，就是在一段時間之內，若沒有使用，就會把螢幕
+關暗，或是展示某些俏皮的圖片，這就叫做螢幕保護程式。在 X 中也有許多方式來
+做到這一點。</P>
+<P>最基本的方式就是在 <CODE>.xinitrc</CODE> 啟始檔中放個指令 <CODE>xset dpms 2400 3600
+4800</CODE>。<B>xset</B> 程式可以設定 X 伺服程式的螢幕保護功能。在文
+字顯示螢幕上，核心有時會做螢幕清除，千萬不要把螢幕保護功能和這個功能相混淆。
+X 可以使用 <CODE>dpms</CODE> 選項來設定監視器的螢幕保護功能。後面的第一個值
+，代表幾秒後螢幕全關暗。第二個值，代表幾秒後省電功能啟動。第三個值，代表幾秒
+後&quot;關斷螢幕&quot;。每當增加一個值，就隱含多開啟了一項功能；但是若把其
+中一個值設為 0，就是明白表示禁能這個值的項目。</P>
+<P>許多 Linux 套件本身就預設安裝了 <B>xlock</B> ，或者把它設為可選擇安裝項目。它是
+個相當基本而且很不錯的螢幕保護程式。如果執行時有 <CODE>-nolock</CODE> 選項，它提供了一
+些功能。但是如果沒有這個選項，每當滑鼠移動或鍵盤被觸動到，它就會要求你輸
+入密碼，做為保全之用。但是這種保全方式並不可靠，如果使用者是在使用終端機
+座，只要重新開啟機座或按幾個鍵關掉 X ，就可以開始使用這台機座了。然而，如果
+用 <B>xdm</B>，就沒有上述的問題了，它的保全能力與登入是一樣的，除非系統重新開機
+，他人都無法使用這個機座。</P>
+<P>Jamie Zawinski 所設計的 <B>xscreensaver</B> 程式則更新更好。它具有許多微妙的設計
+。例如說，它可以以 nicer 優先度來跑，所以執行時能體諒系統的負荷，而且它也
+會偵測螢幕的電力是否被 <B>xset</B> 關斷了，因而不浪費程序計算的時間。而且它所呼
+叫的繪圖常式都是用模組化的方式來展示，所以如果要增加它的繪圖常式，並不
+須要更新整個套件。另外，它還可以用模組化的方式呼叫其它程式，如 <CODE>xearth</CODE> 及 
+<CODE>xdaliclock</CODE>。 </P>
+<P>最新版的 <B>xscreensaver</B> 可以在 
+<A HREF="http://www.jwz.org/xscreensaver/">http://www.jwz.org/xscreensaver/</A> 中找到。一旦把它安裝
+好了，而且真的要用它了，可以在 <CODE>.Xdefaults</CODE> 檔中加入下述的指令：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ !!! some XScreenSaver sample defaults
+ ! Time out after 3 minutes, cycle mode after each 2
+ xscreensaver.timeout: 3
+ xscreensaver.cycle: 2
+ ! Run very low priority, and fade between modes
+ xscreensaver.nice: 12
+ xscreensaver.fadeSeconds: 2
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+
+<H2><A NAME="ss9.2">9.2</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc9.2">Emacs 及 XEmacs</A>
+</H2>
+
+<P>如果你是個 <B>EMACS</B> 文字編輯器迷，或是一直在使用它，你會發現在 X 視窗上，它變
+得更加易用了。對於未曾用過 XEmacs 的人，不仿在 X 中試用一下。如果是這樣的
+話， XEmacs 對你而言有些不錯的功能。例如說，當編輯時，文字的顏色可以完全
+表現得和標簽標式的那個樣子。在 <CODE>.emacs</CODE> 檔中修改一下，讀一下資料頁，來了
+解該有那些選項。查一下如何編輯選單。</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ (global-font-lock-mode t)
+ (setq font-lock-maximum-decoration t)
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+
+<H2><A NAME="ss9.3">9.3</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc9.3">一些有用的程式及訣竅</A>
+</H2>
+
+<P>
+<DL>
+
+<DT><B>appres</B><DD><P>appres 程式列出應用程式（或下次層級的應用程式）所見到的資
+源，以其特定的類別名稱或實例名稱表示出來。它可以用來決定檢查某個程式負載了那些
+資源。它可以用來檢查 X 的預設資源等事。</P>
+
+<DT><B>rclock</B><DD><P>許多套件附帶這個不錯的程式來取代 xclock ，它節省記憶空間，收到信時也會發出
+通知，也可以秀出備忘訊息，也可以用來啟動程式。在 <B>Battery-Powered Mini-HOWTO</B>
+中，曾敘述到如何在這個工具中修改，可以使它在筆記型電腦中秀出電池剩餘電
+力。</P>
+
+<DT><B>rxvt</B><DD><P>是一個用來取代 xterm 的不錯的程式 - 它使用較少的記憶空間，跑起來較快，可
+以在背景上放個 pixmap 圖形，可以不用選單而用熱鍵切換字型。</P>
+
+<DT><B>xcpustate</B><DD><P>可以顯示 CPU 的統計狀態（idle，nice，system，kernel），也可以顯示乙太網
+路上的資訊。</P>
+
+<DT><B>xearth</B><DD><P>會在根視窗上顯示一個地球圖形，也有許多的顯示選項。最有趣的地方是使用 
+<B>Xscreensaver</B> 呼叫它，來作為螢幕保護裝置的模組。</P>
+
+<DT><B>xfig</B><DD><P>是個向量繪圖程式，用在繪圖及編寫文件上特別有用。雖然很好用，但是初學時不容
+易。</P>
+
+<DT><B>xfontsel</B><DD><P>X 視窗的字型選擇工具。先以命令 
+<CODE>xterm -fn `xfontsel -print` &amp;</CODE> 選擇字型，然後以 xterm 打開
+視窗後，就可以使用這個字型了。</P>
+
+<DT><B>xload</B><DD><P>使用變動的圖形及光線來監視記憶使用量。如果使用 Window Maker ，則可以用
+<B>wmmon</B> 來做到相同的效果，但是會比較好看。</P>
+
+<DT><B>xmag</B><DD><P>是 X 中的放大鏡，有許多有用的功能。</P>
+
+<DT><B>xman</B><DD><P>是 X 的參考頁瀏覽器。如果它所開啟的小盒子不穩定，在呼叫這個程式時，選用
+<EM>-notopbox</EM> 選項。</P>
+
+<DT><B>xmodmap</B><DD><P>用來編輯及顯示鍵盤修改圖，用戶應用程式使用 keymap，來轉
+換事件 keycode 成鍵盤系統能瞭解的 keycode。通常由使用者啟始指令稿來啟動。在這文
+件前面，有一個例子，詳情請參考參考頁。</P>
+
+<DT><B>xpaint</B><DD><P>是個基本的 bitmap 繪圖程式。時際用法，請參考
+<A HREF="http://www.gimp.org/">GIMP</A>。</P>
+
+<DT><B>xset</B><DD><P>是一個 X 使用者愛用的工具。它可以用來改變所有的設定。
+例如說， <CODE>xset s 600</CODE> 可以設定螢幕在 10 分鐘不用後，自動變成空白。</P>
+
+<DT><B>xsetroot</B><DD><P>是用來改變桌面的顏色。如果你有安裝如 <B>xcolorsel</B> 
+的顏色選擇程式，那麼 <CODE>xsetroot -solid `xcolorsel`</CODE> 可以用來挑一個
+顏色，來變更桌面的色彩。</P>
+
+<DT><B>xwininfo</B><DD><P>這個程式可以用來點選任何視窗，來取得許多有關這個視窗的資訊。</P>
+
+
+<DT><B>The Intellimouse</B><DD><P>X 中的 Intellimouse 可以用在許多的應用程式上。 
+<A HREF="http://www.inria.fr/koala/colas/mouse-wheel-scroll/">http://www.inria.fr/koala/colas/mouse-wheel-scroll/</A>是個極
+佳的網站，其中的網頁提供很好的資料。</P>
+
+</DL>
+</P>
+<P>
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-10.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-8.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc9">Contents</A>
+</BODY>
+</HTML>

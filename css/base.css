@@ -1,0 +1,517 @@
+body {
+  margin:0;
+  padding:0;
+  background:#fff;
+  font:small Verdana,Sans-serif;
+  line-height:1.6em;
+  text-align:center;
+  background-image:url("../img/background.png");
+}
+
+.container {
+  width:1000px;
+  margin:0 auto;    /* mqk: this sets the positions on the page */
+  border:solid #fff;
+  border-width:0 1px;
+  text-align:left;
+  position:relative;
+  border-color:#123;
+  color:#ccc;
+}
+
+
+/* =Nav
+----------------------------------------------- */
+#nav {
+  background-color:#000000;
+  background-repeat:no-repeat;
+  float:left;
+  width:auto;
+  margin-top:80px;
+  opacity:0.75;
+}
+#nav ul {
+  margin:0;
+  list-style:none;
+  font-size:85%;
+  text-transform:lowercase;
+}
+#nav li {
+  float:left;
+  margin:0;
+  padding:0;
+  line-height:normal;
+  text-indent:0;
+  color:#ffffff;
+  opacity:1.0;
+}
+#nav a, #nav strong {
+  display:block;
+  padding:5px 10px 6px;
+  border:solid #ddd;
+  border-width:1px 1px 1px 0;
+  text-decoration:none;
+  white-space:nowrap;
+}
+/* Following rule allows entire region of link to to be 
+   clickable in IE/Win. Holly Hack explained here:
+   http://www.positioniseverything.net/explorer/escape-floats.html */
+* html #nav a {
+  width:1%;
+}
+#nav a:hover, #nav #current a:hover strong, #nav #current strong {
+  color:#ffffff;
+}
+#nav a:hover {
+  background-image:url("../img/navshadow.png");
+  background-repeat:no-repeat;
+  background-color:#234;
+}
+#nav a strong, #nav #current a strong {
+  padding:0;
+  border:none;
+}
+#nav #current strong, #nav #current a {
+  background-image:url("../img/navshadow.png");
+  background-color:#234;
+}
+#nav #h {
+  border-left-width:1px;
+}
+
+
+#spacer {
+  float:left;
+  background-image:url("../img/middlebar.png");
+  background-repeat:repeat-x;
+  background-color:#234;
+  width:100%;
+  height:25px;
+}
+
+/* MISC: =Lists
+----------------------------------------------- */
+ul, dl {
+  margin:.5em 0 1em;
+  padding:0;
+  list-style:none;
+}
+ul li {
+  margin:0 0 2px;
+  padding:0;
+}
+
+
+/* MISC: =Links
+----------------------------------------------- */
+a {
+  color:#8ac;
+  border-color:#579;
+  text-decoration:none;
+  border-bottom:1px dotted #469;
+}
+a:visited {
+  color:#8ac;
+  border-color:#579;
+}
+a:hover {
+  color:#b88;
+  border-color:#855;
+  border-bottom-style:solid;
+}
+
+
+/* =Header
+----------------------------------------------- */
+#header {
+  background-image:url("../img/banner_ViaLactea.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:100%;
+  height:200px;
+  margin-top:25px;
+}
+
+#header #banner {
+  float:left;
+  margin-top:20px;
+  width:800;
+}
+
+#banner #banner_left {
+  float:left;
+  background-color:#000000;
+  opacity:0.5;
+  text-align:left;
+  width:500px;
+}
+
+#myname {
+  float:left;
+  width:100%;
+  padding-left:40px;
+  color:#ffffff;
+  font:250% Georgia,Serif;
+  opacity:1.0;
+}
+#myaffil {
+  float:left;
+  width:100%;
+  padding-left:40px;
+  padding-bottom:5px;
+  margin-top:-10px;
+  color:#ffffff;
+  font:150% Georgia,Serif;
+  opacity:1.0;
+}
+
+
+#banner #banner_right {
+  float:left;
+  background-color:#000000;
+  opacity:0.5;
+  text-align:left;
+  width:300px;
+}
+
+
+#banner_right #mycontact {
+  position:absolute;
+  right:240px;
+  top:64px;
+  color:#ffffff;
+  opacity:1.0;
+}
+
+
+#header #photo {
+  float:right;
+}
+
+
+#header #junk {
+  float:left;
+  margin-top:-33px;
+  width:700px;
+  height:50px;
+  border-top-style:solid;
+  border-top-color:#ffffff;
+  border-top-width:1px;
+}
+
+
+
+
+/* =Structure
+----------------------------------------------- */
+#content, #c2, #c3 {
+  float:left;
+  width:1000px;
+}
+
+/* Overcome stupid 3px margin bug in IE/Win floats, 
+   which fixes a lot of things, including disapearing company nav,
+   randomly appearing text, and wrappers pushed too wide.
+   http://www.positioniseverything.net/explorer/threepxtest.html */
+* html #content, * html #c2, * html #c3 {
+    margin-right:-3px;
+}
+
+
+
+
+/* ---------- Page Structure -------------------- */
+
+#main {
+  float:left;
+  width:1000px;
+}
+
+
+#column_left {
+  float:left;
+  width:199px;
+  border-right-style:dotted;
+  border-right-width:1px;
+  border-color:#253a47;
+}
+
+#column_main {
+  float:left;
+  width:499px;
+  border-right-style:dotted;
+  border-right-width:1px;
+  border-color:#253a47;
+}
+
+#column_right {
+  float:right;
+  width:300px;
+  border-color:#253a47;
+}
+
+
+#column_head {
+  color:#b95;
+  font:175% Georgia,Serif;
+  padding: 0px 40px;
+}
+
+#column_left #column_head {
+  background-image:url("../img/column_header_background_left.png");
+  background-repeat:repeat-x;
+  background-color:#17262f;
+}
+
+
+#column_main #column_head {
+  background-color:#101a20;
+}
+
+#column_main ul {
+  list-style-image:url("../img/arrow.png");
+  list-style-position:outside;
+  padding-left:20px;
+}
+#column_main ul li {
+  margin:0 0 2px;
+  padding:0;
+}
+#column_main ul li a {
+  font-size:75%;
+}
+
+
+#column_right #column_head {
+  background-image:url("../img/column_header_background_left.png");
+  background-repeat:repeat-x;
+  background-color:#17262f;
+}
+
+
+#column_body {
+  font-size:85%;
+  line-height:1.6em;
+  margin-top:0px;
+  min-height:500px;
+}
+
+#column_left #column_body {
+  background-color:#0c1115;
+}
+
+#column_main #column_body {
+  background-color:#000000;
+  font-size: 125%;
+  line-height:1.3em;
+}
+
+#column_right #column_body {
+  background-color:#0c1115;
+}
+
+
+#column_content {
+  padding:20px 20px;
+}
+
+#column_footer {
+  float:left;
+  width:100%;
+  height:25px;
+ }
+
+
+#column_left #column_footer {
+  background-color:#234;
+  background-image:url("../img/column_footer_left.png");
+}
+
+#column_main #column_footer {
+  background-color:#234;
+  background-image:url("../img/column_footer_main.png");
+}
+
+#column_right #column_footer {
+  background-color:#234;
+  background-image:url("../img/column_footer_left.png");
+}
+
+
+
+#sc_contactinfo_button {
+  padding-left:10px;
+  width: 202px;
+  font-size: 120%;
+  font-weight: bold;
+  color:#ffffff;
+}
+
+#sc_contactinfo_content {
+  border: 1px solid black;
+  padding-left: 10px;
+  width: 200px;
+  background-color:#ffffff;
+  color:#000000;
+  line-height:1.6em;
+}
+
+
+#sc_links_button {
+  width:150px;
+  color:#689;
+  font-size:150%;
+  font-weight:bold;
+  border: 1px solid;
+  padding: 2px;
+}
+
+#sc_blogs_content {
+  padding-left: 5px;
+  width: 150px;
+}
+
+#sc_news_content {
+  padding-left: 5px;
+  width: 150px;
+}
+
+#sc_astro_content {
+  padding-left: 5px;
+  width: 150px;
+}
+
+#sc_personal_content {
+  padding-left: 5px;
+  width: 150px;
+}
+
+
+#sc_calendar_button {
+  width:150px;
+  color:#689;
+  font-size:150%;
+  font-weight:bold;
+  border: 1px solid;
+  padding: 2px;
+}
+
+#sc_calendar_content {
+  width: 300px;
+}
+
+
+
+#search {
+  float:left;
+  margin-top:20px;
+  padding:0px 5px;
+  padding-top: 2px;
+  color:#689;
+  border: 1px solid;
+}
+
+#search a {
+  border-bottom-width:0px;
+}
+
+
+#astro-ph {
+  float:left;
+  font-size:150%;
+  font-weight:bold;
+  margin-top:10px;
+  padding:2px 5px;
+  padding-bottom:0px;
+  color:#689;
+  border: 1px solid;
+  text-align:right;
+}
+
+#astro-ph a {
+  border-bottom-width:0px;
+}
+
+
+#press {
+  float:left;
+  width:400px;
+  margin-left:30px;
+  margin-top:10px;
+  border: 1px solid;  
+}
+
+#press h1 {
+  float:left;
+  margin-top:0px;
+  width:100%;
+  color:#578;
+  background-color:#ffffff;
+  opacity:0.5;
+  font:125% Georgia,Serif;
+  text-align:center;
+}
+
+#press p {
+  float:left;
+  padding-left:15px;
+  margin-top:-5px;
+  width:380px;
+  text-align:left;
+}
+
+
+
+
+/* =Misc
+----------------------------------------------- */
+p {
+  margin:0 0 .75em;
+}
+
+/* =Topbar
+----------------------------------------------- */
+#topbar {
+  background-color:#fff;
+  background-image:url("../img/topbar.png");
+  background-repeat:repeat-x;
+  width:100%;
+  padding:0;
+  height:25px;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+
+
+/* =Footer
+----------------------------------------------- */
+#footer {
+  clear:both;
+  padding-top:0;
+  border-bottom:1px solid #124;
+  font-size:85%;
+  background-color:#234;
+  padding:0px 20px 10px 20px;
+  text-align:center;
+}
+
+#footer p {
+  background-color:#fff;
+  background-repeat:repeat-x;
+  background-position:0 -4px;
+  margin:0;
+  padding:10px 20px;
+  border-top:1px solid #ccc;
+  color:#000000;
+  text-align:center;
+  line-height:1.6em;
+}
+
+/* Fixes footer containment bug in IE-Win (5 and 6)
+   http://www.positioniseverything.net/explorer/escape-floats.html
+   But IE5-Mac shouldn't see this \*/
+* html #footer p {
+    height:1%;
+}

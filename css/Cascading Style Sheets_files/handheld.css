@@ -1,0 +1,59 @@
+/* Simple style sheet for displaying on handheld devices */
+
+/* Workaround for Netfront bug. Netfront applies the "handheld" style,
+but forgets to disable the "screen" style. Here we reset the most
+important properties to their defaults. */
+
+h1:first-line {font-style: normal}
+body {position: static}
+html>body {padding-right: 0}
+div.map, div.banner {position: static; width: auto}
+body>div.map {position: static; width: auto}
+div.map p, div.map li, div.map h2 {margin: 0; padding: 0; background: none}
+div.banner p {font-size: 100%}
+
+/* End of workaround for Netfront */
+
+html {margin: 0.3em; padding: 0; font-family: Times New Roman, serif}
+h1, h2, h3 {font-family: Helvetica, Arial, sans-serif; font-weight: bold}
+body {background: white; color: black; margin: 0; padding: 0}
+a:link {color: blue}
+a:visited {color: #906}
+h1, h3 {color: #888}
+p {margin: 0}
+p + p {text-indent: 1em}
+p.skip + p {text-indent: 0}
+p.skip {font-size: smaller; text-align: center; margin-bottom: 1em}
+h2 + p.skip {margin-top: -1em}
+img {max-width: 100%}
+span.date {font-weight: bold}
+h2 {background: url(bluemap.jpg) #005A9C; color: white; padding: 0.3em;
+  border: outset #005A9C; margin: 0 0 1em 0; font-size: 110%; text-align: center}
+/* div.section {border-top: 0.7em solid green} */
+div.back {/* border-top: 0.49em solid #CC0; */ margin: 1em 0}
+
+ul, ol {margin-left: 0; padding-left: 0}
+li, dd {margin-left: 0.6em}
+
+div.banner, div.map, #Navigate, #Navigate ul {margin: 0.5em 0; padding: 0.3em;
+  background: url(orangemap.jpg) #C90; border: outset #C90}
+div.banner p, div.map p, div.banner li, div.map li, #Navigate li {display: inline;
+  font-weight: bold; list-style: none; margin-left: 0}
+div.banner a:before, div.map a:before, #Navigate a:before {content: " · "}
+div.banner p, div.banner a:link, div.banner a:visited, div.map p,
+  div.map a:link, div.map a:visited {color: white}
+div.banner a.home {position: absolute; top: 0.3em; left: 0.3em; z-index: -1}
+
+h1 {line-height: 1; text-align: center; font-size: 110%; padding-left: 72px}
+
+table {font-size: smaller}
+
+address img {
+  float: right;			/* Portrait of the author */
+  margin-left: 0.5em;
+  width: 4em }
+
+.alt-hint, .hint {display: block; width: 50%; background: #DDD; margin: 0.2em;
+  border: thin outset #DDD; color: green; padding: 0.3em}
+.hint {float: right; margin-right: 0}
+.alt-hint {float: left; margin-left: 0}

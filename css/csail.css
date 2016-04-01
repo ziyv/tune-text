@@ -1,0 +1,155 @@
+
+A:hover {
+  		color:#ff0000;
+		text-decoration: none;
+}
+A:visited {
+		color:#cc6600;
+		text-decoration: none;
+}
+
+A:link {
+		color:#cc6600;
+		text-decoration: none;
+}
+
+A:active {
+		color:#990099;
+		text-decoration: none;
+}
+
+
+.text {  
+		font-family:  MS Sans Serif, Geneva, sans-serif;
+		font-size: 10pt; 
+		font-style: normal; 
+		font-weight: normal; 
+		color: #000000
+		}
+p{
+	vertical-align: text-top;
+	font-family:  MS Sans Serif, Geneva, sans-serif;
+		font-size: 10pt; 
+		font-style: normal; 
+		font-weight: normal; 
+		color: #000000;
+		
+}
+		
+	
+.textbold {  
+		font-family: MS Sans Serif, Geneva, sans-serif;
+		font-size: 10pt; 
+		font-style: normal; 
+		font-weight: bold; 
+		color: #000000
+		}
+		
+.textboldgrey {  
+		font-family: MS Sans Serif, Geneva, sans-serif;
+		font-size: 10pt; 
+		font-style: normal; 
+		font-weight: bold; 
+		color:#666666;
+		}		
+
+.textpageheader {  
+		font-family: MS Sans Serif, Geneva, sans-serif;
+		font-size: 18pt; 
+		font-style: normal; 
+		font-weight: bold; 
+		color:#000000;
+		}		
+
+.textsmall {  
+		font-family:  MS Sans Serif, Geneva, sans-serif;
+		font-size: 9pt; 
+		font-style: normal; 
+		font-weight: normal; 
+		color: #000000
+		}
+.textsmallgrey {  
+		font-family:  MS Sans Serif, Geneva, sans-serif;
+		font-size: 9pt; 
+		font-style: normal; 
+		font-weight: normal; 
+		color:#666666;
+		}		
+.textvsmall {  
+		font-family:  MS Sans Serif, Geneva, sans-serif;
+		font-size: 8pt; 
+		font-style: normal; 
+		font-weight: normal; 
+		color: #000000
+		}		
+.textvsmallbold {  
+		font-family:  MS Sans Serif, Geneva, sans-serif;
+		font-size: 8pt; 
+		font-style: normal; 
+		font-weight: bold; 
+		color: #000000
+		}			
+.textsectionheader1 {  
+		font-family:  MS Sans Serif, Geneva, sans-serif;
+		font-size: 10pt; 
+		font-style: normal; 
+		font-weight: bold; 
+		color: #000000
+		}
+		
+.textsectionheader2 {  
+		font-family:  MS Sans Serif, Geneva, sans-serif;
+		font-size: 12pt; 
+		font-style: normal; 
+		font-weight: bold; 
+		color:#000000;
+		}
+		
+.textsectionheader3 {  
+		font-family:  MS Sans Serif, Geneva, sans-serif;
+		font-size: 12pt; 
+		font-style: normal; 
+		font-weight: bold; 
+		color:#666666;
+		}		
+		
+.textsectionheader3grey {  
+	font-family:  MS Sans Serif, Geneva, sans-serif;
+	font-size: 14pt; 
+	font-style: normal; 
+	font-weight: bold; 
+	color:#666666;
+	}
+	
+.textsectionheader4 {  
+	font-family:  MS Sans Serif, Geneva, sans-serif;
+	font-size: 15pt; 
+	font-style: normal; 
+	font-weight: bold; 
+	color:#666666;
+	}
+	
+	.homenav {
+  		font-size: 11pt; 
+  		font-weight: bold; 
+  		font-family: MS Sans Serif, Geneva, sans-serif; 
+  		color: #cc6600;
+		text-decoration: none;
+	}
+		
+	.pagenav {
+  		font-size: 9pt; 
+  		font-weight: bold; 
+  		font-family: MS Sans Serif, Geneva, sans-serif; 
+  		color: #cc6600;
+		text-decoration: none;
+	}
+	.subnav {
+  		font-size: 9pt; 
+  		font-weight: normal; 
+  		font-family: MS Sans Serif, Geneva, sans-serif; 
+  		color: #cc6600;
+		text-decoration: none;
+		margin-left: 22px;
+		margin-top: 4px;
+	}

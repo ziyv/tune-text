@@ -1,0 +1,30 @@
+/* Simple style sheet for displaying on monochrome handheld devices */
+
+body {background: white; color: black; margin-top: 9em}
+.hide {display: none}
+a:link, a:visited {text-decoration: underline}
+a:link img, a:visited img {border-style: none}
+h1, h3 {color: #888; text-align: right}
+h2 {border-style: none none none solid; padding-top: 0.5em; text-align: right}
+p {margin: 0}
+p + p {text-indent: 1em}
+span.date {font-style: italic; color: #666}
+ul, ol {margin-left: 0; padding-left: 0}
+li {margin-left: 1em; padding-left: 0}
+
+div.banner {position: absolute; top: 0; left: 0; right: 0; max-height: 9em;
+  padding: 0.5em; border-bottom: double; overflow: auto}
+div.banner p {display: inline; font-size: smaller}
+div.banner a:before {content: " · "}
+div.banner img {max-width: 25%}
+
+div.map {margin: 0.5em 0; padding: 0.5em; border: thin solid}
+div.map a:before {content: " · "}
+div.map p {display: inline; font-weight: bold}
+
+.hint {float: right; display: block; width: 50%;
+  margin: 0.2em; border: thin dotted; padding: 0.3em}
+
+div.endmatter {margin-top: 1em}
+div.endmatter img {max-width: 30%}
+address img {float: right; width: 4em} /* Portrait of the author */

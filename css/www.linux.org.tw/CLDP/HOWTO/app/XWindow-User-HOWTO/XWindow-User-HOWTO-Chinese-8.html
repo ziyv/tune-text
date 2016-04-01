@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO: X 資源</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-9.html" REL=next>
+ <LINK HREF="XWindow-User-HOWTO-Chinese-7.html" REL=previous>
+ <LINK HREF="XWindow-User-HOWTO-Chinese.html#toc8" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-9.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-7.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc8">Contents</A>
+<HR>
+<H2><A NAME="s8">8.</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc8">X 資源</A></H2>
+
+<P>現在我們要思考如何在系統上做較細微的調整。現在所可以看到的，是只設定視
+窗管理員的型態的結果罷了。它只讓你設定<EM>視窗外在</EM>（窗框、窗緣、按鍵、桌面
+‧‧‧），但是又要如何使<EM>視窗內在</EM>也很俏麗呢？那只有靠修改系統的
+<EM> X 資源</EM>了。</P>
+<P>X 資源提供了一個機能，可以用來保存程式資源的預設值，也可幫你把視窗的環
+境裁修成喜好的樣子。當一個應用程式執行時，它從許多不同地方讀取以字串表示
+的資源。程式的元件是以層級（hierarchical）的形式命名，層級中的每一個物件
+（object）是以類別（class）或實例（instance）來命名。層級的最上一層，是
+這個應用程式的類別或實質名稱。傳統上，應用程式的類別名稱和程式名稱是相同
+的，唯一不同處是把第一個字母改成大寫（即 Bitmap 或 Emacs ），有些以字母
+X 開頭的程式，基於歷史因素，將第二個字母也改成大寫（即 XTerm ）。</P>
+
+<H2><A NAME="ss8.1">8.1</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc8.1">X 資源：基礎篇</A>
+</H2>
+
+<P>我們先來一點例子，讓你輕鬆進入資源的殿堂。先打開一個 xterm 視窗。可能己
+經有了一個視窗，也能以選單方式開一個，如果還有困難，也可以回頭研究一下
+本文，看要如何打開一個視窗！敲一下如下之命令，來打開 xterm 視窗：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ xterm -background blue &amp;
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>它應該會在螢幕上打開一個 xterm 視窗，但背景還是藍色的。你會叫出來：
+「 Wow ！太神奇了！」 沒錯，真的很神奇。</P>
+<P>在進行到下一個例子之前，先給你一些背景資料。先在 xterm 視窗中敲入 exit （
+它會關起這個視窗）然後回到先前打開 xterm 的視窗。試試：按著 Ctrl 鍵，再按
+滑鼠左鍵。同樣地再按滑鼠中央鍵。然後是右鍵。在任何執行中的 xterm 視窗中，都
+可以得到一個選項。以按右鍵為例，可以改變視窗之字型。注意此選單的顏色。再
+試一下此例：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ xterm -xrm 'xterm*fontMenu*background: green' &amp;
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+
+<P>這次，它就和一般的 xterm 視窗相同了。但是如果按 Ctrl ，同時按滑鼠右鍵，此時
+選單（前例中的”字型選單”）就變成了綠色。到底發生了什麼事？如果讀一下 xterm
+的參考頁，其中有許多命令行選項列在 xterm 視窗選項的後面，例如
+<EM>-background</EM> 及 <EM>-font</EM> ，都可以在啟動 X 中的視窗時設
+定。其中比較特殊者叫做 <EM>X Toolkit 選項</EM>，它幾乎可以用在 X 中的任何
+東西上。</P>
+
+<H2><A NAME="ss8.2">8.2</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc8.2">用 <EM>editres</EM> 進入 X 資源資料庫</A>
+</H2>
+
+<P>要真正了解 X 的內部資源，我們需要用到 <EM>editres</EM>。現在就啟動它
+吧（還有要用到的範例程式）：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ xclock &amp;
+ editres &amp;
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>將見到一個簡單的時鐘，以及一個相當純樸幾乎空白的 <B>editres</B> 視窗。
+在主視窗的上，會出現任何出現在桌面上的資源樹。它在啟動之初，是完全空白的。好！
+現在給它一棵樹。在命令選單上，按一下左鍵，然後選 Get Tree 。在視窗上會出現
+Click the mouse pointer on any toolkit client （在任何用戶工具上，
+以滑鼠點選一下）。這個訊息還有其它含義，它隱含著，並非所有的 X 應用程式都是用戶
+工具（雖然大部份是，如果它不在參考頁中，它也會告訴我們）。滑鼠的游標也會
+變成十字，等你去點選其它視窗。</P>
+<P>在這個例子中，我們先點選 <B>xclock</B> 。會見到 <B>editres</B> 視
+窗出現一堆東西。它們是這個工具所發現的分枝。按一下右下方的按鍵（ clock ）。
+它應該會倒過來。然後在 ``Commands" 選項中選 ``Show Resource Box" 。此時
+會出現一個視窗，標題為 &quot;.xclock.clock.unknown&quot; 。 Bingo！</P>
+<P>接下來，可以好好玩一下 <B>xclock</B> 的主視窗的型態選項。首先，按一下底下的
+``Set Save File"按鍵，填入檔名 <EM>/home/yourname/resources</EM> 來
+測試其中的資源。現在，按一下 ``foreground" ，然後在 ``Enter Resource Value:" 後，填入 
+``blue" 。然後，按一下底下的``Apply"鍵。此時，時鐘上的刻度應該會變藍。再到
+``background" ，並填入``navajowhite"（或任何要的顏色）。然後再按``Apply"
+鍵。會見到，我們可以這樣來設定整個視窗的型態。但是，如果現在啟動另一個
+<B>xclock</B> ，它只會和未設定前的樣子相同。所以還要把改變的結果存起來。</P>
+<P>按一下 ``Save" ，然後按 ``Popdown Resource Box" （事實上，只是 ``Close" 的
+一個噱頭罷了！）。如果讀一下剛建立的那個檔案（ <EM>cat /home/yourname/resources</EM> 
+吧），可以一一讀出剛設定好環境的資源（以 X 工具的格式）。但是這樣還不是
+很好用，因為此時再啟動 xclock ，它仍然看起來像 Plain Jane 。所以最後的一步
+是去掛上你的資源：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ xrdb -merge /home/yourname/resources
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>它會把這一項資源與 <EM>X 資源資料庫</EM>（ X Resource Database；
+<B>xrdb</B> ）<EM>混</EM>在一起，供 X 視窗的會期使用。也就是說，以後
+再呼叫這個修改過的應用程式時，我們的修改內容都繼續有效，連結也會有效。如果
+以後每次執行 <B>xclock</B> ，它會和先前修改的結果相同。提醒一下， 
+<B>xrdb</B> 是個複雜的程式，在使用前應先讀一下參考頁，否則
+也要先試跑幾次。如果在本文很前面所提到的 <CODE>.xinitrc</CODE> 中有所修改
+，在 X 啟動之初，資源即可自動掛上，在 X 會期中有改變時，就只須要用到 
+<B>xrdb</B> 命令。</P>
+
+<H2><A NAME="ss8.3">8.3</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc8.3">X 資源之剖析</A>
+</H2>
+
+<P>可以見到，設定型態的方式真的是令人眼花瞭亂。前面所講到的那一個設定 X 的方
+法，固然提供了幾乎無限的可能，但也產生了幾乎無限的模糊。若要了解單單只是 X
+Toolkit Intrinsic 要那些資源，就執行一下 <EM>viewres</EM> ，並多玩幾次。
+它會以圖形方式顯示在 <EM>Xt 函式庫</EM>中資源之樹狀結構。</P>
+<P>當讀 <B>X</B> 的參考頁時，即可發現，它對於要用那種文法來定義資源，講得
+不甚清楚。我們可以簡化它，並且歸納為下面的定義：</P>
+<P><EM>&lt;program&gt;&lt;binding&gt;&lt;widget&gt;&lt;binding&gt;&lt;widget&gt;&lt;...&gt;&lt;resource&gt;:&lt;value&gt;</EM></P>
+<P>事實上，它並沒有這麼的簡單。那麼我們先來定義一下其中的項目。如果想的話，
+也可以一邊讀一邊跳讀比對下節中的例子。</P>
+<P>其中的 <EM>program</EM> 是用來呼叫資源資料庫中的應用程式。當呼叫 
+<B>xterm</B> 時，為 <CODE>XTerm</CODE>。當呼叫 <CODE>emacs</CODE> 時，為 
+<B>emacs</B>。當應用程式是在命令列中，以 <B>-name</B> 的選項呼叫時
+，是使用者自訂的名稱。用這種方法，也可以給使用不同資源的 <B>xterm</B>s
+不同的名稱。真酷！</P>
+<P>其中的 <EM>binding</EM> 可以用一至二個字母來分辨 widget 。如果使用 
+<CODE>.</CODE> (period)，就是 <EM>tight binding</EM>，意思是說，在
+widget 階層中，一個 widget 是直接在另一個 widget 的上一層或下一層，
+所以有最高的優先權。如果使用 <CODE>*</CODE> (period)，就是 
+<EM>loose binding</EM>，意思是說，在 widget 階層中，可以略過 widget 
+階層中略過任何數量的 widget ，直到找到可以吻合的 widget。</P>
+<P>在每一個 widget 階層中，有許多 <EM>widget</EM> 項目。他們以 widget 樹的方式
+表現出來，根據 <B>editres</B> 變數，依序從 most-specific 排列到 
+least-specific。任何 widget 項目，都可以以 <CODE>?</CODE> (question mark) 
+取代，我們就可以略過它，去找下一個可以吻合的 widget 項目。</P>
+<P>但是 <EM>resource</EM>，不可以用 <CODE>?</CODE> 字元來取代。它是階層中的 
+most-specific 項目，通常包含如真實的顏色、真實的字型等。事實上，階層中，
+其餘的項目，都可以用個單一的星號來取代，但是定義中真實的資源，一定要存在。
+如果只是放個星號在它的 most-specific 資源名﹝如<CODE>*background: blue</CODE>﹞中，
+X 會嘗試以 global 定義，來定義每一個 client 的資源。</P>
+<P>冒號後面，是<EM>變數值</EM>。它是用來定義，這個資源要給誰用，可能是字型名稱
+或顏色值。變數值可能是，布林值、數字或文字﹝視狀況而定﹞。而且，在正確的資源定
+義中，不可以忽略。</P>
+
+
+<H2><A NAME="ss8.4">8.4</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc8.4">用 <EM>.Xdefaults</EM> 儲存改變值</A>
+</H2>
+
+<P>可以在你的 home 目錄中放個神奇的檔案，它叫做 <EM>.Xdefaults</EM>。
+如果把資源檔中每一行都烤貝到 home 目錄中的 <EM>.Xdefaults</EM> 檔中，
+就永遠不須要再去設定 <B>xclock</B> 的視窗的型態了！這種解釋雖然沒講到
+所有的功用，但也點出了重點。在這個檔案中，可以塞入 X 中所有程式的。而且只要
+小心處理，當想要微調一部份時，還是很容易辦得到。反想起來，當你想大幅修改時
+，用 <B>editres</B> 一步步慢慢設定，還真是又累又痛苦。的確，有時候真是
+太繁雜了。更何況，在系統中，許多資源早就有條不紊地放在那裡了。</P>
+<P>在 <EM>/var/X11R6/lib/app-defaults</EM> 中，可以發現許許多多的檔案，
+所有的檔案都是以一個 X Toolkit 程式命名。如果仔細觀查，會發現每一個檔案
+都包含著許多型態設定的選項，用來設定它的程式。真的有許多選項ㄡ。你不可能要
+把這些檔案中的所有選項，都放到 <EM>.Xdefaults</EM> 中，那真的是會讓你忙
+斃的。它們就是預設值，可以用它們來決定可以設定那些型態。</P>
+<P>下面是我的 <EM>.Xdefaults</EM> 檔的範例。注意一下其中我們未曾討論過的東西。
+任何以<CODE>!</CODE>﹝驚嘆號﹞開始的那一行，都是說明行，行中後面的東西都沒有作用
+。任何以 <CODE>#include <EM>filename</EM></CODE> 開始的那一行，都是<EM>包
+含指令（include directive）</EM>，在此處，另一個檔案與此檔案之資源合在一起。
+這樣子，資源檔才不會過度膨脹。這裡有一些例子：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ ! Default resources for me@localhost xterms
+ ! start with the generic, move to the specific...
+ *Dialog*Text*font:     -b&amp;h-lucida-medium-r-*-*-12-*-*-*-*-*-*-*
+ *dialog*value*background: white
+ *Dialog*Label*font:    -adobe-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*
+ *MenuButton*font:      -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
+ *MenuButton*background:        grey80
+ *MenuButton*foreground:        black
+ *Label.font:           -adobe-helvetica-medium-r-*-*-10-*-*-*-*-*-*-*
+ *Label*shadowWidth:    1
+ *SmeBSB.font:          -adobe-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*
+ *SimpleMenu*font:      -adobe-helvetica-medium-r-*-*-10-*-*-*-*-*-*-*
+ *OptionMenu*font:      -adobe-helvetica-medium-r-*-*-10-*-*-*-*-*-*-*
+ *Command.font:         -linotype-helvetica-bold-r-narrow-*-12-*-*-*-*-*-*-*
+ *commandBox*font:      -b&amp;h-lucida-bold-r-*-*-12-*-*-*-*-*-*-*
+ *Toggle.font:          -adobe-helvetica-bold-o-*-*-12-*-*-*-*-*-*-*
+ *Form.background:      grey70
+ *TransientShell*Dialog.background: grey70
+ *Scrollbar.Foreground: grey80
+ *Scrollbar.Background: grey50
+ *Scrollbar*cursorName: top_left_arrow
+ *Scrollbar*width:      16
+ *shapeStyle:           Rectangle
+ *XlwMenu.shadowThickness: 1
+ *shadowWidth:          1
+ 
+ ! xterm stuff
+ xterm*scrollbar.background: grey40
+ xterm*foreground: grey90
+ xterm*background: grey25
+ xterm*cursorColor: white
+ xterm*visualbell: on
+ ! rxvt stuff (a quicker, better xterm)
+ rxvt*color12: steelblue
+ rxvt*color15: white
+ rxvt*color9: rgb:ff/7f/5f
+ rxvt*foreground: grey90
+ rxvt*background: grey10
+ rxvt*cursorColor: white
+ rxvt*font: lucidasanstypewriter-12
+ rxvt*loginShell: false
+ rxvt*saveLines: 1024
+ rxvt*title: shell
+ rxvt*geometry: 80x25
+ ! Make Xman just a little bit more sane
+ xman*topBox: false
+ xman*background: lightsteelblue
+ xman*foreground: black
+ ! xcalc is too bland by default...
+ xcalc*Command.font: -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+ xcalc*customization: -color
+ ! Disallow the &lt;blink&gt; tag in Netscape
+ Netscape*blinkingEnabled: False
+ 
+ ! Merge other resources (example)
+ # include $HOME/.otherXresources
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>對 KDE 使用者而言，我還要提醒一點有關 X 資源的事。在控制台中有個設定，它會
+用所有的 X 資源改寫到你的應用程式中。這功能蠻好的，但是如果在使用之前，
+剛剛辛辛苦若地設定了你的資源型態，那麼你的辛苦可能又付諸流水，而必須重來
+。先打開控制台，找到 ``Fonts etc.'' 頁。其中有個選項 
+``Apply style to non-KDE apps.''（設定非 KDE 的應用程式的風格）。如果
+打開這個選項，所有的程式好像都以 KDE 來設定它的樣子（可以重新打開 X 來檢查
+一下）。如果關起來這個選項，你的資源將不會改變。</P>
+
+<H2><A NAME="ss8.5">8.5</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc8.5">自己的使用者資源目錄</A>
+</H2>
+
+<P>你也可以建立一個資源檔的目錄，使它像上述那樣，是全系統通用的應用程式資源檔目
+錄，其中每個程式都有一個資源檔。先建立一個目錄（本例中，我們在 home 目錄中
+建立一稱為 <EM>app-defaults</EM> 的目錄），然後設定一個環境變數 
+<CODE>XAPPLRESDIR</CODE> 指向此一目錄。舉例而言，此一變數可以放在 
+<CODE>.xinitrc</CODE> 檔的前端，放在 <CODE>export XAPPLRESDIR=$HOME/app-defaults</CODE> 
+（如果資源檔要放在 home 目錄中的 <EM>app-defaults</EM> 目錄中）一行之中。</P>
+<P>從此以後，每當啟動了一個 X 程式，它都會把這個目錄當作是那個全系統通目的目
+錄，而在其中尋找與它的資源名稱相同的資源檔。這個名稱就是在 <CODE>.Xdefaults</CODE> 中的
+用戶名稱。</P>
+<P>例如說，一個名為 <EM>XTerm</EM> 的檔案，其中有一行寫著 <CODE>*background: gold</CODE>，
+那麼所有的 <B>xterm</B>s 程式都會預設有個金色的背景。這是除了只使用單一 
+<CODE>.Xdefaults</CODE> 檔外，更好的一種選擇。當要決定後續該有那些型態修改時，也
+變得比較清楚了。而且也易於分辨那個檔案是給那個程式用的。然而 <CODE>.Xdefaults</CODE> 
+檔還是有它的優點。例如說，當不要個別設定，而是想將所有應用程式一視同仁，把它們
+中某一類按鈕改為藍色，此時 <CODE>.Xdefaults</CODE> 就很有用了。</P>
+<P>
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-9.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-7.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc8">Contents</A>
+</BODY>
+</HTML>

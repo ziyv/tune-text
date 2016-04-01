@@ -1,0 +1,204 @@
+/* CSS for zyweb */
+
+
+.toplink { 
+	font-size: small; 
+	float: right;
+	margin-right: 10px;
+	line-height:2;
+}
+.toplink A { 
+	text-decoration: none;
+	color: inherit;
+	background: inherit;
+}
+.toplink A:hover { text-decoration: underline }
+/*.toplink A:visited { color: darkgray; text-decoration: none }*/
+
+
+
+.c1 {font-family:  MS Sans Serif, Geneva, sans-serif;
+/*font-size: 10pt;*/
+font-size: 14pt; 
+font-weight: normal; 
+color:#0000FF}
+
+
+
+th {
+  text-align: left;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background-color: #000;
+}
+h1 {
+  text-align: center;
+}
+
+fieldset {
+  background-color: #eee;
+  padding: 0.8em;
+}
+input[type="submit"] {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+/* Generic nowrap class */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Navigation header for source views, diffs and annotations */
+.navigate-header {
+  background-color: #99e;
+  padding: 2px;
+  border: 2px outset;
+}
+
+/* Directory table */
+table.dir {
+  border-right: 1px solid #ccc;
+}
+/* Cells */
+table.dir * td {
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* Column headers */
+table.dir * th {
+  background-color: #ffc;
+  border: thin outset;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* Sorted column header */
+table.dir * th.sorted {
+  background-color: #fc6;
+  border: thin inset;
+}
+/* Even rows */
+table.dir * tr.even {
+  background-color: #fff;
+}
+/* Odd rows */
+table.dir * tr.odd {
+  background-color: #fff;
+}
+/* File and dir name columns */
+table.dir * td.file, table.dir * td.dir {
+  white-space: nowrap;
+}
+/* Graph link column */
+table.dir * td.graph {
+  padding-left: 3px;
+  padding-right: 3px;
+  text-align: center;
+  width: 1%;
+}
+/* Age column */
+table.dir * td.age {
+  font-style: italic;
+  white-space: nowrap;
+}
+table.dir * td.author {
+  white-space: nowrap;
+}
+/* Log entry column */
+table.dir * td.log {
+  font-size: smaller;
+}
+/* Attic toggles in directory view */
+.attic {
+  font-size: smaller;
+}
+
+
+/* menu */
+.menu {
+display: none;
+margin-left: 15px;
+color: #000;
+}
+.menu a {
+color: #000;
+}
+.menu a:hover {
+color: #B22222;
+margin-left: 20px;
+}
+
+.sysHand{
+	cursor:pointer;cursor:hand;
+}
+.sysBr{
+	word-wrap:break-word;
+	table-layout:fixed;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.sysBr180{
+	word-wrap:break-word;
+	table-layout:fixed;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	width:180px;
+}
+
+.backtotop{
+ max-height: 10pt;
+text-align: right;
+text-decoration:none;
+font-family: arial;
+font-weight: bold; 
+font-size: 10pt; 
+}
+
+/* Source code */
+.srccode {
+  color: #070;
+  background-color: #eee;
+  font-family: courier;
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+
+
+
+pre {
+      border: #777777 1px solid;
+      padding: 0.5em;
+      margin-left: 1em;
+      margin-right: 2em;
+      white-space: pre;
+      background-color: snow;
+      color: #006400 ;
+      font-family : Luxi Mono, Luxi Sans, Monospace, sans-serif, 宋体;    
+      font-size: 90%;
+      overflow: auto;
+      max-height: 3in;
+      }
+
+
+pre.syntax {
+             background: lightblue;
+             }
+
+pre.error {
+            background-color: pink;
+            }
+
+pre.url {
+          background: bisque;
+          }
+
+pre.verse { 
+            background: pink;}
+

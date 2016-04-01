@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO: 設定視窗管理員的型態</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-7.html" REL=next>
+ <LINK HREF="XWindow-User-HOWTO-Chinese-5.html" REL=previous>
+ <LINK HREF="XWindow-User-HOWTO-Chinese.html#toc6" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-7.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-5.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc6">Contents</A>
+<HR>
+<H2><A NAME="s6">6.</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc6">設定視窗管理員的型態</A></H2>
+
+<P>現在，我們來看一下那些用來設定視窗管理員的型態的檔案。它們的內容，是隨視窗
+管理員而變，但在我們的例子中，將以 FVWM2 的個人專用型態檔為主，所以我們要
+修改的是 home 目錄中的 <EM>.fvwm2rc</EM> 檔。</P>
+
+<H2><A NAME="ss6.1">6.1</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc6.1">基本 FVWM2 型態檔設定</A>
+</H2>
+
+<P>早期 FVWM 版本中視窗管理員資源檔型態的設定是一件非常艱困的程序，因為各個項
+目的次序不可搞錯，但在現在這一版中，己經不再那麼嚴格了。就我所知現在只剩下
+連結選單的次序不可搞錯，但是在後面，我們會討論這一部份。當安裝 FVWM2 時
+應該就自動有了一個資源型態檔，它就是 <EM>/var/X11R6/lib/fvwm2/system.fvwm2rc</EM>。
+它是預設的全系統共用的型態檔。可以把它烤貝到你自己的 home 目錄中，改名為
+<EM>.fvwm2rc</EM>。以後當 FVWM2 開啟時，它會使用你的 home 目錄中的這個
+檔案，而忽略全系統共用的型態檔。</P>
+<P>現在，己經有了一個個人可用的視窗管理員資源檔，用你愛用的編輯器把它打開來
+看看。此時，如果你正在使用 X 視窗，可以比對一下桌面與檔案中的資料。
+這真的很有用。我們來改動一下，看看桌面能不能變好看一點。這個檔案的第一個項
+目 ( 除了以 <CODE>#</CODE> 啟始的諸行 ) 可能是以 <CODE>WindowFont</CODE> 
+開始，後面寫著一堆怪裏怪氣的字型名稱。要了解怎麼設定字型和顏色，跳到下節
+「 X 字型和 X 顏色」。</P>
+
+
+<H2><A NAME="ss6.2">6.2</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc6.2">高等 FVWM2 型態檔設定</A>
+</H2>
+
+<P>FVWM2 的型態檔也可以設定得非常複雜微妙。下面是一小段 <EM>.fvwm2rc</EM> 檔中對
+<B>fvwm2gnome</B> 的設定：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ # import config files
+ 
+ Echo -Styles- 
+ Read .fvwm2gnome/config/styles/app.styles
+ Read .fvwm2gnome/config/styles/window.styles
+ 
+ Echo -Buttons &amp; Keys-
+ Read .fvwm2gnome/config/buttons.config
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>它是個用來讀其它型態檔案的實例。以這種方式， <EM>.fvwm2rc</EM> 可以模組
+化 -- 考慮到型態檔可能非常龐大，這也不失為一種好方法。它簡化了修改及抓蟲的
+程序，也簡化了<EM>佈景主題</EM> 的型態設定，我們馬上回來討論它。</P>
+
+<H2><A NAME="ss6.3">6.3</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc6.3">FVWM2 型態檔設定的捷徑</A>
+</H2>
+
+<P>設定 FVWM2 ( 或 FVWM 、或 <B>bash</B> 、或許許多多其它的程式 ) 
+型態檔時，最妙的方式就是用 Jesper K. Pedersen 的 Dotfile generator 來
+設定。它可以從 
+<A HREF="http://www.imada.ou.dk/~blackie/dotfile/">http://www.imada.ou.dk/~blackie/dotfile/</A> 
+取得。你必須先要安裝 <B>Tcl/Tk</B> ( 在大部份的 Linux 套件上都附有 )。
+在執行之初，從預先己設定的型態開始，或從現有的型態開始，它讓你用許多有組織
+的選單來調整型態。</P>
+<P>但是呢，我還是建議要學習如何不依賴它，而能設定你的型態檔案！不僅僅因為這
+是 <EM>Unix 本色</EM>（有道理的那些部份），也因為對一些微調 <CODE>.fvwmrc</CODE> 
+的動作而言，這樣子較簡單，而且也因為這樣子才能設成真正要的樣子，而且 
+<B>Tcl/Tk</B> 程式本身有點慢。不管怎麼說，如果希望在開始設定一個平
+常的型態不要大費周章，這個程式是蠻值得一試。</P>
+
+<H2><A NAME="ss6.4">6.4</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc6.4">FVWM2 佈景主題</A>
+</H2>
+
+<P>FVWM2 開創了許多新功能，其中有一些總稱為<EM>佈景主題</EM>。它的基本
+意義是說，可以瞬間把基本造型切換成另外一個造型。注意，如果運用程
+式本身的功能和視窗管理員的不同，視窗管理員的佈景主題不會影響到應用程式的造型。
+整合性的工具，如 KDE 及 GNOME 都有這種能力，但它們仍然可以很有效地用在一起。</P>
+<P>要產生一個佈景主題，你還是要打起精神，稍事修改 <EM>.fvwm2rc</EM> 一下。我把下
+列的指令加在型態檔的前面，你可以把它放在 <CODE>Style</CODE> 定義的後面：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ # Blue Theme
+ DestroyDecor Blue
+ AddToDecor Blue
+ + WindowFont -b&amp;h-lucida-bold-r-*-*-*-140-*-*-*-*-*-*
+ + TitleStyle ActiveDown (Solid DarkSteelBlue)\
+     ActiveUp (Solid SteelBlue) Inactive (Solid Grey)
+ + HilightColor white blue
+ + ButtonStyle 1 -- UseBorderStyle
+ Style Blue UseDecor Blue, BorderWidth 5, HandleWidth 5,\
+     MWMborder, MWMbuttons
+ 
+ # Function to change all windows to a new style.
+ DestroyFunc ChangeStyle
+ AddToFunc ChangeStyle
+ + &quot;I&quot; Style $0 $1
+ + &quot;I&quot; Recapture
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>對啦！對啦！有點消化不良啦！基本上，我們先定義一個叫做 ``<CODE>Blue</CODE>,'' 的
+佈景主題，你可以以前半段為範例，自行設計其它佈景主題。一個佈景主題可以加入更多的功能，而且兩個主
+題間還可以天差地別。我們還可以定義一個功能，一次改變所有的視窗的風格。這個
+想法不賴，因為可以一再改變風格，而不會有大麻煩。</P>
+<P>要呼叫我們己定義的風格，我們需要以函式呼叫的方式，來作為基本的介面。現在我
+們建立個選單來呼叫它們。</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ DestroyMenu &quot;Themes&quot;
+ AddToMenu &quot;Themes&quot;
+ + &quot;Choose a theme...&quot; Title
+ + &quot;&quot; Nop
+ + &quot;Blue&quot; ChangeStyle &quot;*&quot; &quot;UseStyle Blue&quot;
+ + &quot;Mwm&quot; ChangeStyle &quot;*&quot; &quot;UseStyle Mwm&quot;
+ + &quot;Flat&quot; ChangeStyle &quot;*&quot; &quot;UseStyle Flat&quot;
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>雖然這裡的選單有點過簡，在你的系統的檔案中，選項可以不用那麼少。我們先定義
+<CODE>ChangeStyle</CODE> 函式，然後以呼叫它的方式，來把螢幕上所有視窗的風格，
+改成前面己定義的風格。注意，在建立一個新的選單時，要先把舊的刪除。那麼在重新
+打開 FVWM2 後（理論上，應該會見到選單！）看到的<EM>佈景主題</EM>選單
+應該是新的，可以試一下其它的佈景主題。</P>
+<P>看一下 
+<A HREF="http://www.vis.colostate.edu/~scriven/Linux/fvwm/index.html">http://www.vis.colostate.edu/~scriven/Linux/fvwm/index.html</A>，
+其中有更多有關 FVWM2 佈景主題的實例。</P>
+<P>
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-7.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-5.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc6">Contents</A>
+</BODY>
+</HTML>

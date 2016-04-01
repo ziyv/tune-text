@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-1.html" REL=next>
+
+
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-1.html">Next</A>
+Previous
+Contents
+<HR>
+<H1>中文 X Window User HOWTO</H1>
+
+<H2>原著作者:  Ray Brigleb, <CODE>ray@aracnet.com</CODE><br>
+譯者: 王世渠﹝Shyh-Chyu Wang, rex_wang@hushmail.com﹞</H2>v2.0, 1 September 1999
+<HR>
+<EM>本文件包含 Linux X 視窗環境使用者所需要的資訊，也可以讓系統管理新手，瞭解
+許多有關 X 視窗的細節及如果掌握構型的選項。預設的方向，是軟體構型、軟體安裝
+及如果在使用者的系統中顯示 X 的基本ぅ嚏C</EM>
+<HR>
+<P>
+<H2><A NAME="toc1">1.</A> <A HREF="XWindow-User-HOWTO-Chinese-1.html">說明</A></H2>
+
+<UL>
+<LI><A NAME="toc1.1">1.1</A> <A HREF="XWindow-User-HOWTO-Chinese-1.html#ss1.1">其它資料來源</A>
+<LI><A NAME="toc1.2">1.2</A> <A HREF="XWindow-User-HOWTO-Chinese-1.html#ss1.2">版本</A>
+<LI><A NAME="toc1.3">1.3</A> <A HREF="XWindow-User-HOWTO-Chinese-1.html#ss1.3">反映及更正</A>
+<LI><A NAME="toc1.4">1.4</A> <A HREF="XWindow-User-HOWTO-Chinese-1.html#ss1.4">感謝</A>
+<LI><A NAME="toc1.5">1.5</A> <A HREF="XWindow-User-HOWTO-Chinese-1.html#ss1.5">著作權</A>
+<LI><A NAME="toc1.6">1.6</A> <A HREF="XWindow-User-HOWTO-Chinese-1.html#ss1.6">原著作內容(Origional)</A>
+</UL>
+<P>
+<H2><A NAME="toc2">2.</A> <A HREF="XWindow-User-HOWTO-Chinese-2.html">開始吧</A></H2>
+
+<UL>
+<LI><A NAME="toc2.1">2.1</A> <A HREF="XWindow-User-HOWTO-Chinese-2.html#ss2.1">X 視窗系統的歷史及架構</A>
+<LI><A NAME="toc2.2">2.2</A> <A HREF="XWindow-User-HOWTO-Chinese-2.html#ss2.2">桌面的解剖</A>
+<LI><A NAME="toc2.3">2.3</A> <A HREF="XWindow-User-HOWTO-Chinese-2.html#ss2.3">打開 X Window</A>
+<LI><A NAME="toc2.4">2.4</A> <A HREF="XWindow-User-HOWTO-Chinese-2.html#ss2.4">X 顯示管理員</A>
+</UL>
+<P>
+<H2><A NAME="toc3">3.</A> <A HREF="XWindow-User-HOWTO-Chinese-3.html">選擇那一個視窗管理員呢?</A></H2>
+
+<UL>
+<LI><A NAME="toc3.1">3.1</A> <A HREF="XWindow-User-HOWTO-Chinese-3.html#ss3.1">FVWM 及其前身</A>
+<LI><A NAME="toc3.2">3.2</A> <A HREF="XWindow-User-HOWTO-Chinese-3.html#ss3.2">視窗系統的世界性</A>
+<LI><A NAME="toc3.3">3.3</A> <A HREF="XWindow-User-HOWTO-Chinese-3.html#ss3.3">X 圖形介面</A>
+<LI><A NAME="toc3.4">3.4</A> <A HREF="XWindow-User-HOWTO-Chinese-3.html#ss3.4">X 桌面環境</A>
+<LI><A NAME="toc3.5">3.5</A> <A HREF="XWindow-User-HOWTO-Chinese-3.html#ss3.5">豪華視窗管理員</A>
+</UL>
+<P>
+<H2><A NAME="toc4">4.</A> <A HREF="XWindow-User-HOWTO-Chinese-4.html">與 X 共舞</A></H2>
+
+<UL>
+<LI><A NAME="toc4.1">4.1</A> <A HREF="XWindow-User-HOWTO-Chinese-4.html#ss4.1">命令列選項</A>
+<LI><A NAME="toc4.2">4.2</A> <A HREF="XWindow-User-HOWTO-Chinese-4.html#ss4.2">顯示名稱</A>
+<LI><A NAME="toc4.3">4.3</A> <A HREF="XWindow-User-HOWTO-Chinese-4.html#ss4.3">是要 xterm ? 還是要 rxvt ? 了解您要那一種終端機仿模器</A>
+</UL>
+<P>
+<H2><A NAME="toc5">5.</A> <A HREF="XWindow-User-HOWTO-Chinese-5.html">開啟 X</A></H2>
+
+<UL>
+<LI><A NAME="toc5.1">5.1</A> <A HREF="XWindow-User-HOWTO-Chinese-5.html#ss5.1">一個簡單的開啟型態</A>
+<LI><A NAME="toc5.2">5.2</A> <A HREF="XWindow-User-HOWTO-Chinese-5.html#ss5.2">更有意思的開啟型態</A>
+<LI><A NAME="toc5.3">5.3</A> <A HREF="XWindow-User-HOWTO-Chinese-5.html#ss5.3">在想要的地方打開視窗</A>
+</UL>
+<P>
+<H2><A NAME="toc6">6.</A> <A HREF="XWindow-User-HOWTO-Chinese-6.html">設定視窗管理員的型態</A></H2>
+
+<UL>
+<LI><A NAME="toc6.1">6.1</A> <A HREF="XWindow-User-HOWTO-Chinese-6.html#ss6.1">基本 FVWM2 型態檔設定</A>
+<LI><A NAME="toc6.2">6.2</A> <A HREF="XWindow-User-HOWTO-Chinese-6.html#ss6.2">高等 FVWM2 型態檔設定</A>
+<LI><A NAME="toc6.3">6.3</A> <A HREF="XWindow-User-HOWTO-Chinese-6.html#ss6.3">FVWM2 型態檔設定的捷徑</A>
+<LI><A NAME="toc6.4">6.4</A> <A HREF="XWindow-User-HOWTO-Chinese-6.html#ss6.4">FVWM2 佈景主題</A>
+</UL>
+<P>
+<H2><A NAME="toc7">7.</A> <A HREF="XWindow-User-HOWTO-Chinese-7.html">字型與顏色</A></H2>
+
+<UL>
+<LI><A NAME="toc7.1">7.1</A> <A HREF="XWindow-User-HOWTO-Chinese-7.html#ss7.1">解開字型的迷津</A>
+<LI><A NAME="toc7.2">7.2</A> <A HREF="XWindow-User-HOWTO-Chinese-7.html#ss7.2">字型別名（font alias）及型態設定</A>
+<LI><A NAME="toc7.3">7.3</A> <A HREF="XWindow-User-HOWTO-Chinese-7.html#ss7.3">在 X 視窗中使用 Type 1 字型</A>
+<LI><A NAME="toc7.4">7.4</A> <A HREF="XWindow-User-HOWTO-Chinese-7.html#ss7.4">在 X 視窗中使用 TrueType 字型</A>
+<LI><A NAME="toc7.5">7.5</A> <A HREF="XWindow-User-HOWTO-Chinese-7.html#ss7.5">顏色</A>
+</UL>
+<P>
+<H2><A NAME="toc8">8.</A> <A HREF="XWindow-User-HOWTO-Chinese-8.html">X 資源</A></H2>
+
+<UL>
+<LI><A NAME="toc8.1">8.1</A> <A HREF="XWindow-User-HOWTO-Chinese-8.html#ss8.1">X 資源：基礎篇</A>
+<LI><A NAME="toc8.2">8.2</A> <A HREF="XWindow-User-HOWTO-Chinese-8.html#ss8.2">用 <EM>editres</EM> 進入 X 資源資料庫</A>
+<LI><A NAME="toc8.3">8.3</A> <A HREF="XWindow-User-HOWTO-Chinese-8.html#ss8.3">X 資源之剖析</A>
+<LI><A NAME="toc8.4">8.4</A> <A HREF="XWindow-User-HOWTO-Chinese-8.html#ss8.4">用 <EM>.Xdefaults</EM> 儲存改變值</A>
+<LI><A NAME="toc8.5">8.5</A> <A HREF="XWindow-User-HOWTO-Chinese-8.html#ss8.5">自己的使用者資源目錄</A>
+</UL>
+<P>
+<H2><A NAME="toc9">9.</A> <A HREF="XWindow-User-HOWTO-Chinese-9.html">有關用戶程式及應用程式之訣竅</A></H2>
+
+<UL>
+<LI><A NAME="toc9.1">9.1</A> <A HREF="XWindow-User-HOWTO-Chinese-9.html#ss9.1">X 的螢幕保護程式</A>
+<LI><A NAME="toc9.2">9.2</A> <A HREF="XWindow-User-HOWTO-Chinese-9.html#ss9.2">Emacs 及 XEmacs</A>
+<LI><A NAME="toc9.3">9.3</A> <A HREF="XWindow-User-HOWTO-Chinese-9.html#ss9.3">一些有用的程式及訣竅</A>
+</UL>
+<P>
+<H2><A NAME="toc10">10.</A> <A HREF="XWindow-User-HOWTO-Chinese-10.html">X 的高等用法</A></H2>
+
+<UL>
+<LI><A NAME="toc10.1">10.1</A> <A HREF="XWindow-User-HOWTO-Chinese-10.html#ss10.1">編譯 X 應用程式及函式庫</A>
+<LI><A NAME="toc10.2">10.2</A> <A HREF="XWindow-User-HOWTO-Chinese-10.html#ss10.2">X 保全基礎篇</A>
+<LI><A NAME="toc10.3">10.3</A> <A HREF="XWindow-User-HOWTO-Chinese-10.html#ss10.3">更多有關 X 上的確認</A>
+</UL>
+<P>
+<H2><A NAME="toc11">11.</A> <A HREF="XWindow-User-HOWTO-Chinese-11.html">參考資料及其餘資料來源</A></H2>
+
+</P>
+</P>
+</P>
+</P>
+</P>
+</P>
+</P>
+</P>
+</P>
+</P>
+</P>
+</P>
+</PHR>
+<H3></H3>
+
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-1.html">Next</A>
+Previous
+Contents
+</BODY>
+</HTML>

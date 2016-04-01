@@ -1,0 +1,111 @@
+
+/* All other browsers */
+/* Sent to all browsers except IE3 */
+
+body {
+	font-family: Verdana, "Myriad Web", Syntax, sans-serif;
+	margin-top: 3em;
+	margin-bottom: 3em;
+	margin-left: 12%;
+	margin-right: 8%;
+	padding: 0;
+}
+
+:link, :visited {
+/*	text-decoration: none; */
+/*	font-weight: bold; */
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Tahoma, Verdana, "Myriad Web", Syntax, sans-serif;
+}
+
+.legalese {
+    font-size: 75%;
+}
+
+/* Sent to all browsers except IE3 and NN4 */
+
+ul {
+	margin-left: 0;
+	padding-left: 3em;
+	}
+
+li {
+	margin-left: 0;
+	padding-left: 0;
+	}
+
+body {
+	line-height: 1.5;
+	/* font-size: 0.9em; */
+	}
+
+h1, h2, h3, h4, h5, h6 {
+	font-style: normal;
+	}
+	
+h1, h3, h5, dt {
+	font-weight: bold;
+	}
+
+h2, h4, h6 {
+	font-weight: normal;
+	}
+
+h1 {
+	font-size: 2.33em;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+	}
+
+h2 {
+	font-size: 2em;
+	margin-top: 1.33em;
+	margin-bottom: 0.5em;
+	}
+
+h3, h4 {
+	font-size: 1.5em;
+	margin-top: 1em;
+	margin-bottom: 0.333em;
+	}
+
+h5, h6 {
+	font-size: 1.33em;
+	margin-top: 0.75em;
+	margin-bottom: 0.25em;
+	}
+
+/* Sent to all browsers except IE3 */
+
+body {
+	color: white;
+	background: #030;
+	}
+
+h1, h2, h3, h4, h5, h6, dt, th, hr {
+	color: #FF0;
+	background: #030;
+	}
+
+:link:focus, :visited:focus { background: #600; }
+:link, :visited { background: #030; }
+:link:active, :visited:active { background: #030; }
+:link:hover, :visited:hover { background: #600; }
+:link { color: #F90; }
+:visited { color: #F03; }
+:link:active, :visited:active { color: #C93; }
+
+:link img { border-color: #F90; }
+:visited img { border-color: #F03; }
+:link:active img, :visited:active img { border-color: #C93; }
+
+/* Moved here from sans_all */
+:link, :visited {
+	font-weight: bold;
+}
+
+
+
+

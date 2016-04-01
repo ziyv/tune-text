@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO: X 的高等用法</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-11.html" REL=next>
+ <LINK HREF="XWindow-User-HOWTO-Chinese-9.html" REL=previous>
+ <LINK HREF="XWindow-User-HOWTO-Chinese.html#toc10" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-11.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-9.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc10">Contents</A>
+<HR>
+<H2><A NAME="s10">10.</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc10">X 的高等用法</A></H2>
+
+<P>X 中有很多值得學習的地方。在莫測高深的參考頁中，藏著許多的資訊，有許多大多人
+懶得去深讀的東西。有些相當重要的東西，很容易出錯，而且完全不知所從。因為 X 和在
+它上面執行的東西極為遼廣，所以很難在 X 上，寫個程式，檢查保全功能，或做類似的事
+。本節的宗旨是要討論一些較高段較易混淆的狀況。</P>
+
+<H2><A NAME="ss10.1">10.1</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc10.1">編譯 X 應用程式及函式庫</A>
+</H2>
+
+<P>早晚你會想要編譯自己的應用程式。晚的情況是，剛安裝了個不錯的 Linux 套件，
+洽好又滿足你所得到的一切。早的情況是，就是那種愛修修改改再安裝的人。記著，這是
+個人隱私，而不是特權，所以盡量去搞吧！</P>
+<P>首先是有關編譯 X 的程式的一些重點。許多新的應用程式（尤其是 GNU 的應用程式）在 root 
+目錄中有個指令稿，叫作 <B>configure</B> 。它假設己經有了這個檔案，而且正在這個
+目錄中。這個程式先執行 ./configure ，它會自動偵測許多系統中的事項。接著，只要執
+行 <CODE>make</CODE> ，也許再進入 root 目錄執行 <CODE>make install</CODE> ，那麼你
+的程式就可以開始在系統中使用了。</P>
+<P>如果沒有 <B>configure</B> 指令檔，可能還要稍事調整。許多 X 程式須執行個叫
+做 <CODE>xmkmf</CODE> 的程式來產生它的 <B>Makefile</B> 。如果在你的目錄中沒
+有 <B>Makefile</B> ，它也許幫得上忙，它可以用來產生合用的型態檔，然後就可以
+用 <CODE>make</CODE> 來編譯了。</P>
+<P>有時候，必須先執行 <B>configure</B> 指令稿，也可能會被告知須先具有必要的函
+式庫來編譯這個應用程式。例如說，近日我安裝 <B>xscreensaver</B> 應用程式，
+發現到如果我再安裝 <B>Mesa</B> 函式庫，它還可以支援數種 3D 模式。 如果遇
+到這種情況，而希望要把缺少的函式庫補齊，這時候要做的第一件事，就是先檢查一下
+用來安裝 Linux 套件的 CD 或其餘的媒體，看看這個函式庫是不是在裡面。這樣也許可
+以免掉許多重新編譯函式庫的麻煩。</P>
+<P>這些函式庫一旦編譯安裝好了，就可以回到要安裝 X 程式的目錄，刪掉 
+<CODE>config.cache</CODE> 檔，然後再執行一下 <B>configure</B> 指令稿。如果
+一切無誤，它會找到前面所安裝的函式庫。如果找不到，還要稍加調整，使它變得可用。
+如果你的函式庫是從網站上下載，就有可能有這種事，因為這些函式庫無法好好地支
+援 Linux 檔案系統標準（無論如何都應該可以支援）。</P>
+
+<H2><A NAME="ss10.2">10.2</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc10.2">X 保全基礎篇</A>
+</H2>
+
+<P>人家常說 X 有個非常簡單的保全模式：要嘛樣樣整全，要嘛一無所有。這一點也不
+誇張。 X 也可以用加密（encryption）的方式來設定有點繁鎖的保全功能，這己經超
+出了本 HOWTO 的範圍（至少現在如此）。以下的討論，假設使用者不使用任何加密的
+方式。</P>
+<P>首先，在編譯一些 X 的程式時，不論是為了什麼理由，應該試著運用一些簡單的規則。
+除非必要，不要以 root 的身份來編譯。要以一個一般使用者的身份，以命
+令 <CODE>./configure &amp;&amp; make</CODE> （如果沒有 configure 指令稿，就用
+<CODE>make</CODE> ），來設定程式的型態，然後以一個單一的命
+令 <CODE>su -c &quot;make install&quot;</CODE> ，以 root 的
+身份來安裝它，當然還要答以 root 的密碼。這樣子，就不必以 root 的身份來登入，
+只要下一個命令而已，接著又可以回到一般使用者的身份。這是個又聰明又安全的方式來
+安裝軟體。</P>
+<P>接著就要討論以 root 的身份來執行 X 軟體的問題。要知道 X 本來就有點保全的麻煩
+，如果你所以要用 Linux 的主因是保全的話，根本就不該安裝 X 視窗！我也說過，
+有些人喜歡在 X 中，使用一些很酷很炫的型態設定程式或套件管理工具。我<B>很不建議</B>
+以 root 的身份來啟動任何 X 程式。這樣做不是很好。還有很多很多很好的方法可以做到！</P>
+<P>如果要以 root 的身份來執行 X 應用程式，只須以一般使用者的身份登入，然後在其中
+做這種事。就如我前面所說的，除非絕對必要，不必以 root 的身份登入。 root 有權力
+在系統中做任何事，包括千千萬萬種毀掉它的方法。只要在 <B>xterm</B> 中，或類似
+的應用程式中，鍵入命令 <CODE>su -c &quot;glint -display :0.0&quot;</CODE>，
+在桌面上開啟一個視窗。此時在整個桌面上，只有一個視窗是以 root 的身份來執行。也
+可以指定一個程式的完整路徑，並且以 root 的身份來執行，那麼就更有保全能力了。</P>
+<P>Tomasz Motylewski 也提供下述訣竅給 <B>ssh</B> 及 <B>ssh-agent</B> 愛
+用者。不妨在 <EM>/usr/X11R6/lib/xinit/Xclients</EM> 檔中放入下述指令：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ eval &quot;exec ssh-agent fvwm${FVWMVER} ${FVWMOPTIONS}&quot; >
+ &quot;$HOME&quot;/.FVWM${FVWMVER}-errors 2>&amp;
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>也就是說以上述的這些指令來取代原來的標準命令 <CODE>fvwm${FVWMVER} ${FVWMOPTIONS}</CODE>。
+這樣就是說，你是以 <B>ssh-agent</B> 來啟動視窗管理員。此時，如果在 <CODE>ssh-add &lt;
+/dev/null</CODE> 檔中有身分確認用 RSA 匙（identity RSA key），可以試著打開一
+個 <B>xterm</B> 然後下個命令 <EM>&nbsp;/.ssh/identity</EM> 。如果是這樣，以
+後每當打開 X 視窗時，都會有確認的動作。</P>
+<P>必須注意的是，這是個讀者的建議，筆者現在並沒有使用過 <B>ssh</B> ，所以要自求
+多福了！許多現在的 Linux 套件，可以以 <CODE>setup</CODE> 或類似的東西自動設
+定 <B>ssh</B> ，所以對你來說，如何設定它並不重要，只要知道怎麼用它就好了。</P>
+
+<H2><A NAME="ss10.3">10.3</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc10.3">更多有關 X 上的確認</A>
+</H2>
+
+<P>我對於 X 上的確認只是一個實例，其中有許多使用者在 X 中都會碰到的保全問題。 
+Tomasz Motylewski 講了一個故事，簡潔地描述了這問題的因果。</P>
+<P>「‧‧‧依據 XFree86 預設的型態， X 會期是由 ``startx" 所開啟的， startx 又
+接受來自各地相連接的每一個人的命令。如果你是 user1 開啟了 X ，同時在別台機器上登
+入了 user2 ，user2 可以無限制地存取你的鍵盤及桌面（有一次，我的朋友開個玩笑，他
+下了一個 cron 命令，使得每一個小時我桌面上的樣子，都被製成影像寄給他。﹞這種事，持續了兩
+個星期，我卻沒有發現！</P>
+<P>這的確不是件好事，但不幸得很，許多讀者卻都遇上了。 Tomasz 又指出，如果是
+以 <B>xdm</B> 來登入（相關細節見前面的 HOWTO ），而不只是跑 <B>startx</B> ，
+就不會有這種困擾了，因為 <B>xauth</B> 程式會確認任何存取動作。可以下 
+<B>xhost</B> 命令，來看一下那些人可以存取你的 X 會期。 <B>xhost</B> 命令
+會列出那些主機上的使用可以無限制地存取你的螢幕及鍵盤。</P>
+<P>如果想在命令列上開啟 X 伺服程式，具有保全概念，在型態設定中，應有下述修改。
+首先，修改 <B>startx</B> （可能在 <EM>/usr/X11R6/bin/startx</EM> 中），
+把最後一行的 <CODE>xinit $clientargs -- $serverargs</CODE> 改為 
+<CODE>exec xinit $clientargs -- $serverargs -auth ~/.Xauthority</CODE>。</P>
+<P>然後要修改 <B>.xinitrc</B> 或全系統共用的 
+<EM>/usr/X11R6/lib/xinit/xinitrc</EM>（真正用到的檔案，可能在
+你的 home 目錄中），在檔案的最前面加上：</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ # if Xserver has been run with &quot;-auth ~/.Xauthority&quot; option
+this will
+ # prevent other users on your machine to connect to your X server
+ # unless you allow it explicitly using xhost +host or give them
+ # your ~/.Xauthority file.
+ xauth generate $DISPLAY . trusted
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>而且，還要常常跑一下 <B>xhost</B> 來檢查當時的型態，確定一切都在掌握之中。</P>
+<P>
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-11.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-9.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc10">Contents</A>
+</BODY>
+</HTML>

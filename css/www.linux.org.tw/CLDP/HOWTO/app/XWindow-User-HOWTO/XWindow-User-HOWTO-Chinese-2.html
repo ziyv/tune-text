@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO: 開始吧</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-3.html" REL=next>
+ <LINK HREF="XWindow-User-HOWTO-Chinese-1.html" REL=previous>
+ <LINK HREF="XWindow-User-HOWTO-Chinese.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-3.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-1.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="s2">2.</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc2">開始吧</A></H2>
+
+
+
+<H2><A NAME="ss2.2">2.2</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc2.2">桌面的解剖</A>
+</H2>
+
+<P>要想善用 X System 之前，應該先熟晰一些基本的理論及名詞。這裡所講到
+的名詞，會在使用手冊中及說明檔案中一再出現，如果到時候有任何不清楚的地
+方，可以再回過頭來讀一下本文中的解說。</P>
+<P>所謂的<B>螢幕</B> (screen) 指的就是桌面 (desktop) ，而桌面指的就是螢幕。技術上，我們常說，螢幕指的是用
+來看 X System 的主要影像顯示器，但是事實上單一的 X 伺服程式可以同
+時顯示在數個電腦上。雖然這個理論不是本文件討論的項目，但是其中差別不可不
+知。</P>
+<P>所謂<B>根視窗</B> (root window) 指的就是螢幕的背景。名義上說它是個視窗，但它和一般的視窗卻不相
+同，頂多只是在上面跑個程式，貼個圖片，不然就只是設定它為一個單色的視窗。</P>
+<P>所謂<B>視窗管理員</B> (window manager) 就是介於 X System 與使用者間的介面。沒有
+視窗管理員，視窗系統將難以使用，也不會成為極強大的工具。視窗管理員提供
+的功能有視窗窗緣、選單、插圖、虛擬桌面、按鍵列、工具列，並且允許使用者
+自訂功能，而且它本身的功能就是這樣建立起來的。</P>
+<P>所謂的<B>指標</B>為一個箭頭或給定外型的指示器，用來表示滑鼠 ( 或其它指標設備 ) 在
+螢幕上的位置。指標所給你的環境回饋，會隨老鼠在螢幕上的位置而改變。</P>
+<P>所謂<B>視窗</B> (window) 為一個框框，視窗管理員安排如何在其中執行應用程式。此一定
+義應可函蓋除了根視窗外的任何視窗。還有一些視窗，雖然看起來沒有框框、沒有標
+題、也沒有正常窗緣，也是由視窗管理員來管理。所謂的活動視窗 (active window) 
+指的是正在使用的視窗，當鍵入文字時，它接受所鍵入的東西，它常常是指滑鼠
+所在的那一個視窗，但在有些系統上也不盡然。我們說活動視窗已經取得了焦點 (focused)
+，而說其餘的視窗為沒有取得焦點 (unfocused) 。</P>
+<P><B>選單</B>(menus)與<B>圖型視窗</B>(icons)在 X System 上的作用與其餘視窗系統上相類，而且使用相同的
+原理。只有文字的視窗叫做<B>終端機類比器</B> (terminal emulator) ，例如 xterm。它
+基本上只模仿一個只顯示文字的終端機座，但它也允許你一次顯示數個終端機，也
+有其它用於 X System 的優點。其中許多都會在後面談到。</P>
+<P>
+<H2><A NAME="ss2.3">2.3</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc2.3">打開 X Window</A>
+</H2>
+
+<P>有許多方法可以啟動 X System 。在你的系統中，啟動 X System 也
+許是自動完成的，那就可以略過本節。但是大部份現行的 Linux 系統，必須在登
+錄後，再從命令列下指令才進入 X System 的，所以要好好了解一下。</P>
+<P>啟動 X System 最基本的方式是用 <B>xinit</B> 。它的預設功能只是給你一個空白
+的桌面，沒有任何視窗管理員。如果在指令行上不加使用者程式 (client program) 
+， <B>xinit</B> 會以 <EM>.xinitrc</EM> 檔為 shell 腳本 (shell script) ，並把它當使用者程式來執行。如果
+.xinitrc 檔不存在， <B>xinit</B> 會以下面這一行為預設的指令:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ xterm -geometry +1+1 -n login -display :0
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>可見也沒有什麼大用。啟動 X System 最正常的指令還是 <B>xstart</B> 。這是最
+常用的方式，但事先要登錄到文字層，再自行操作進入視窗系統。對許多 Linux 的
+使用者而言，這個方法最正常，也最有彈性。可用的指令有:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ startx -- -bpp 8    #start x in 256 color mode
+ startx -- -bpp 32   #start x in true color mode
+ 
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>其中 "--" 的部份將參數都送給 xinit ，那麼你就可以指定這個 X 的解析
+度，也可以指定它使用後述的型態檔。</P>
+<P>
+<H2><A NAME="ss2.4">2.4</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc2.4">X 顯示管理員</A>
+</H2>
+
+<P><B>xdm</B> 程式的功用與 <B>getty</B> 及 <B>login</B> 類似，
+都允許使用者登錄到一系統中，啟動基本 shell 。若是用 <B>xdm</B> 來
+啟動 X ，使用者只須答以 username 及 password ，即可直接進到一繪圖環
+境。這對於大學生、網路咖啡使用者、商務使用者、或任何不必深入了解
+Unix 的使用者而言，是相當的簡易。</P>
+<P><B>xdm</B> 可以用在 Linux 系統中 <EM>/usr/X11R6/lib/X11/xdm</EM> 中
+的型態檔來規範其型態。<CODE>xdm-config</CODE> 檔定義登錄螢幕的樣子，而 
+<CODE>Xsetup_0</CODE> 是用來告訴 xdm ，當 X 啟動時應開啟那些程式。一般而
+言，當使用 xdm 時，使用者要放入 <CODE>.xinitrc</CODE> 的一些型態應在此定
+義。</P>
+<P>在定義系統時，下面有關 <CODE>Xsetup_0</CODE> 檔的實例也許對你有些幫助。
+<CODE>xfstt</CODE> 程式為 TrueType 字型伺服程式，將在後文中討論。上面所討
+論的可執行檔為 shell script，它會先叫用 <B>xv</B> 來將背景設成適當
+的圖形 ( 而不是單調的黑白背景 ) 。如果叫不到 xv ，則會去叫用
+<B>xsetroot</B> ，將背景設成藍藍的。</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+        #!/bin/sh
+        xconsole -geometry 480x100-0-0 -daemon -notify -verbose -fn \
+        '-schumacher-clean-medium-r-*-*-10-*-*-*-*-*-*-*' -exitOnFail
+        /usr/X11R6/bin/xfstt &amp;
+        /usr/X11R6/bin/xv -quit -root                               \
+        /usr/local/share/WindowMaker/Backgrounds/InDreams.jpg       \
+        || xsetroot -solid darkblue
+        xset fp+ unix/:7100
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>許多 Linux 的套件自動包含此一功能。如果去查一查現在你的 Linux 系統的
+執行層次 ( 檢查 <CODE>/etc/rc/d</CODE> ) ，將可發現，如果不是用像 xdm 之類
+的程式來開機，正常的開始層是第 3 層。但如果是用 <EM>xdm</EM> ，則會從
+第 5 層開始。它是標準 Linux ( 或類似的 ) 系統的定義。若要改變此一定義，
+可用程式 <EM>linuxconfig</EM> 或其它等效程式。</P>
+<P>在其它新的 Linux 系統，如 GNOME 及 KDE ，則使用 <EM>gdm</EM> 及 
+<EM>kdm</EM> 。它們的主要功能為，調整桌面的外表及感覺。但它們往往包括其
+它功能，例如說，它會記憶所登錄的桌面環境為何、能夠使用控制台上的選項來
+關機等等。</P>
+<P>
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-3.html">Next</A>
+<A HREF="XWindow-User-HOWTO-Chinese-1.html">Previous</A>
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc2">Contents</A>
+</BODY>
+</HTML>

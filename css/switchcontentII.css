@@ -1,0 +1,9 @@
+.showstate{ /*Definition for state toggling image */
+  cursor:hand;
+  cursor:pointer;
+  float: right;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+
+

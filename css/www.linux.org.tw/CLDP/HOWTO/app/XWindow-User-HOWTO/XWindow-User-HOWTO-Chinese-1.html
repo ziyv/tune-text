@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <TITLE>中文 X Window User HOWTO: 1. 說明</TITLE>
+ <link href="../../style.css" rel="stylesheet" type="text/css" />
+ <LINK HREF="XWindow-User-HOWTO-Chinese-2.html" REL=next>
+
+ <LINK HREF="XWindow-User-HOWTO-Chinese.html#toc1" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="XWindow-User-HOWTO-Chinese-2.html">Next</A>
+Previous
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc1">Contents</A>
+<HR>
+<H2><A NAME="s1">1.</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc1">說明</A></H2>
+
+<P><EM>X 視窗系統</EM>是由 <EM>Massachusetts Institute of Technology</EM> 所
+開發出來的，並於 1984 年首次開放使用。它是個先進的、網路透明化、視窗化及
+圖形環境的系統。本文假設你己經成功地安裝了 X ，而且它已經正常工作了。所以
+我們所討論的是如何善用 X ，而不是如何去編譯 X 。另外也是因為大多數
+的套件，在安裝時，只要選用 X ，就己能自動安裝 X 了。</P>
+
+<H2><A NAME="ss1.1">1.1</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc1.1">其它資料來源</A>
+</H2>
+
+<P>如果你才剛入門 <EM>XFree86 HOWTO</EM> 及 <EM>XFree86 Video Timings HOWTO</EM> 
+兩書是更好的選擇。在找得到他們的地方，常常也可以找到本文件。本文的後面
+還有參考書目，也不耍忘了讀一下那些 <B>首頁</B>。</P>
+
+<H2><A NAME="ss1.2">1.2</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc1.2">版本</A>
+</H2>
+
+<P>若有更新版本，會不定期在 
+<A HREF="news:comp.os.linux.help">comp.os.linux.help</A> 上
+刊登，也會上載到相關 Linux WWW 及 FTP 網站
+(含 
+<A HREF="http://metalab.unc.edu/LDP">Linux Documentation Project</A> 網站)。
+一般而言，最新版常常是放在 
+<A HREF="http://www.croftj.net/~ray/howto">http://www.croftj.net/~ray/howto</A> 上，
+其中原來是發行 Matelab 寶庫。</P>
+<P>在 1.1 版中，增加了對於 <B>rxvt</B> 的說明，擴增對 X 資源的說明，增加了一些有關 X 的
+歷史，更新其中指到 SunSite 的 MetaLab 的連結，也說明了如何在 X 中使
+用 Type 1 字型的指令。</P>
+<P>在 1.2 版中，增加了許多在 X 中使用 TrueType 字型的說明，一些設定 <CODE>xdm</CODE> 的
+細節，一些新增的資源。同時也更正了我對空白螢幕特性的討論(謝謝 Heinrich Langos
+的更正)。</P>
+<P>在 1.3 版中，包含一些更正，有關一些新版套件中字型路徑的錯誤，以及許多有關
+X 的基本保全問題。我也增加了一些有關 KDE 及 E-Mail 的訣竅。</P>
+<P>在 1.4 版中，新增了一些來自 Anthony J. 的更正及補充，還有一些由 Tomasz Motylewski
+的有關保全的訣竅。</P>
+<P>在 2.0 版中，包含一些由 Guus Bosch 、 Brian J. Miller 及我自己的更正，還有
+許多新的更新及資訊，同時希望有人能繼續維護此文件。</P>
+
+
+<H2><A NAME="ss1.3">1.3</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc1.3">反映及更正</A>
+</H2>
+
+<P>如果對本文有任何疑問或意見，請不吝來信 Ray Brigleb 指教 ( <CODE>ray@aracnet.com</CODE> 
+或永久地址 <CODE>rayola@mindless.com</CODE> ) ，本人絕對歡迎。如果發現任何錯誤也請不吝
+反映，我將會在下一版中加以修正。如果你有任何資料，希望在下一版中加入，請寫
+給我要加入的內容。也希望有人能提供參考書目。同時，也希望有人自願繼續來維
+護此一文件，如果你有興趣，請告訴我。也許另一個維護者，可以為本文件帶來一些
+新生氣。我手上有一些讀者來信，寫得非常生動而豐富，他們也許就是可能的人選。</P>
+
+<H2><A NAME="ss1.4">1.4</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc1.4">感謝</A>
+</H2>
+
+<P>非常感謝 HOWTO 的整合者 Tim Bynum 的幫助及建議，也感謝 XFree86 小組所提供
+的隨 XFree86 套件而來的首頁。真的非常感謝，前人所寫的種種文件，我只是東抄西
+湊，來寫成此一文件。也謝謝 Window Managers Guide website 的作者 Matt Chapman 
+及抄自 Scott Scriven 的 FVWM2 Themes 的要領及訣竅。也感謝 Joe Croft 為現有
+HOWTO 的網路服務。以及 Claire Galper ，他提供了許多的援助及詳細的訣竅。最
+後還要謝謝整個 GNU/Linux 圈的每一個人，還有 Mr. Stallman 的文件編輯程式(及
+其中的哲思)。</P>
+
+
+<H2><A NAME="ss1.5">1.5</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc1.5">著作權</A>
+</H2>
+
+<P>著作權 (c) 1998, 1999 屬於 Ray Brigleb. </P>
+<P>除非特別聲明，Linux HOWTO 各文件之著作權屬於各原著之作者。Linux HOWTO 文件可
+以部份或完整複製、散佈、可以利用各種媒體﹝實物或電子方式﹞，但必須保證原版權仍保
+留在所有文件上。具商業目的的發行是允許的，也是被鼓勵的，但在發行前應先通知原作者。 </P>
+<P>不論是直接翻譯、間接參用或是集文成冊，只要是用到 Linux HOWTO 文件，本著作權聲明
+一律有效。也就是說，一旦參用了HOWTO的內容，就不能對你的產品附加任何發行的權限
+。在某些特殊條件之下，若是想取得某些不違反上述規定的權利，請與 Linux HOWTO 整
+合者連絡。 </P>
+<P>簡而言之，我們期望把其中的資訊，經由任何可能的管道傳播出去，並且鼓勵越多越好。
+然而，我們仍然要保留著作權，唯獨對於任何散佈 HOWTO 的計劃，都希望能夠預先得
+到告知。</P>
+<P>文件中所提到的許多註冊商標，除非特殊例外，都歸各自擁有者所有。</P>
+
+
+<H2><A NAME="ss1.6">1.6</A> <A HREF="XWindow-User-HOWTO-Chinese.html#toc1.6">原著作內容(Origional)</A>
+</H2>
+
+<P>Copyright (c) 1998, 1999 by Ray Brigleb. </P>
+<P>Unless otherwise stated, Linux HOWTO documents are copyrighted by their
+respective authors. Linux HOWTO documents may be reproduced and
+distributed in whole or in part, in any medium physical or electronic,
+as
+long as this copyright notice is retained on all copies. Commercial
+redistribution is allowed and encouraged; however, the author would
+like
+to be notified of any such distributions.</P>
+<P>All translations, derivative works, or aggregate works incorporating any
+Linux HOWTO documents must be covered under this copyright notice. That
+is, you may not produce a derivative work from a HOWTO and impose
+additional restrictions on its distribution. Exceptions to these rules
+may be granted under certain conditions; please contact the Linux HOWTO
+coordinator for more information.</P>
+<P>In short, we wish to promote dissemination of this information through
+as
+many channels as possible. However, we do wish to retain copyright on
+the
+HOWTO documents, and would very much like to be notified of any plans
+to
+redistribute the HOWTOs, this one in particular!</P>
+<P>Many of the terms mentioned in this document are trade names. Unless
+otherwise stated, all trademarks are property of their respective
+owners.</P>
+
+<HR>
+<A HREF="XWindow-User-HOWTO-Chinese-2.html">Next</A>
+Previous
+<A HREF="XWindow-User-HOWTO-Chinese.html#toc1">Contents</A>
+</BODY>
+</HTML>

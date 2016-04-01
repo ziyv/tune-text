@@ -1,0 +1,213 @@
+--18:54:29--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese.html
+正在解析主机 www.linux.org.tw... 140.109.17.84
+Connecting to www.linux.org.tw|140.109.17.84|:80... 已连接。
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：6304 (6.2K) [text/html]
+--18:54:44--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：6304 (6.2K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese.html'
+
+
+
+18:54:45 (9.03 KB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese.html' saved [6304/6304]
+
+正在载入 robots.txt；请忽略错误消息。
+--18:54:45--  http://www.linux.org.tw/robots.txt
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：261 [text/plain]
+--18:54:47--  (尝试次数： 2)  http://www.linux.org.tw/robots.txt
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：261 [text/plain]
+Saving to: `www.linux.org.tw/robots.txt'
+
+     0K                                                       100% 40.4M=0s
+
+18:54:50 (40.4 MB/s) - `www.linux.org.tw/robots.txt' saved [261/261]
+
+--18:54:50--  http://www.linux.org.tw/CLDP/HOWTO/style.css
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：1871 (1.8K) [text/css]
+--18:54:52--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/style.css
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：1871 (1.8K) [text/css]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/style.css'
+
+     0K .                                                     100%  499K=0.004s
+
+18:54:52 (499 KB/s) - `www.linux.org.tw/CLDP/HOWTO/style.css' saved [1871/1871]
+
+--18:54:52--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-1.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：6016 (5.9K) [text/html]
+--18:54:54--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-1.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：6016 (5.9K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-1.html'
+
+     0K .....                                                 100%  292M=0s
+
+18:54:56 (292 MB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-1.html' saved [6016/6016]
+
+--18:54:56--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-2.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：6068 (5.9K) [text/html]
+--18:54:58--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-2.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：6068 (5.9K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-2.html'
+
+     0K .....                                                 100% 2.88K=2.1s
+
+18:55:00 (2.88 KB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-2.html' saved [6068/6068]
+
+--18:55:00--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-3.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：12502 (12K) [text/html]
+--18:55:02--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-3.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：12502 (12K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-3.html'
+
+     0K .......... ..                                         100% 6.01K=2.0s
+
+18:55:05 (6.01 KB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-3.html' saved [12502/12502]
+
+--18:55:05--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-4.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：5978 (5.8K) [text/html]
+--18:55:08--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-4.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：5978 (5.8K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-4.html'
+
+     0K .....                                                 100% 8.47K=0.7s
+
+18:55:09 (8.47 KB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-4.html' saved [5978/5978]
+
+--18:55:09--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-5.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：5603 (5.5K) [text/html]
+--18:55:11--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-5.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：5603 (5.5K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-5.html'
+
+     0K .....                                                 100% 2.45K=2.2s
+
+18:55:14 (2.45 KB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-5.html' saved [5603/5603]
+
+--18:55:14--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-6.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：6190 (6.0K) [text/html]
+--18:55:15--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-6.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：6190 (6.0K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-6.html'
+
+     0K ......                                                100% 4.46K=1.4s
+
+18:55:18 (4.46 KB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-6.html' saved [6190/6190]
+
+--18:55:18--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-7.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：11983 (12K) [text/html]
+--18:55:20--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-7.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：11983 (12K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-7.html'
+
+     0K .......... .                                          100% 5.74K=2.0s
+
+18:55:23 (5.74 KB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-7.html' saved [11983/11983]
+
+--18:55:23--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-8.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：13051 (13K) [text/html]
+--18:55:24--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-8.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：13051 (13K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-8.html'
+
+     0K .......... ..                                         100%  915 =14s
+
+18:55:39 (915 B/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-8.html' saved [13051/13051]
+
+--18:55:39--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-9.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：6877 (6.7K) [text/html]
+--18:55:41--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-9.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：6877 (6.7K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-9.html'
+
+     0K ......                                                100% 4.96K=1.4s
+
+18:55:43 (4.96 KB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-9.html' saved [6877/6877]
+
+--18:55:43--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-10.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：7355 (7.2K) [text/html]
+--18:55:45--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-10.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：7355 (7.2K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-10.html'
+
+     0K .......                                               100% 10.4K=0.7s
+
+18:55:46 (10.4 KB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-10.html' saved [7355/7355]
+
+--18:55:46--  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-11.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：2328 (2.3K) [text/html]
+--18:55:48--  (尝试次数： 2)  http://www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-11.html
+Reusing existing connection to www.linux.org.tw:80.
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：2328 (2.3K) [text/html]
+Saving to: `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-11.html'
+
+     0K ..                                                    100%  252K=0.009s
+
+18:55:48 (252 KB/s) - `www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-11.html' saved [2328/2328]
+
+FINISHED --18:55:48--
+Downloaded: 14 files, 90K in 27s (3.29 KB/s)
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-8.html... 16-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-9.html... 14-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-1.html... 14-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-2.html... 14-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-3.html... 16-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-10.html... 14-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-4.html... 14-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-11.html... 8-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-5.html... 14-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-6.html... 15-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese-7.html... 16-0
+正在转换 www.linux.org.tw/CLDP/HOWTO/app/XWindow-User-HOWTO/XWindow-User-HOWTO-Chinese.html... 56-0
+Converted 12 files in 0.004 seconds.

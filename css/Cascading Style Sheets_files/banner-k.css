@@ -1,0 +1,23 @@
+/* Like banner.css, but with different color.
+ * Use for special pages.
+ *
+ * Author: Bert Bos <bert@w3.org>
+ * Created: 26 July 2000
+ * Version: $Id: banner-k.css,v 1.7 2002/10/18 08:36:25 bbos Exp $
+ *
+ * The 'fixed' in the background is there to work around a bug in
+ * Opera 6.0 (disappearing background when the page is scrolled). It
+ * should have no visible effect in other browsers.
+ *
+ */
+@import "banner.css";
+
+/* Override the colors */
+div.banner>p { background: url(semi2x2b.png) transparent fixed;
+   border-color: #025c7f }
+div.banner a, div.banner em { border-top-color: #025c7f }
+
+/* Hide from NS4 (there is a higher-specificity rule in banner.css) */
+div.banner { display: none }
+
+div.banner a:hover { background: white; color: black }
